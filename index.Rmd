@@ -10,3 +10,5 @@ site: bookdown::bookdown_site
 ## Structure of the book
 
 ## About the Author
+
+Andrea Villanes earned her PhD in Computer Science from NC State un 2019. She is also a 2009 graduate of the [MSA program](https://analytics.ncsu.edu/) and a teaching assistant professor at the Institute for Advanced Analytics.
