@@ -1,5 +1,4 @@
-This is a template for creating an [HTML GitBook style](https://bookdown.org/yihui/bookdown/html.html#gitbook-style) **[bookdown](https://github.com/rstudio/bookdown)** book, [hosted on GitHub Pages](https://bookdown.org/yihui/bookdown/github.html). It is based on the one created with *File, New Project..., New Directory, Book Project using bookdown* in RStudio. It assumes you know how to use git/GitHub and R Markdown, and have some familiarity with the **bookdown** package. If you don't, the package author Yihue Xie's RStudio webinar *[Introduction to Bookdown (R Package)](https://www.youtube.com/watch?v=dVqVscgwSpw)* provides an excellent introduction. In addition, check out [*bookdown: Authoring Books and Technical Documents with R Markdown*](https://bookdown.org/yihui/bookdown), also by Yihui Xie, both for the content and the format--it is itself a **bookdown** book.
-
+This repository contains the source files of the book Data Manipulation Techniques with R. You may also read the free online version at https://andreavillanes.github.io/R_Data_Manipulation_Techniques/.
 
 ### Render the book
 
@@ -13,17 +12,9 @@ This is a template for creating an [HTML GitBook style](https://bookdown.org/yih
 
 (You will need to repeat steps 2 and 4 every time you wish to update the book online.)
 
-### Edit README
+### Contributions
 
-Once you've completed these steps, delete the content of this **README** and add a short description of your project with a link to the book URL. It would be appreciated if you add the following to the end:
+If you have any feedback, please feel free to [file an issue on GitHub](https://github.com/andreavillanes/R_Data_Manipulation_Techniques/issues). Thank you!
 
 *This repo was initially generated from a bookdown template available here: https://github.com/jtr13/bookdown-template.*
-
-### Demo Video
-
-A demo video showing how to create a **bookdown book** following these instructions: http://bit.ly/fiveminutebookdown
-
-### Additional features
-
-Please consult the official guide to **bookdown**: https://bookdown.org/yihui/bookdown
 
