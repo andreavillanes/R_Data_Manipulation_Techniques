@@ -3,6 +3,7 @@ title: "Data Manipulation Techniques with R"
 #author: "Dr. Andrea Villanes"
 output: pdf_document
 site: bookdown::bookdown_site
+github-repo: andreavillanes/R_Data_Manipulation_Techniques
 ---
 
 # Preface
