@@ -2,3 +2,5 @@ preface
 introduction
 a-caucus-race-and-a-long-tale
 resources
+cheat-sheets
+boooks

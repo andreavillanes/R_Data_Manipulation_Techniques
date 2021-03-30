@@ -1,1 +1,15 @@
 # Resources
+
+Here is a list of resources that might help you in your R journey:
+
+## Cheat Sheets
+
+* [Base R Cheat Sheet](http://github.com/rstudio/cheatsheets/raw/master/base-r.pdf)
+* [Advanced R Cheat Sheet](https://www.rstudio.com/wp-content/uploads/2016/02/advancedR.pdf)
+* [Data Wrangling with dplyr and tidyr Cheat Sheet](https://www.rstudio.com/wp-content/uploads/2015/02/data-wrangling-cheatsheet.pdf)
+* [Work with strings with stringr Cheat Sheet](https://evoldyn.gitlab.io/evomics-2018/ref-sheets/R_strings.pdf)
+* [Basic Regular Expressions in R Cheat Sheet](https://www.rstudio.com/wp-content/uploads/2016/09/RegExCheatsheet.pdf)
+
+## Boooks
+
+In this class, we will use the R for Data Science book. A free online version can be found [here](https://r4ds.had.co.nz/)
