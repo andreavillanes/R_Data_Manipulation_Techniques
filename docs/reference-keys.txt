@@ -1,6 +1,4 @@
 preface
-structure-of-the-book
-about-the-author
-acknowledgements
 introduction
 a-caucus-race-and-a-long-tale
+resources

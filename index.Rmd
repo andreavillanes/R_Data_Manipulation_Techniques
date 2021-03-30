@@ -7,11 +7,11 @@ site: bookdown::bookdown_site
 
 # Preface
 
-## Structure of the book
+## Structure of the book {-}
 
 This book is a work in progress. Submit any issues  [here](https://github.com/andreavillanes/R_Data_Manipulation_Techniques/issues). Please check back for frequent updates. 
 
-## About the Author
+## About the Author {-}
 
 Andrea Villanes earned her PhD in Computer Science from NC State un 2019. She is also a 2009 graduate of the [MSA program](https://analytics.ncsu.edu/) and a teaching assistant professor at the Institute for Advanced Analytics.
 
@@ -21,6 +21,6 @@ While working toward her advanced degrees in computer science, Villanes served a
 
 In addition to teaching, Villanes is actively involved in the broader data science community. She is the co-founder of Women in Technology Perú, which brings together women who are interested in different areas of technology, as well as the co-founder of Zunti, a new entrepreneurial venture that promotes the use of data science in companies in Latin America. 
 
-## Acknowledgements
+## Acknowledgements {-}
 
 The author would like to thank the members of the faculty and the TAs at the Institute who provided feedback on this work.
