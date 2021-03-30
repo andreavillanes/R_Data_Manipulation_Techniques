@@ -1,6 +1,7 @@
 preface
-introduction
-a-caucus-race-and-a-long-tale
+introduction-to-r
+data-structures
 resources
 cheat-sheets
-boooks
+programming-style
+books

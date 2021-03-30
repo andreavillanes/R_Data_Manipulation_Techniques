@@ -10,6 +10,10 @@ Here is a list of resources that might help you in your R journey:
 * [Work with strings with stringr Cheat Sheet](https://evoldyn.gitlab.io/evomics-2018/ref-sheets/R_strings.pdf)
 * [Basic Regular Expressions in R Cheat Sheet](https://www.rstudio.com/wp-content/uploads/2016/09/RegExCheatsheet.pdf)
 
-## Boooks
+## Programming Style
+
+* [Google's R Style Guide](https://google.github.io/styleguide/Rguide.html) 
+
+## Books
 
 In this class, we will use the R for Data Science book. A free online version can be found [here](https://r4ds.had.co.nz/)
