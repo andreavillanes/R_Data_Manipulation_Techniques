@@ -1,9 +1,12 @@
 --- 
 title: "Data Manipulation Techniques with R"
-author: "Dr. Andrea Villanes"
-date: "`r Sys.Date()`"
+#author: "Dr. Andrea Villanes"
+output: pdf_document
 site: bookdown::bookdown_site
 ---
 
-# Down the rabbit-hole
+# Introduction
 
+## Structure of the book
+
+## About the Author

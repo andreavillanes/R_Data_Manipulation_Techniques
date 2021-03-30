@@ -3,6 +3,7 @@ bookdown::gitbook:
   config:
     toc:
       before: |
-        <li><a href="./">Data Manipulation Techniques with R</a></li>
+        <li><a style="font-weight:bold" href="https://andreavillanes.github.io/R_Data_Manipulation_Techniques/">Data Manipulation Techniques with R</a>
+        <img src="./img/iaaicon.png" alt="IAA"  class="center"</li>
       after: |
         <li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
