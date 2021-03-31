@@ -5,6 +5,8 @@ variable-assignment
 finding-variables
 deleting-variables
 data-structures
+programming-fundamentals
+data-wrangling
 resources
 cheat-sheets
 programming-style
