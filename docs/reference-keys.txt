@@ -1,5 +1,7 @@
 preface
 introduction-to-r
+getting-started
+variable-assignment
 data-structures
 resources
 cheat-sheets

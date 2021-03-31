@@ -1,9 +1,11 @@
 # Introduction to R
 
+## Getting Started
+
 The simplest way to use R is to use it as if it were a calculator. For example, if we want to know what one plus one is, you may type:
 
 ```{r prompt=TRUE, eval=FALSE}
-1+1
+  1 + 1
 ```
 
 We can use any arithmetic operator, like addition, subtraction, multiplication, division, divison, exponentiation, and modulus operations:
@@ -62,6 +64,18 @@ R includes extensive facilities for accessing documentation and searching for he
   ?round()
 ```
 
+## Variable Assignment
 
+A basic concept in programming is called a variable. A variable allows you to store a value (e.g. 10) or an object (e.g. a function description) in R. We can then further use the variable's name to access the value or the object that is stored within this variable.
 
+For example, you can assign a value 10 to a variable my_variable:
 
+```{r prompt=TRUE, eval=FALSE}
+  my_variable <- 10
+```
+
+To print out the value of the variable, you simply type the name of your variable
+
+```{r prompt=TRUE, eval=TRUE}
+  my_variable
+```

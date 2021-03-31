@@ -139,7 +139,11 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="" data-path="index.html"><a href="index.html#about-the-author"><i class="fa fa-check"></i>About the Author</a></li>
 <li class="chapter" data-level="" data-path="index.html"><a href="index.html#acknowledgements"><i class="fa fa-check"></i>Acknowledgements</a></li>
 </ul></li>
-<li class="chapter" data-level="2" data-path="introduction-to-r.html"><a href="introduction-to-r.html"><i class="fa fa-check"></i><b>2</b> Introduction to R</a></li>
+<li class="chapter" data-level="2" data-path="introduction-to-r.html"><a href="introduction-to-r.html"><i class="fa fa-check"></i><b>2</b> Introduction to R</a>
+<ul>
+<li class="chapter" data-level="2.1" data-path="introduction-to-r.html"><a href="introduction-to-r.html#getting-started"><i class="fa fa-check"></i><b>2.1</b> Getting Started</a></li>
+<li class="chapter" data-level="2.2" data-path="introduction-to-r.html"><a href="introduction-to-r.html#variable-assignment"><i class="fa fa-check"></i><b>2.2</b> Variable Assignment</a></li>
+</ul></li>
 <li class="chapter" data-level="3" data-path="data-structures.html"><a href="data-structures.html"><i class="fa fa-check"></i><b>3</b> Data Structures</a></li>
 <li class="chapter" data-level="4" data-path="resources.html"><a href="resources.html"><i class="fa fa-check"></i><b>4</b> Resources</a>
 <ul>
@@ -169,8 +173,10 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
             <section class="normal" id="section-">
 <div id="introduction-to-r" class="section level1" number="2">
 <h1><span class="header-section-number">Chapter 2</span> Introduction to R</h1>
+<div id="getting-started" class="section level2" number="2.1">
+<h2><span class="header-section-number">2.1</span> Getting Started</h2>
 <p>The simplest way to use R is to use it as if it were a calculator. For example, if we want to know what one plus one is, you may type:</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="introduction-to-r.html#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="sc">&gt;</span> <span class="dv">1</span><span class="sc">+</span><span class="dv">1</span></span></code></pre></div>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="introduction-to-r.html#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="sc">&gt;</span>   <span class="dv">1</span> <span class="sc">+</span> <span class="dv">1</span></span></code></pre></div>
 <p>We can use any arithmetic operator, like addition, subtraction, multiplication, division, divison, exponentiation, and modulus operations:</p>
 <div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb2-1"><a href="introduction-to-r.html#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="sc">&gt;</span>   <span class="co"># addition</span></span>
 <span id="cb2-2"><a href="introduction-to-r.html#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="er">&gt;</span>   <span class="dv">1</span> <span class="sc">+</span> <span class="dv">1</span></span>
@@ -213,7 +219,17 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <span id="cb4-3"><a href="introduction-to-r.html#cb4-3" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb4-4"><a href="introduction-to-r.html#cb4-4" aria-hidden="true" tabindex="-1"></a>  <span class="co">#? operator  </span></span>
 <span id="cb4-5"><a href="introduction-to-r.html#cb4-5" aria-hidden="true" tabindex="-1"></a>  ?<span class="fu">round</span>()</span></code></pre></div>
+</div>
+<div id="variable-assignment" class="section level2" number="2.2">
+<h2><span class="header-section-number">2.2</span> Variable Assignment</h2>
+<p>A basic concept in programming is called a variable. A variable allows you to store a value (e.g. 10) or an object (e.g. a function description) in R. We can then further use the variable’s name to access the value or the object that is stored within this variable.</p>
+<p>For example, you can assign a value 10 to a variable my_variable:</p>
+<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb5-1"><a href="introduction-to-r.html#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="sc">&gt;</span>   my_variable <span class="ot">&lt;-</span> <span class="dv">10</span></span></code></pre></div>
+<p>To print out the value of the variable, you simply type the name of your variable</p>
+<div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb6-1"><a href="introduction-to-r.html#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="sc">&gt;</span>   my_variable</span></code></pre></div>
+<pre><code>## [1] 10</code></pre>
 
+</div>
 </div>
             </section>
 
