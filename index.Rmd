@@ -6,11 +6,11 @@ site: bookdown::bookdown_site
 github-repo: andreavillanes/R_Data_Manipulation_Techniques
 ---
 
-# Preface
+# Preface {.unnumbered}
 
 ## Structure of the book {-}
 
-This book is a work in progress. Submit any issues  [here](https://github.com/andreavillanes/R_Data_Manipulation_Techniques/issues). Please check back for frequent updates. 
+The book is broken down into small sections that aim to demonstrate a single concept at a time. Chapter \@ref(introduction) introduces the basic components of R, and how you can assign values to variables. This book is a work in progress. Submit any issues  [here](https://github.com/andreavillanes/R_Data_Manipulation_Techniques/issues). Please check back for frequent updates. 
 
 ## About the Author {-}
 

@@ -1,5 +1,4 @@
-preface
-introduction-to-r
+introduction
 getting-started
 variable-assignment
 finding-variables

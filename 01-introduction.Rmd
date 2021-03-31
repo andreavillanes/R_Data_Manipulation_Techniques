@@ -1,4 +1,4 @@
-# Introduction to R
+# Introduction to R {#introduction}
 
 ## Getting Started
 
@@ -64,7 +64,7 @@ R includes extensive facilities for accessing documentation and searching for he
   ?round()
 ```
 
-## Variable Assignment
+## Variable Assignment 
 
 A basic concept in programming is called a variable. A variable allows you to store a value (e.g. 10) or an object (e.g. a function description) in R. We can then further use the variable's name to access the value or the object that is stored within this variable.
 
@@ -127,6 +127,7 @@ The `ls()` function can also use patterns to match the variable names.
 Variables can be deleted by using the `rm()` function. Below we delete the variable my_variable:
 
 ```{r prompt=TRUE, eval=FALSE}
+  my_variable <- 5
   rm(my_variable)
 ```
 
