@@ -242,19 +242,27 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <span id="cb8-9"><a href="introduction-to-r.html#cb8-9" aria-hidden="true" tabindex="-1"></a><span class="sc">&gt;</span> </span>
 <span id="cb8-10"><a href="introduction-to-r.html#cb8-10" aria-hidden="true" tabindex="-1"></a><span class="er">&gt;</span>   <span class="co"># You can also operate on and reassign a variable to itself </span></span>
 <span id="cb8-11"><a href="introduction-to-r.html#cb8-11" aria-hidden="true" tabindex="-1"></a><span class="er">&gt;</span>   my_variable <span class="ot">&lt;-</span> my_variable <span class="sc">+</span> <span class="dv">1</span></span></code></pre></div>
+<p>You can broaden assignments beyond numbers:</p>
+<div class="sourceCode" id="cb9"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb9-1"><a href="introduction-to-r.html#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="sc">&gt;</span>   result <span class="ot">&lt;-</span> <span class="fu">sqrt</span>(<span class="dv">9</span>)</span>
+<span id="cb9-2"><a href="introduction-to-r.html#cb9-2" aria-hidden="true" tabindex="-1"></a><span class="sc">&gt;</span>   </span>
+<span id="cb9-3"><a href="introduction-to-r.html#cb9-3" aria-hidden="true" tabindex="-1"></a><span class="er">&gt;</span>   fruit_1 <span class="ot">&lt;-</span> <span class="st">&quot;apple&quot;</span></span>
+<span id="cb9-4"><a href="introduction-to-r.html#cb9-4" aria-hidden="true" tabindex="-1"></a><span class="sc">&gt;</span>   fruit_2 <span class="ot">&lt;-</span> <span class="st">&quot;banana&quot;</span></span>
+<span id="cb9-5"><a href="introduction-to-r.html#cb9-5" aria-hidden="true" tabindex="-1"></a><span class="sc">&gt;</span>   fruit_3 <span class="ot">&lt;-</span> <span class="st">&quot;cantaloupe&quot;</span></span></code></pre></div>
 </div>
 <div id="finding-variables" class="section level2" number="2.3">
 <h2><span class="header-section-number">2.3</span> Finding Variables</h2>
 <p>To know all the variables currently available in the workspace we use the <code>ls()</code> function:</p>
-<div class="sourceCode" id="cb9"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb9-1"><a href="introduction-to-r.html#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="sc">&gt;</span>   <span class="fu">print</span>(<span class="fu">ls</span>())</span></code></pre></div>
+<div class="sourceCode" id="cb10"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb10-1"><a href="introduction-to-r.html#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="sc">&gt;</span>   <span class="fu">print</span>(<span class="fu">ls</span>())</span></code></pre></div>
 <p>The <code>ls()</code> function can also use patterns to match the variable names.</p>
-<div class="sourceCode" id="cb10"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb10-1"><a href="introduction-to-r.html#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="sc">&gt;</span>   <span class="co"># List the variables starting with the pattern &quot;var&quot;.</span></span>
-<span id="cb10-2"><a href="introduction-to-r.html#cb10-2" aria-hidden="true" tabindex="-1"></a><span class="er">&gt;</span>   <span class="fu">print</span>(<span class="fu">ls</span>(<span class="at">pattern =</span> <span class="st">&quot;var&quot;</span>))   </span></code></pre></div>
+<div class="sourceCode" id="cb11"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb11-1"><a href="introduction-to-r.html#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="sc">&gt;</span>   <span class="co"># List the variables starting with the pattern &quot;var&quot;.</span></span>
+<span id="cb11-2"><a href="introduction-to-r.html#cb11-2" aria-hidden="true" tabindex="-1"></a><span class="er">&gt;</span>   <span class="fu">print</span>(<span class="fu">ls</span>(<span class="at">pattern =</span> <span class="st">&quot;var&quot;</span>))   </span></code></pre></div>
 </div>
 <div id="deleting-variables" class="section level2" number="2.4">
 <h2><span class="header-section-number">2.4</span> Deleting Variables</h2>
-<p>Variables can be deleted by using the <code>rm()</code> function. Below we delete the variable my_var:</p>
-<div class="sourceCode" id="cb11"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb11-1"><a href="introduction-to-r.html#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="sc">&gt;</span>   <span class="fu">rm</span>(my_var)</span></code></pre></div>
+<p>Variables can be deleted by using the <code>rm()</code> function. Below we delete the variable my_variable:</p>
+<div class="sourceCode" id="cb12"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb12-1"><a href="introduction-to-r.html#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="sc">&gt;</span>   <span class="fu">rm</span>(my_variable)</span></code></pre></div>
+<p>All the variables can be deleted by using the <code>rm()</code> and <code>ls()</code> function together:</p>
+<div class="sourceCode" id="cb13"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb13-1"><a href="introduction-to-r.html#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="sc">&gt;</span>   <span class="fu">rm</span>(<span class="at">list =</span> <span class="fu">ls</span>())</span></code></pre></div>
 
 </div>
 </div>
@@ -295,7 +303,7 @@ gitbook.start({
 "size": 2
 },
 "edit": {
-"link": "https://github.com/andreavillanes/R_Data_Manipulation_Techniques/edit/master/02-tears.Rmd",
+"link": "https://github.com/andreavillanes/R_Data_Manipulation_Techniques/edit/master/02-introduction.Rmd",
 "text": "Edit"
 },
 "history": {
@@ -303,7 +311,7 @@ gitbook.start({
 "text": null
 },
 "view": {
-"link": "https://github.com/andreavillanes/R_Data_Manipulation_Techniques/blob/master/02-tears.Rmd",
+"link": "https://github.com/andreavillanes/R_Data_Manipulation_Techniques/blob/master/02-introduction.Rmd",
 "text": null
 },
 "download": null,

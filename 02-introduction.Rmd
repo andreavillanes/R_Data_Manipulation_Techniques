@@ -96,6 +96,17 @@ A valid variable name consists of letters, numbers and the dot or underline char
   my_variable <- my_variable + 1
 ```
 
+You can broaden assignments beyond numbers:
+
+```{r prompt=TRUE, eval=FALSE}
+  result <- sqrt(9)
+  
+  fruit_1 <- "apple"
+  fruit_2 <- "banana"
+  fruit_3 <- "cantaloupe"
+```
+
+
 ## Finding Variables
 
 To know all the variables currently available in the workspace we use the `ls()` function:
@@ -118,5 +129,12 @@ Variables can be deleted by using the `rm()` function. Below we delete the varia
 ```{r prompt=TRUE, eval=FALSE}
   rm(my_variable)
 ```
+
+All the variables can be deleted by using the `rm()` and `ls()` function together:
+
+```{r prompt=TRUE, eval=FALSE}
+  rm(list = ls())
+```
+
 
 
