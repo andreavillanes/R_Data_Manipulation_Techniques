@@ -16,4 +16,5 @@ Here is a list of resources that might help you in your R journey:
 
 ## Books
 
-In this class, we will use the R for Data Science book. A free online version can be found [here](https://r4ds.had.co.nz/)
+* [R for Data Science](https://r4ds.had.co.nz/)
+* [SAS Programming for R Users](https://support.sas.com/content/dam/SAS/support/en/books/free-books/sas-programming-for-r-users.pdf)
