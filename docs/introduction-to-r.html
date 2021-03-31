@@ -143,6 +143,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <ul>
 <li class="chapter" data-level="2.1" data-path="introduction-to-r.html"><a href="introduction-to-r.html#getting-started"><i class="fa fa-check"></i><b>2.1</b> Getting Started</a></li>
 <li class="chapter" data-level="2.2" data-path="introduction-to-r.html"><a href="introduction-to-r.html#variable-assignment"><i class="fa fa-check"></i><b>2.2</b> Variable Assignment</a></li>
+<li class="chapter" data-level="2.3" data-path="introduction-to-r.html"><a href="introduction-to-r.html#finding-variables"><i class="fa fa-check"></i><b>2.3</b> Finding Variables</a></li>
+<li class="chapter" data-level="2.4" data-path="introduction-to-r.html"><a href="introduction-to-r.html#deleting-variables"><i class="fa fa-check"></i><b>2.4</b> Deleting Variables</a></li>
 </ul></li>
 <li class="chapter" data-level="3" data-path="data-structures.html"><a href="data-structures.html"><i class="fa fa-check"></i><b>3</b> Data Structures</a></li>
 <li class="chapter" data-level="4" data-path="resources.html"><a href="resources.html"><i class="fa fa-check"></i><b>4</b> Resources</a>
@@ -223,11 +225,36 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div id="variable-assignment" class="section level2" number="2.2">
 <h2><span class="header-section-number">2.2</span> Variable Assignment</h2>
 <p>A basic concept in programming is called a variable. A variable allows you to store a value (e.g. 10) or an object (e.g. a function description) in R. We can then further use the variable’s name to access the value or the object that is stored within this variable.</p>
-<p>For example, you can assign a value 10 to a variable my_variable:</p>
+<p>For example, you can assign a value 10 to a variable <code>my_variable</code>:</p>
 <div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb5-1"><a href="introduction-to-r.html#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="sc">&gt;</span>   my_variable <span class="ot">&lt;-</span> <span class="dv">10</span></span></code></pre></div>
-<p>To print out the value of the variable, you simply type the name of your variable</p>
+<p>To print out the value of the variable, you simply type the name of your variable:</p>
 <div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb6-1"><a href="introduction-to-r.html#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="sc">&gt;</span>   my_variable</span></code></pre></div>
 <pre><code>## [1] 10</code></pre>
+<p>A valid variable name consists of letters, numbers and the dot or underline characters. The variable name starts with a letter or the dot not followed by a number:</p>
+<div class="sourceCode" id="cb8"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb8-1"><a href="introduction-to-r.html#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="sc">&gt;</span>   <span class="co"># A variable can be operated on </span></span>
+<span id="cb8-2"><a href="introduction-to-r.html#cb8-2" aria-hidden="true" tabindex="-1"></a><span class="er">&gt;</span>   my_variable <span class="sc">+</span> <span class="dv">1</span></span>
+<span id="cb8-3"><a href="introduction-to-r.html#cb8-3" aria-hidden="true" tabindex="-1"></a><span class="sc">&gt;</span>   </span>
+<span id="cb8-4"><a href="introduction-to-r.html#cb8-4" aria-hidden="true" tabindex="-1"></a><span class="er">&gt;</span>   <span class="co"># And passed to a function</span></span>
+<span id="cb8-5"><a href="introduction-to-r.html#cb8-5" aria-hidden="true" tabindex="-1"></a><span class="er">&gt;</span>   <span class="fu">sqrt</span>(my_variable <span class="sc">+</span> <span class="dv">1</span>)</span>
+<span id="cb8-6"><a href="introduction-to-r.html#cb8-6" aria-hidden="true" tabindex="-1"></a><span class="sc">&gt;</span>   </span>
+<span id="cb8-7"><a href="introduction-to-r.html#cb8-7" aria-hidden="true" tabindex="-1"></a><span class="er">&gt;</span>   <span class="co"># To reassign a variable, just reassign in</span></span>
+<span id="cb8-8"><a href="introduction-to-r.html#cb8-8" aria-hidden="true" tabindex="-1"></a><span class="er">&gt;</span>   my_variable <span class="ot">&lt;-</span> <span class="dv">3000</span></span>
+<span id="cb8-9"><a href="introduction-to-r.html#cb8-9" aria-hidden="true" tabindex="-1"></a><span class="sc">&gt;</span> </span>
+<span id="cb8-10"><a href="introduction-to-r.html#cb8-10" aria-hidden="true" tabindex="-1"></a><span class="er">&gt;</span>   <span class="co"># You can also operate on and reassign a variable to itself </span></span>
+<span id="cb8-11"><a href="introduction-to-r.html#cb8-11" aria-hidden="true" tabindex="-1"></a><span class="er">&gt;</span>   my_variable <span class="ot">&lt;-</span> my_variable <span class="sc">+</span> <span class="dv">1</span></span></code></pre></div>
+</div>
+<div id="finding-variables" class="section level2" number="2.3">
+<h2><span class="header-section-number">2.3</span> Finding Variables</h2>
+<p>To know all the variables currently available in the workspace we use the <code>ls()</code> function:</p>
+<div class="sourceCode" id="cb9"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb9-1"><a href="introduction-to-r.html#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="sc">&gt;</span>   <span class="fu">print</span>(<span class="fu">ls</span>())</span></code></pre></div>
+<p>The <code>ls()</code> function can also use patterns to match the variable names.</p>
+<div class="sourceCode" id="cb10"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb10-1"><a href="introduction-to-r.html#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="sc">&gt;</span>   <span class="co"># List the variables starting with the pattern &quot;var&quot;.</span></span>
+<span id="cb10-2"><a href="introduction-to-r.html#cb10-2" aria-hidden="true" tabindex="-1"></a><span class="er">&gt;</span>   <span class="fu">print</span>(<span class="fu">ls</span>(<span class="at">pattern =</span> <span class="st">&quot;var&quot;</span>))   </span></code></pre></div>
+</div>
+<div id="deleting-variables" class="section level2" number="2.4">
+<h2><span class="header-section-number">2.4</span> Deleting Variables</h2>
+<p>Variables can be deleted by using the <code>rm()</code> function. Below we delete the variable my_var:</p>
+<div class="sourceCode" id="cb11"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb11-1"><a href="introduction-to-r.html#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="sc">&gt;</span>   <span class="fu">rm</span>(my_var)</span></code></pre></div>
 
 </div>
 </div>

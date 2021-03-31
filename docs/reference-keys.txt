@@ -2,6 +2,8 @@ preface
 introduction-to-r
 getting-started
 variable-assignment
+finding-variables
+deleting-variables
 data-structures
 resources
 cheat-sheets
