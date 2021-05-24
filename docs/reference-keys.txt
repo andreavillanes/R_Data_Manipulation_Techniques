@@ -10,3 +10,4 @@ resources
 cheat-sheets
 programming-style
 books
+vectors

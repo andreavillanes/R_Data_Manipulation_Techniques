@@ -1,1 +1,5 @@
 # Data Structures
+
+## Vectors
+
+A vector is the simplest type of data structure in R. Vectors are particularly important as most of the functions you will write will work with vectors. Simply put, a vector is a sequence of data elements of the same basic type. 
