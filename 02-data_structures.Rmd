@@ -208,6 +208,202 @@ Similar to vectors, functions can be applied to arrays:
 
 ## Matrices
 
+Matrices are objects in which the elements are arranged in a two-dimensional rectangular layout. A matrix is created using the matrix() function:
+
+```{r prompt=TRUE, eval=FALSE}
+  # A matrix is a 2-demensional (row x column) array 
+  A <- matrix(1:25, 5, 5)
+  
+  B <- matrix(1:25, 5, 5, byrow=TRUE) #if you want to fill down the row instead of across the columns
+  
+  C <- matrix(1:5, 1, 5)
+  
+  D <- matrix(1:5, 5, 1)
+```
+
+Matrices are convenient because we can do linear algebra with them:
+
+```{r prompt=TRUE, eval=FALSE}
+  # Element-wise operators 
+  A + B
+  A - B
+  A * B
+  A / B
+  
+  # Matrix Multiplication
+  C %*% D
+  
+  # Transpose 
+  C
+  t(C)
+```
+
+We can also name the matrix columns and and rows:
+
+```{r prompt=TRUE, eval=FALSE}
+  colnames(A) <- c("Column_1", "Column_2", "Column_3", "Column_4", "Column_5")
+  A
+  
+  colnames(A)[4] <- "Changed_It"
+  A
+  
+  rownames(A)  <- c("Row_1", "Row_2", "Row_3", "Row_4", "Row_5")
+  A
+```
+
+We can also use some helpful functions for matrices:
+
+```{r prompt=TRUE, eval=FALSE}
+  colSums(A)
+  rowSums(A)
+  sum(A)
+  dim(A)
+  length(A)
+```
+
+And we can extract information from a matrix using similar index notation (row, column):
+
+```{r prompt=TRUE, eval=FALSE}
+  A[2,1] # Single element 
+  
+  A[,1] # All rows in the first column
+  A[,c(1,2)] # All rows for columns 1 and 2
+  
+  A[1,] # All columns in the first row 
+  A[c(1,2),] # All columns for rows 1 and 2
+  
+  A["Row_1","Column_2"]
+```
+
 ## Data Frames
 
+Data Frames are data displayed in a format as a table. A data frame is essentially a 2 dimensional matrix (row x column). You can think of it like an excel table or relational database table. Data Frames can have different types of data inside it, and we use the data.frame() function to create a data frame:
+
+```{r prompt=TRUE, eval=FALSE}
+  # Create a data frame called dt1 from a set of vectors:
+  dt1 <- data.frame (
+    names =  c("Simmons", "Race", "Healey", "LaBarr", "Villanes"),
+    class = c("Time Series", "Linear Algebra", "Visualization", "Finance", "Programming"),
+    female = c(1,1,0,0,1)
+  )
+```
+
+To view the data frame:
+
+```{r prompt=TRUE, eval=FALSE}
+  # View the table
+  View(dt1)
+  
+  # Head of the table
+  head(dt1, 3)
+```
+
+To change the column names:
+
+```{r prompt=TRUE, eval=FALSE}
+  colnames(dt1)
+  colnames(dt1) <- c("Last_Name", "Class_Taught", "Female?")
+  colnames(dt1)
+  colnames(dt1)[2] <- "Classes_Taught"
+  colnames(dt1)
+```
+
+To reference a column by name:
+
+```{r prompt=TRUE, eval=FALSE}
+  dt1$Last_Name
+  dt1$Classes_Taught
+```
+
+Data frame indexes - similar to vectors and arrays. We can perform the following actions:
+
+```{r prompt=TRUE, eval=FALSE}
+  # Retrieve a row
+  # leaving the row or column blank means "everything"
+  # the negative operator "-" means "everything but"
+  dt1[1,]
+  dt1[2:5,]
+  dt1[-1,]
+  
+  # Retrieve a column
+  dt1[,1]
+  dt1[,-3]
+  dt1[,c(1:2)]
+  dt1[,"Last_Name"]
+  dt1[,c("Last_Name","Female?")]
+  
+  # Retrieve an element
+  dt1[6,2]
+  
+  # Reassign an element 
+  dt1[5,2] <- "R Programming"
+  dt1[5,]
+  
+  #Find elements that meet a condition
+  dt1$`Female?`==1
+  dt1$Last_Name=='Race'
+  
+  # Filter by an value 
+  dt1[dt1$`Female?`==1,]
+  dt1[dt1$Last_Name=='Race',]
+  
+  # Add a new row - rbind (row-bind) function
+  dt1 <- rbind(dt1, c("Larsen", "Teaching Assistant", 0))
+  dt1
+  
+  # Add a new column
+  dt1$First_Name <- c("Susan", "Shaina", "Christopher", "Aric", "Andrea", "Nicholas")
+  
+  # Change the order of columns 
+  dt1 <- dt1[,c(4,1:3)]
+  
+  # Make columns based off other columns
+  dt1$First_Name_Length <- nchar(dt1$First_Name)
+  dt1$Last_Name_Length <- nchar(dt1$Last_Name)
+  dt1$Total_Name_Length <- dt1$First_Name_Length + dt1$Last_Name_Length + 1
+  dt1$Full_Name <- paste(dt1$First_Name, dt1$Last_Name, sep=" ")
+  dt1 
+  
+  # Remove some intermediate step columns
+  dt1 <- dt1[,-c(5,6)]
+```
+
 ## Working with different types
+
+We can examine the class of each object using the class function:
+
+```{r prompt=TRUE, eval=FALSE}
+  total_add
+  class(total_add)
+  
+  names
+  class(names)
+  
+  l2
+  class(l2)
+
+  sequence_array_1_dim
+  class(sequence_array_1_dim)
+  
+  A
+  class(A)
+  
+  dt1
+  class(dt1)
+  
+  dt1$First_Name
+  class(dt1$First_Name)
+```
+
+Finally, we can also do some conversions between them using the "as" functions:
+
+```{r prompt=TRUE, eval=FALSE}
+  new_array <- as.array(total_add)
+  class(new_array)
+  
+  old_vector <- as.vector(new_array) 
+  class(old_vector)
+  
+  dfA <- as.data.frame(A)
+  class(dfA)
+```
