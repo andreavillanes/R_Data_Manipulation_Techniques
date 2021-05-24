@@ -3,3 +3,93 @@
 ## Vectors
 
 A vector is the simplest type of data structure in R. Vectors are particularly important as most of the functions you will write will work with vectors. Simply put, a vector is a sequence of data elements of the same basic type. 
+
+We can construct a vector using the combine `(c)` function:
+
+```{r prompt=TRUE, eval=FALSE}
+  # Here is a vector containing three numeric values 3, 5 and 7:
+  numbers <- c(3, 5, 7)
+
+  #Here is a vector of logical values:
+  logical <- c(TRUE, FALSE, TRUE, FALSE, FALSE) 
+  
+  #Here is a vector of character values:
+  fruits <- c("apple", "oranges", "banana")
+```
+
+We can also change the value in a vector:
+
+```{r prompt=TRUE, eval=FALSE}
+  fruits[2] <- "strawberries"
+```
+
+Every vector has two key properties: its type and its length:
+
+```{r prompt=TRUE, eval=FALSE}
+  typeof(fruits)
+  length(fruits)
+```
+
+You can combine vectors using the combine function as well:
+
+```{r prompt=TRUE, eval=FALSE}
+  results <- c(1, 2, 3)
+  other_results <- c(4, 5, 6)
+  combined_results <- c(results, other_results)
+```
+
+Vectors can be added together in an element-wise operation:
+
+```{r prompt=TRUE, eval=FALSE}
+  total_add <- results + other_results
+  total_div <- results / other_results
+  total_mod <- results %% other_results
+```
+
+
+Functions can be applied to each element of the vector. However, not all functions are vectorized (we will cover this later):
+
+```{r prompt=TRUE, eval=FALSE}
+  total_rou <- round(total_div, 1)
+
+  names <- c("Simmons", "Race", "Healey", "LaBarr", "Villanes")
+  names <- sort(names, decreasing = TRUE)
+```
+
+There are also functions for constructing useful types of vectors:
+
+```{r prompt=TRUE, eval=FALSE}
+  # Replicate - replicates a value X number of times 
+  identity_vector <- rep(1,10)
+  identity_vector
+  
+  # Sequence operator ":" From:To 
+  sequence_vector <- 1:10
+  
+  # Sequence function - allows sequencing by a value
+  sequence_by_two_vector <- seq(0,10, 2)
+  sequence_by_two_vector
+  
+  # Sample function - take a random sample from a vector
+  random_vector <- sample(sequence_by_two_vector,3)
+```
+
+Finally, a vector doesn't have to be made with consistent elements, but it will force them to one type:
+
+```{r prompt=TRUE, eval=FALSE}
+  values <- c("IAA", 1, "2021", 5)
+  typeof(values)
+```
+
+As we mentioned earlier, the elements of a vector can only be of one type. If we want elements of different types... we will need a list.
+
+
+## Lists
+
+## Arrays
+
+## Matrices
+
+## Data Frames
+
+## Working with different types

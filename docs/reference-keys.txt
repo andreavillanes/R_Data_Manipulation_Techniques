@@ -11,3 +11,8 @@ cheat-sheets
 programming-style
 books
 vectors
+lists
+arrays
+matrices
+data-frames
+working-with-different-types
