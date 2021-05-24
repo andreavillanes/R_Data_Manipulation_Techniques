@@ -236,6 +236,61 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </div>
 <div id="lists" class="section level2" number="2.2">
 <h2><span class="header-section-number">2.2</span> Lists</h2>
+<p>Lists are objects which contain elements of different types like − numbers, strings, vectors and another list inside it. A list can also contain a matrix or a function as its elements. A list is created using list() function.</p>
+<div class="sourceCode" id="cb9"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb9-1"><a href="data-structures.html#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="sc">&gt;</span>   <span class="co"># Here are 3 vectors of different types</span></span>
+<span id="cb9-2"><a href="data-structures.html#cb9-2" aria-hidden="true" tabindex="-1"></a><span class="er">&gt;</span>   v1 <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;apple&quot;</span>, <span class="st">&quot;banana&quot;</span>)</span>
+<span id="cb9-3"><a href="data-structures.html#cb9-3" aria-hidden="true" tabindex="-1"></a><span class="sc">&gt;</span>   v2 <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;dog&quot;</span>, <span class="st">&quot;cat&quot;</span>, <span class="st">&quot;bunny&quot;</span>, <span class="st">&quot;pig&quot;</span>, <span class="st">&quot;cow&quot;</span>, <span class="st">&quot;horse&quot;</span>)</span>
+<span id="cb9-4"><a href="data-structures.html#cb9-4" aria-hidden="true" tabindex="-1"></a><span class="sc">&gt;</span>   v3 <span class="ot">&lt;-</span> <span class="fu">seq</span>(<span class="dv">0</span>,<span class="dv">10</span>,<span class="at">by=</span><span class="dv">2</span>)</span>
+<span id="cb9-5"><a href="data-structures.html#cb9-5" aria-hidden="true" tabindex="-1"></a><span class="sc">&gt;</span>   </span>
+<span id="cb9-6"><a href="data-structures.html#cb9-6" aria-hidden="true" tabindex="-1"></a><span class="er">&gt;</span>   v1;v2;v3</span></code></pre></div>
+<p>We can put all of these vectors into a list:</p>
+<div class="sourceCode" id="cb10"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb10-1"><a href="data-structures.html#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="sc">&gt;</span>   <span class="co"># Here are 3 vectors of different types</span></span>
+<span id="cb10-2"><a href="data-structures.html#cb10-2" aria-hidden="true" tabindex="-1"></a><span class="er">&gt;</span>   l1 <span class="ot">&lt;-</span> <span class="fu">list</span>(v1, v2, v3)</span>
+<span id="cb10-3"><a href="data-structures.html#cb10-3" aria-hidden="true" tabindex="-1"></a><span class="sc">&gt;</span> </span>
+<span id="cb10-4"><a href="data-structures.html#cb10-4" aria-hidden="true" tabindex="-1"></a><span class="er">&gt;</span>   <span class="fu">class</span>(l1)</span>
+<span id="cb10-5"><a href="data-structures.html#cb10-5" aria-hidden="true" tabindex="-1"></a><span class="sc">&gt;</span>   <span class="fu">typeof</span>(l1)  </span></code></pre></div>
+<p>List elements can be accessed via index. Each of the components of a list is accessed via the double bracket [[x]] syntax:</p>
+<div class="sourceCode" id="cb11"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb11-1"><a href="data-structures.html#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="sc">&gt;</span>   <span class="co"># First element in the list</span></span>
+<span id="cb11-2"><a href="data-structures.html#cb11-2" aria-hidden="true" tabindex="-1"></a><span class="er">&gt;</span>   l1[[<span class="dv">1</span>]]</span>
+<span id="cb11-3"><a href="data-structures.html#cb11-3" aria-hidden="true" tabindex="-1"></a><span class="sc">&gt;</span>   </span>
+<span id="cb11-4"><a href="data-structures.html#cb11-4" aria-hidden="true" tabindex="-1"></a><span class="er">&gt;</span>   <span class="co"># First element in the first element (vector) of the list</span></span>
+<span id="cb11-5"><a href="data-structures.html#cb11-5" aria-hidden="true" tabindex="-1"></a><span class="er">&gt;</span>   l1[[<span class="dv">1</span>]][<span class="dv">1</span>]</span></code></pre></div>
+<p>List elements can be named:</p>
+<div class="sourceCode" id="cb12"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb12-1"><a href="data-structures.html#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="sc">&gt;</span>   <span class="fu">names</span>(l1) <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;Fruit&quot;</span>, <span class="st">&quot;Animals&quot;</span>, <span class="st">&quot;Even_Numbers&quot;</span>)</span></code></pre></div>
+<p>Or they can be named upon creating the list:</p>
+<div class="sourceCode" id="cb13"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb13-1"><a href="data-structures.html#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="sc">&gt;</span>   l1 <span class="ot">&lt;-</span> <span class="fu">list</span>(<span class="at">Fruit=</span>v1, <span class="at">Animals=</span>v2, <span class="at">Even_Numbers=</span>v3)</span></code></pre></div>
+<p>The elements in a list can be retrieved by name:</p>
+<div class="sourceCode" id="cb14"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb14-1"><a href="data-structures.html#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="sc">&gt;</span>   l1<span class="sc">$</span>Fruit</span>
+<span id="cb14-2"><a href="data-structures.html#cb14-2" aria-hidden="true" tabindex="-1"></a><span class="sc">&gt;</span>   l1<span class="sc">$</span>Fruit[<span class="dv">1</span>]</span>
+<span id="cb14-3"><a href="data-structures.html#cb14-3" aria-hidden="true" tabindex="-1"></a><span class="sc">&gt;</span>   </span>
+<span id="cb14-4"><a href="data-structures.html#cb14-4" aria-hidden="true" tabindex="-1"></a><span class="er">&gt;</span>   l1<span class="sc">$</span>Even_Numbers</span>
+<span id="cb14-5"><a href="data-structures.html#cb14-5" aria-hidden="true" tabindex="-1"></a><span class="sc">&gt;</span>   <span class="fu">max</span>(l1<span class="sc">$</span>Even_Numbers)</span></code></pre></div>
+<p>A list can even contain lists:</p>
+<div class="sourceCode" id="cb15"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb15-1"><a href="data-structures.html#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="sc">&gt;</span>   l2 <span class="ot">&lt;-</span> <span class="fu">list</span>(<span class="at">Odd_Numbers=</span><span class="fu">seq</span>(<span class="dv">1</span>,<span class="dv">10</span>,<span class="at">by=</span><span class="dv">2</span>), <span class="at">list1=</span>l1)</span>
+<span id="cb15-2"><a href="data-structures.html#cb15-2" aria-hidden="true" tabindex="-1"></a><span class="sc">&gt;</span> </span>
+<span id="cb15-3"><a href="data-structures.html#cb15-3" aria-hidden="true" tabindex="-1"></a><span class="er">&gt;</span>   <span class="co"># First Vector</span></span>
+<span id="cb15-4"><a href="data-structures.html#cb15-4" aria-hidden="true" tabindex="-1"></a><span class="er">&gt;</span>   l2<span class="sc">$</span>Odd_Numbers</span>
+<span id="cb15-5"><a href="data-structures.html#cb15-5" aria-hidden="true" tabindex="-1"></a><span class="sc">&gt;</span>   l2[[<span class="dv">1</span>]]</span>
+<span id="cb15-6"><a href="data-structures.html#cb15-6" aria-hidden="true" tabindex="-1"></a><span class="sc">&gt;</span>   </span>
+<span id="cb15-7"><a href="data-structures.html#cb15-7" aria-hidden="true" tabindex="-1"></a><span class="er">&gt;</span>   <span class="co"># l1 within L2</span></span>
+<span id="cb15-8"><a href="data-structures.html#cb15-8" aria-hidden="true" tabindex="-1"></a><span class="er">&gt;</span>   l2<span class="sc">$</span>list1</span>
+<span id="cb15-9"><a href="data-structures.html#cb15-9" aria-hidden="true" tabindex="-1"></a><span class="sc">&gt;</span>   l2[[<span class="dv">2</span>]]</span>
+<span id="cb15-10"><a href="data-structures.html#cb15-10" aria-hidden="true" tabindex="-1"></a><span class="sc">&gt;</span>   </span>
+<span id="cb15-11"><a href="data-structures.html#cb15-11" aria-hidden="true" tabindex="-1"></a><span class="er">&gt;</span>   l2<span class="sc">$</span>list1<span class="sc">$</span>Fruit</span>
+<span id="cb15-12"><a href="data-structures.html#cb15-12" aria-hidden="true" tabindex="-1"></a><span class="sc">&gt;</span>   l2[[<span class="dv">2</span>]][<span class="dv">1</span>]</span>
+<span id="cb15-13"><a href="data-structures.html#cb15-13" aria-hidden="true" tabindex="-1"></a><span class="sc">&gt;</span>   </span>
+<span id="cb15-14"><a href="data-structures.html#cb15-14" aria-hidden="true" tabindex="-1"></a><span class="er">&gt;</span>   l2<span class="sc">$</span>list1<span class="sc">$</span>Fruit[<span class="dv">1</span>]</span>
+<span id="cb15-15"><a href="data-structures.html#cb15-15" aria-hidden="true" tabindex="-1"></a><span class="sc">&gt;</span>   l2[[<span class="dv">2</span>]][[<span class="dv">1</span>]][<span class="dv">1</span>]</span>
+<span id="cb15-16"><a href="data-structures.html#cb15-16" aria-hidden="true" tabindex="-1"></a><span class="sc">&gt;</span>   </span>
+<span id="cb15-17"><a href="data-structures.html#cb15-17" aria-hidden="true" tabindex="-1"></a><span class="er">&gt;</span>   l2[[<span class="dv">2</span>]][[<span class="dv">1</span>]][<span class="dv">3</span>] <span class="ot">&lt;-</span> <span class="st">&quot;blueberry&quot;</span></span>
+<span id="cb15-18"><a href="data-structures.html#cb15-18" aria-hidden="true" tabindex="-1"></a><span class="sc">&gt;</span>   l2<span class="sc">$</span>list1<span class="sc">$</span>Fruit</span>
+<span id="cb15-19"><a href="data-structures.html#cb15-19" aria-hidden="true" tabindex="-1"></a><span class="sc">&gt;</span>   l2</span></code></pre></div>
+<p>To combine lists:</p>
+<div class="sourceCode" id="cb16"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb16-1"><a href="data-structures.html#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="sc">&gt;</span>   l4 <span class="ot">&lt;-</span> <span class="fu">list</span>(<span class="at">More_Fruit=</span><span class="fu">c</span>(<span class="st">&quot;melon&quot;</span>, <span class="st">&quot;orange&quot;</span>))</span>
+<span id="cb16-2"><a href="data-structures.html#cb16-2" aria-hidden="true" tabindex="-1"></a><span class="sc">&gt;</span>   l1 <span class="ot">&lt;-</span> <span class="fu">c</span>(l1,l4)</span></code></pre></div>
+<p>Finally, if we want to update part of a list, we can just operate on and update it accordingly:</p>
+<div class="sourceCode" id="cb17"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb17-1"><a href="data-structures.html#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="sc">&gt;</span>   l1<span class="sc">$</span>Fruit <span class="ot">&lt;-</span> <span class="fu">c</span>(l1<span class="sc">$</span>Fruit, l4<span class="sc">$</span>More_Fruit)</span>
+<span id="cb17-2"><a href="data-structures.html#cb17-2" aria-hidden="true" tabindex="-1"></a><span class="sc">&gt;</span>   l1<span class="sc">$</span>Fruit</span></code></pre></div>
 </div>
 <div id="arrays" class="section level2" number="2.3">
 <h2><span class="header-section-number">2.3</span> Arrays</h2>
