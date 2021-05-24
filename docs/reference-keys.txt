@@ -16,3 +16,8 @@ arrays
 matrices
 data-frames
 working-with-different-types
+logicals
+conditionals
+functions
+loops
+vectorization
