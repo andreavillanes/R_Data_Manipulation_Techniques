@@ -77,8 +77,77 @@ Logicals are used for evaluating comparisons, such as:
   all.equal(A,B)
 ```
 
-
 ## Conditionals
+
+Conditionals are expressions that perform different computations or actions depending on whether a predefined boolean condition is TRUE or FALSE. Conditionals allow us to control the flow of execution. We use logicals to evaluate conditional statements. Conditionals include if, else, ifelse.
+
+The syntax of if statement is:
+
+```{r prompt=TRUE, eval=FALSE}
+  if (test_expression) {
+  statement
+  }
+```
+
+If the test_expression is `TRUE`, the statement gets executed. But if it is `FALSE`, nothing happens. For example:
+
+```{r prompt=TRUE, eval=FALSE}
+  x <- 5
+  if(x > 0){
+  print("Positive number")
+  }
+```
+
+If you will be executing a single statement after the conditional, you can withold the { }
+
+```{r prompt=TRUE, eval=FALSE}
+  x <- 5
+  if(x > 0) print("Positive number")
+```
+
+If we want code to execute when the test_expression is `FALSE`, then we add an else statement:
+
+```{r prompt=TRUE, eval=FALSE}
+  if (test_expression) {
+  statement
+  } else {
+  statement2
+  }
+```
+
+For example:
+
+```{r prompt=TRUE, eval=FALSE}
+  x <- -5
+  if(x > 0){
+  print("Non-negative number")
+  } else {
+  print("Negative number")
+  }
+```
+
+Note that you can use multiple logicals in the test_expression, such as:
+
+* Or operator | 
+* And operator &
+
+For example:
+
+```{r prompt=TRUE, eval=FALSE}
+  mean_values <- 3.1
+  std_dev_values <- 1.95
+  
+  if (mean_values>=0 & std_dev_values>=1) {
+      print(paste("The mean", mean_values, "is above 0, and the standard deviation", std_dev_values, "is above 1"))
+  }
+```
+
+Additionally, you can use the ifelse function to quickly assign a value based on a condition. The syntax for the ifelse function is `ifelse(test_expression, yes, no)`. For example:
+
+```{r prompt=TRUE, eval=FALSE}
+  std_dev_vector <- c(1.2,0.8,0.3,2.4)
+  ifelse(std_dev_vector>=1, "above one", "below one")
+```
 
 ## Functions
 

@@ -264,6 +264,47 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </div>
 <div id="conditionals" class="section level2" number="3.2">
 <h2><span class="header-section-number">3.2</span> Conditionals</h2>
+<p>Conditionals are expressions that perform different computations or actions depending on whether a predefined boolean condition is TRUE or FALSE. Conditionals allow us to control the flow of execution. We use logicals to evaluate conditional statements. Conditionals include if, else, ifelse.</p>
+<p>The syntax of if statement is:</p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="programming-fundamentals.html#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="sc">&gt;</span>   <span class="cf">if</span> (test_expression) {</span>
+<span id="cb3-2"><a href="programming-fundamentals.html#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="sc">+</span>   statement</span>
+<span id="cb3-3"><a href="programming-fundamentals.html#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="sc">+</span>   }</span></code></pre></div>
+<p>If the test_expression is <code>TRUE</code>, the statement gets executed. But if it is <code>FALSE</code>, nothing happens. For example:</p>
+<div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb4-1"><a href="programming-fundamentals.html#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="sc">&gt;</span>   x <span class="ot">&lt;-</span> <span class="dv">5</span></span>
+<span id="cb4-2"><a href="programming-fundamentals.html#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="sc">&gt;</span>   <span class="cf">if</span>(x <span class="sc">&gt;</span> <span class="dv">0</span>){</span>
+<span id="cb4-3"><a href="programming-fundamentals.html#cb4-3" aria-hidden="true" tabindex="-1"></a><span class="sc">+</span>   <span class="fu">print</span>(<span class="st">&quot;Positive number&quot;</span>)</span>
+<span id="cb4-4"><a href="programming-fundamentals.html#cb4-4" aria-hidden="true" tabindex="-1"></a><span class="sc">+</span>   }</span></code></pre></div>
+<p>If you will be executing a single statement after the conditional, you can withold the { }</p>
+<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb5-1"><a href="programming-fundamentals.html#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="sc">&gt;</span>   x <span class="ot">&lt;-</span> <span class="dv">5</span></span>
+<span id="cb5-2"><a href="programming-fundamentals.html#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="sc">&gt;</span>   <span class="cf">if</span>(x <span class="sc">&gt;</span> <span class="dv">0</span>) <span class="fu">print</span>(<span class="st">&quot;Positive number&quot;</span>)</span></code></pre></div>
+<p>If we want code to execute when the test_expression is <code>FALSE</code>, then we add an else statement:</p>
+<div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb6-1"><a href="programming-fundamentals.html#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="sc">&gt;</span>   <span class="cf">if</span> (test_expression) {</span>
+<span id="cb6-2"><a href="programming-fundamentals.html#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="sc">+</span>   statement</span>
+<span id="cb6-3"><a href="programming-fundamentals.html#cb6-3" aria-hidden="true" tabindex="-1"></a><span class="sc">+</span>   } <span class="cf">else</span> {</span>
+<span id="cb6-4"><a href="programming-fundamentals.html#cb6-4" aria-hidden="true" tabindex="-1"></a><span class="sc">+</span>   statement2</span>
+<span id="cb6-5"><a href="programming-fundamentals.html#cb6-5" aria-hidden="true" tabindex="-1"></a><span class="sc">+</span>   }</span></code></pre></div>
+<p>For example:</p>
+<div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb7-1"><a href="programming-fundamentals.html#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="sc">&gt;</span>   x <span class="ot">&lt;-</span> <span class="sc">-</span><span class="dv">5</span></span>
+<span id="cb7-2"><a href="programming-fundamentals.html#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="sc">&gt;</span>   <span class="cf">if</span>(x <span class="sc">&gt;</span> <span class="dv">0</span>){</span>
+<span id="cb7-3"><a href="programming-fundamentals.html#cb7-3" aria-hidden="true" tabindex="-1"></a><span class="sc">+</span>   <span class="fu">print</span>(<span class="st">&quot;Non-negative number&quot;</span>)</span>
+<span id="cb7-4"><a href="programming-fundamentals.html#cb7-4" aria-hidden="true" tabindex="-1"></a><span class="sc">+</span>   } <span class="cf">else</span> {</span>
+<span id="cb7-5"><a href="programming-fundamentals.html#cb7-5" aria-hidden="true" tabindex="-1"></a><span class="sc">+</span>   <span class="fu">print</span>(<span class="st">&quot;Negative number&quot;</span>)</span>
+<span id="cb7-6"><a href="programming-fundamentals.html#cb7-6" aria-hidden="true" tabindex="-1"></a><span class="sc">+</span>   }</span></code></pre></div>
+<p>Note that you can use multiple logicals in the test_expression, such as:</p>
+<ul>
+<li>Or operator |</li>
+<li>And operator &amp;</li>
+</ul>
+<p>For example:</p>
+<div class="sourceCode" id="cb8"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb8-1"><a href="programming-fundamentals.html#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="sc">&gt;</span>   mean_values <span class="ot">&lt;-</span> <span class="fl">3.1</span></span>
+<span id="cb8-2"><a href="programming-fundamentals.html#cb8-2" aria-hidden="true" tabindex="-1"></a><span class="sc">&gt;</span>   std_dev_values <span class="ot">&lt;-</span> <span class="fl">1.95</span></span>
+<span id="cb8-3"><a href="programming-fundamentals.html#cb8-3" aria-hidden="true" tabindex="-1"></a><span class="sc">&gt;</span>   </span>
+<span id="cb8-4"><a href="programming-fundamentals.html#cb8-4" aria-hidden="true" tabindex="-1"></a><span class="er">&gt;</span>   <span class="cf">if</span> (mean_values<span class="sc">&gt;=</span><span class="dv">0</span> <span class="sc">&amp;</span> std_dev_values<span class="sc">&gt;=</span><span class="dv">1</span>) {</span>
+<span id="cb8-5"><a href="programming-fundamentals.html#cb8-5" aria-hidden="true" tabindex="-1"></a><span class="sc">+</span>       <span class="fu">print</span>(<span class="fu">paste</span>(<span class="st">&quot;The mean&quot;</span>, mean_values, <span class="st">&quot;is above 0, and the standard deviation&quot;</span>, std_dev_values, <span class="st">&quot;is above 1&quot;</span>))</span>
+<span id="cb8-6"><a href="programming-fundamentals.html#cb8-6" aria-hidden="true" tabindex="-1"></a><span class="sc">+</span>   }</span></code></pre></div>
+<p>Additionally, you can use the ifelse function to quickly assign a value based on a condition. The syntax for the ifelse function is <code>ifelse(test_expression, yes, no)</code>. For example:</p>
+<div class="sourceCode" id="cb9"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb9-1"><a href="programming-fundamentals.html#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="sc">&gt;</span>   std_dev_vector <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="fl">1.2</span>,<span class="fl">0.8</span>,<span class="fl">0.3</span>,<span class="fl">2.4</span>)</span>
+<span id="cb9-2"><a href="programming-fundamentals.html#cb9-2" aria-hidden="true" tabindex="-1"></a><span class="sc">&gt;</span>   <span class="fu">ifelse</span>(std_dev_vector<span class="sc">&gt;=</span><span class="dv">1</span>, <span class="st">&quot;above one&quot;</span>, <span class="st">&quot;below one&quot;</span>)</span></code></pre></div>
 </div>
 <div id="functions" class="section level2" number="3.3">
 <h2><span class="header-section-number">3.3</span> Functions</h2>
