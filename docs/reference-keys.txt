@@ -21,3 +21,12 @@ conditionals
 functions
 loops
 vectorization
+libraries
+importing-exporting-data
+dplyr-and-tidyverse
+data-manipulation---dplyr-basics
+dplyr---pipe-operator
+combining-data---dplyr
+cheat-sheet
+extra---sqldf
+stringr-package
