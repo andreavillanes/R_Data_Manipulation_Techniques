@@ -30,3 +30,4 @@ combining-data---dplyr
 cheat-sheet
 extra---sqldf
 stringr-package
+other-resources
