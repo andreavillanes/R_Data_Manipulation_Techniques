@@ -56,7 +56,7 @@ R also provides numerous built-in functions to use in calculations, such as natu
 ```
 R includes extensive facilities for accessing documentation and searching for help. This is useful to get more information about a specific function. The `help()` function and `?` help operator in R provide access to the documentation pages for R functions. For example, to get help with the round() function, we submit the following code:
 
-```{r}
+```{r prompt=TRUE, eval=FALSE}
   #help() function
   help(round)
 
@@ -76,7 +76,7 @@ For example, you can assign a value 10 to a variable `my_variable`:
 
 To print out the value of the variable, you simply type the name of your variable:
 
-```{r prompt=TRUE, eval=TRUE}
+```{r prompt=TRUE, eval=FALSE}
   my_variable
 ```
 
@@ -137,5 +137,4 @@ All the variables can be deleted by using the `rm()` and `ls()` function togethe
   rm(list = ls())
 ```
 
-
-
+Another common way to remove all variables in the R environment is to click on the little broom icon next to the button `Import Dataset` under the Environment tab. One can also go up to `Session` and do `Restart R` or `New Session` (the `Restart R` and `New session` options might come in handy for when programs crash).
