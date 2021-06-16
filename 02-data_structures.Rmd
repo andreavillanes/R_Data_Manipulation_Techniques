@@ -72,6 +72,9 @@ There are also functions for constructing useful types of vectors:
   
   # Sample function - take a random sample from a vector
   random_vector <- sample(sequence_by_two_vector,3)
+  
+  #A common trick to randomly permute all elements in a vector is sample(vector_name)
+  permute <- sample(numbers)
 ```
 
 Finally, a vector doesn't have to be made with consistent elements, but it will force them to one type:
@@ -347,7 +350,7 @@ Data frame indexes - similar to vectors and arrays. We can perform the following
   dt1[dt1$`Female?`==1,]
   dt1[dt1$Last_Name=='Race',]
   
-  # Add a new row - rbind (row-bind) function
+  # Add a new row - rbind (row-bind) function. The cbind function is its column version.
   dt1 <- rbind(dt1, c("Larsen", "Teaching Assistant", 0))
   dt1
   

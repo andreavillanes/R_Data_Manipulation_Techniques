@@ -136,7 +136,6 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Preface</a>
 <ul>
 <li class="chapter" data-level="" data-path="index.html"><a href="index.html#structure-of-the-book"><i class="fa fa-check"></i>Structure of the book</a></li>
-<li class="chapter" data-level="" data-path="index.html"><a href="index.html#about-the-author"><i class="fa fa-check"></i>About the Author</a></li>
 <li class="chapter" data-level="" data-path="index.html"><a href="index.html#acknowledgements"><i class="fa fa-check"></i>Acknowledgements</a></li>
 </ul></li>
 <li class="chapter" data-level="1" data-path="introduction.html"><a href="introduction.html"><i class="fa fa-check"></i><b>1</b> Introduction to R</a>
@@ -162,12 +161,24 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="3.3" data-path="programming-fundamentals.html"><a href="programming-fundamentals.html#loops"><i class="fa fa-check"></i><b>3.3</b> Loops</a></li>
 <li class="chapter" data-level="3.4" data-path="programming-fundamentals.html"><a href="programming-fundamentals.html#functions"><i class="fa fa-check"></i><b>3.4</b> Functions</a></li>
 </ul></li>
-<li class="chapter" data-level="4" data-path="data-wrangling.html"><a href="data-wrangling.html"><i class="fa fa-check"></i><b>4</b> Data Wrangling</a></li>
+<li class="chapter" data-level="4" data-path="data-wrangling.html"><a href="data-wrangling.html"><i class="fa fa-check"></i><b>4</b> Data Wrangling</a>
+<ul>
+<li class="chapter" data-level="4.1" data-path="data-wrangling.html"><a href="data-wrangling.html#libraries"><i class="fa fa-check"></i><b>4.1</b> Libraries</a></li>
+<li class="chapter" data-level="4.2" data-path="data-wrangling.html"><a href="data-wrangling.html#importing-exporting-data"><i class="fa fa-check"></i><b>4.2</b> Importing &amp; Exporting Data</a></li>
+<li class="chapter" data-level="4.3" data-path="data-wrangling.html"><a href="data-wrangling.html#dplyr-and-tidyverse"><i class="fa fa-check"></i><b>4.3</b> dplyr and tidyverse</a></li>
+<li class="chapter" data-level="4.4" data-path="data-wrangling.html"><a href="data-wrangling.html#data-manipulation---dplyr-basics"><i class="fa fa-check"></i><b>4.4</b> Data manipulation - dplyr basics</a></li>
+<li class="chapter" data-level="4.5" data-path="data-wrangling.html"><a href="data-wrangling.html#dplyr---pipe-operator"><i class="fa fa-check"></i><b>4.5</b> dplyr - pipe operator</a></li>
+<li class="chapter" data-level="4.6" data-path="data-wrangling.html"><a href="data-wrangling.html#stringr-package"><i class="fa fa-check"></i><b>4.6</b> stringr package</a></li>
+<li class="chapter" data-level="4.7" data-path="data-wrangling.html"><a href="data-wrangling.html#combining-data---dplyr"><i class="fa fa-check"></i><b>4.7</b> Combining Data - dplyr</a></li>
+<li class="chapter" data-level="4.8" data-path="data-wrangling.html"><a href="data-wrangling.html#cheat-sheet"><i class="fa fa-check"></i><b>4.8</b> Cheat Sheet</a></li>
+<li class="chapter" data-level="4.9" data-path="data-wrangling.html"><a href="data-wrangling.html#extra---sqldf"><i class="fa fa-check"></i><b>4.9</b> Extra - sqldf</a></li>
+</ul></li>
 <li class="chapter" data-level="5" data-path="resources.html"><a href="resources.html"><i class="fa fa-check"></i><b>5</b> Resources</a>
 <ul>
 <li class="chapter" data-level="5.1" data-path="resources.html"><a href="resources.html#cheat-sheets"><i class="fa fa-check"></i><b>5.1</b> Cheat Sheets</a></li>
 <li class="chapter" data-level="5.2" data-path="resources.html"><a href="resources.html#programming-style"><i class="fa fa-check"></i><b>5.2</b> Programming Style</a></li>
-<li class="chapter" data-level="5.3" data-path="resources.html"><a href="resources.html#books"><i class="fa fa-check"></i><b>5.3</b> Books</a></li>
+<li class="chapter" data-level="5.3" data-path="resources.html"><a href="resources.html#other-resources"><i class="fa fa-check"></i><b>5.3</b> Other resources</a></li>
+<li class="chapter" data-level="5.4" data-path="resources.html"><a href="resources.html#books"><i class="fa fa-check"></i><b>5.4</b> Books</a></li>
 </ul></li>
 <li class="divider"></li>
 <li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
@@ -234,7 +245,10 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <span id="cb7-10"><a href="data-structures.html#cb7-10" aria-hidden="true" tabindex="-1"></a><span class="sc">&gt;</span>   sequence_by_two_vector</span>
 <span id="cb7-11"><a href="data-structures.html#cb7-11" aria-hidden="true" tabindex="-1"></a><span class="sc">&gt;</span>   </span>
 <span id="cb7-12"><a href="data-structures.html#cb7-12" aria-hidden="true" tabindex="-1"></a><span class="er">&gt;</span>   <span class="co"># Sample function - take a random sample from a vector</span></span>
-<span id="cb7-13"><a href="data-structures.html#cb7-13" aria-hidden="true" tabindex="-1"></a><span class="er">&gt;</span>   random_vector <span class="ot">&lt;-</span> <span class="fu">sample</span>(sequence_by_two_vector,<span class="dv">3</span>)</span></code></pre></div>
+<span id="cb7-13"><a href="data-structures.html#cb7-13" aria-hidden="true" tabindex="-1"></a><span class="er">&gt;</span>   random_vector <span class="ot">&lt;-</span> <span class="fu">sample</span>(sequence_by_two_vector,<span class="dv">3</span>)</span>
+<span id="cb7-14"><a href="data-structures.html#cb7-14" aria-hidden="true" tabindex="-1"></a><span class="sc">&gt;</span>   </span>
+<span id="cb7-15"><a href="data-structures.html#cb7-15" aria-hidden="true" tabindex="-1"></a><span class="er">&gt;</span>   <span class="co">#A common trick to randomly permute all elements in a vector is sample(vector_name)</span></span>
+<span id="cb7-16"><a href="data-structures.html#cb7-16" aria-hidden="true" tabindex="-1"></a><span class="er">&gt;</span>   permute <span class="ot">&lt;-</span> <span class="fu">sample</span>(numbers)</span></code></pre></div>
 <p>Finally, a vector doesn’t have to be made with consistent elements, but it will force them to one type:</p>
 <div class="sourceCode" id="cb8"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb8-1"><a href="data-structures.html#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="sc">&gt;</span>   values <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;IAA&quot;</span>, <span class="dv">1</span>, <span class="st">&quot;2021&quot;</span>, <span class="dv">5</span>)</span>
 <span id="cb8-2"><a href="data-structures.html#cb8-2" aria-hidden="true" tabindex="-1"></a><span class="sc">&gt;</span>   <span class="fu">typeof</span>(values)</span></code></pre></div>
@@ -426,7 +440,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <span id="cb29-27"><a href="data-structures.html#cb29-27" aria-hidden="true" tabindex="-1"></a><span class="er">&gt;</span>   dt1[dt1<span class="sc">$</span><span class="st">`</span><span class="at">Female?</span><span class="st">`</span><span class="sc">==</span><span class="dv">1</span>,]</span>
 <span id="cb29-28"><a href="data-structures.html#cb29-28" aria-hidden="true" tabindex="-1"></a><span class="sc">&gt;</span>   dt1[dt1<span class="sc">$</span>Last_Name<span class="sc">==</span><span class="st">&#39;Race&#39;</span>,]</span>
 <span id="cb29-29"><a href="data-structures.html#cb29-29" aria-hidden="true" tabindex="-1"></a><span class="sc">&gt;</span>   </span>
-<span id="cb29-30"><a href="data-structures.html#cb29-30" aria-hidden="true" tabindex="-1"></a><span class="er">&gt;</span>   <span class="co"># Add a new row - rbind (row-bind) function</span></span>
+<span id="cb29-30"><a href="data-structures.html#cb29-30" aria-hidden="true" tabindex="-1"></a><span class="er">&gt;</span>   <span class="co"># Add a new row - rbind (row-bind) function. The cbind function is its column version.</span></span>
 <span id="cb29-31"><a href="data-structures.html#cb29-31" aria-hidden="true" tabindex="-1"></a><span class="er">&gt;</span>   dt1 <span class="ot">&lt;-</span> <span class="fu">rbind</span>(dt1, <span class="fu">c</span>(<span class="st">&quot;Larsen&quot;</span>, <span class="st">&quot;Teaching Assistant&quot;</span>, <span class="dv">0</span>))</span>
 <span id="cb29-32"><a href="data-structures.html#cb29-32" aria-hidden="true" tabindex="-1"></a><span class="sc">&gt;</span>   dt1</span>
 <span id="cb29-33"><a href="data-structures.html#cb29-33" aria-hidden="true" tabindex="-1"></a><span class="sc">&gt;</span>   </span>
