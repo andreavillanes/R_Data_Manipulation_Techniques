@@ -36,6 +36,12 @@ Before importing data, we generally want to set the working directory. This is a
   setwd("C:/Users/avillan/Documents/Class 2022/Class_Code")
 ```
   
+Another useful function is `getwd()`. This function returns an absolute filepath representing the current working directory of the R process, or `NULL` if the working directory is not available:
+
+```{r prompt=TRUE, eval=FALSE}
+  getwd()
+```
+
 To import data, we can use the `read.` function 
 
 ```{r prompt=TRUE, eval=FALSE}
@@ -82,6 +88,8 @@ If we want to export the data, we can use write.csv. The row.names = FALSE argum
 ```{r prompt=TRUE, eval=FALSE}
   write.csv(df_auto, file="Auto_MPG_Clean.csv", row.names = FALSE)
 ```
+
+In addition to importing the data using code, one can also import data into RStudio with point-and-click. Go to `Import Dataset` in the Environment panel and select the relevant format. From there, you can set the datatype of each column, as well as specify whether to include or to skip a column or row. RStudio automatically generates the corresponding code that you can copy and paste for later reproducibility.
 
 ## dplyr and tidyverse 
 
