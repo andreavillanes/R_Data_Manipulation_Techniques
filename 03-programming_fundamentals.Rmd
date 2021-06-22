@@ -4,7 +4,7 @@
 
 A logical is a binary representation of True and False:
 
-```{r prompt=TRUE, eval=FALSE}
+```{r results='hide', message=FALSE, eval=FALSE}
   a <- TRUE
   
   b <- FALSE
@@ -14,7 +14,7 @@ A logical is a binary representation of True and False:
 
 Logicals are used for evaluating comparisons, such as:
 
-```{r prompt=TRUE, eval=FALSE}
+```{r results='hide', message=FALSE, eval=FALSE}
   #equality
   # note the double equals == operator is a logical comparison, opposed to a single equal = being an assignment 
     
@@ -83,7 +83,7 @@ Conditionals are expressions that perform different computations or actions depe
 
 The syntax of if statement is:
 
-```{r prompt=TRUE, eval=FALSE}
+```{r results='hide', message=FALSE, eval=FALSE}
   if (test_expression) {
   statement
   }
@@ -91,7 +91,7 @@ The syntax of if statement is:
 
 If the test_expression is `TRUE`, the statement gets executed. But if it is `FALSE`, nothing happens. For example:
 
-```{r prompt=TRUE, eval=FALSE}
+```{r results='hide', message=FALSE, eval=FALSE}
   x <- 5
   if(x > 0){
   print("Positive number")
@@ -100,14 +100,14 @@ If the test_expression is `TRUE`, the statement gets executed. But if it is `FAL
 
 If you will be executing a single statement after the conditional, you can withold the { }
 
-```{r prompt=TRUE, eval=FALSE}
+```{r results='hide', message=FALSE, eval=FALSE}
   x <- 5
   if(x > 0) print("Positive number")
 ```
 
 If we want code to execute when the test_expression is `FALSE`, then we add an else statement:
 
-```{r prompt=TRUE, eval=FALSE}
+```{r results='hide', message=FALSE, eval=FALSE}
   if (test_expression) {
   statement
   } else {
@@ -117,7 +117,7 @@ If we want code to execute when the test_expression is `FALSE`, then we add an e
 
 For example:
 
-```{r prompt=TRUE, eval=FALSE}
+```{r results='hide', message=FALSE, eval=FALSE}
   x <- -5
   if(x > 0){
   print("Non-negative number")
@@ -133,7 +133,7 @@ Note that you can use multiple logicals in the test_expression, such as:
 
 For example:
 
-```{r prompt=TRUE, eval=FALSE}
+```{r results='hide', message=FALSE, eval=FALSE}
   mean_values <- 3.1
   std_dev_values <- 1.95
   
@@ -144,7 +144,7 @@ For example:
 
 Additionally, you can use the ifelse function to quickly assign a value based on a condition. The syntax for the ifelse function is `ifelse(test_expression, yes, no)`. For example:
 
-```{r prompt=TRUE, eval=FALSE}
+```{r results='hide', message=FALSE, eval=FALSE}
   std_dev_vector <- c(1.2,0.8,0.3,2.4)
   ifelse(std_dev_vector>=1, "above one", "below one")
 ```
@@ -155,7 +155,7 @@ Occassionally, we need perform a task in an iterative cycle, also known as a loo
 
 A for loop is used for iterating over a sequence (they iterate a defined number of times):
 
-```{r prompt=TRUE, eval=FALSE}
+```{r results='hide', message=FALSE, eval=FALSE}
   sequence <- seq(0,50,5)
   
   #Note this will iterate 11 times, the number of elements in "sequence"
@@ -167,7 +167,7 @@ A for loop is used for iterating over a sequence (they iterate a defined number 
 
 By default, R will iterate over all the elements in a vector without needing to designate a number
 
-```{r prompt=TRUE, eval=FALSE}
+```{r results='hide', message=FALSE, eval=FALSE}
   for(value in sequence){
     print(paste("Value of sequence is", value))
     Sys.sleep(0.50)
@@ -176,7 +176,7 @@ By default, R will iterate over all the elements in a vector without needing to 
 
 With the break statement, we can stop the loop before it has looped through all the items:
 
-```{r prompt=TRUE, eval=FALSE}
+```{r results='hide', message=FALSE, eval=FALSE}
   for(i in 1:length(sequence)){
     if(i>5) break
     print(paste("Now at iteration", i, ", value of sequence is", sequence[i]))
@@ -186,7 +186,7 @@ With the break statement, we can stop the loop before it has looped through all 
 
 With the next statement, we can skip an iteration without terminating the loop:
 
-```{r prompt=TRUE, eval=FALSE}
+```{r results='hide', message=FALSE, eval=FALSE}
   for(i in 1:length(sequence)){
     if((i %% 2)!=0) next
     print(paste("Now at iteration", i, ", value of sequence is", sequence[i]))
@@ -196,7 +196,7 @@ With the next statement, we can skip an iteration without terminating the loop:
 
 The while loops are used to loop until a specific condition is met:
 
-```{r prompt=TRUE, eval=FALSE}
+```{r results='hide', message=FALSE, eval=FALSE}
   while (test_expression)
   {
   statement
@@ -205,7 +205,7 @@ The while loops are used to loop until a specific condition is met:
 
 Here, test_expression is evaluated and the body of the loop is entered if the result is TRUE. The statements inside the loop are executed and the flow returns to evaluate the test_expression again. This is repeated each time until test_expression evaluates to FALSE, in which case, the loop exits. For example:
 
-```{r prompt=TRUE, eval=FALSE}
+```{r results='hide', message=FALSE, eval=FALSE}
   #While loops - iterate so long as the condition is true 
   #With while loops, it's important to set your starting conditions
   continue <- TRUE 
@@ -224,7 +224,7 @@ Here, test_expression is evaluated and the body of the loop is entered if the re
 
 A repeat loop is used to iterate over a block of code multiple number of times. There is no condition check in repeat loop to exit the loop. We must ourselves put a condition explicitly inside the body of the loop and use the break statement to exit the loop. Failing to do so will result into an infinite loop.
 
-```{r prompt=TRUE, eval=FALSE}
+```{r results='hide', message=FALSE, eval=FALSE}
   repeat {
   statement
   }
@@ -232,7 +232,7 @@ A repeat loop is used to iterate over a block of code multiple number of times. 
 
 For example:
 
-```{r prompt=TRUE, eval=FALSE}
+```{r results='hide', message=FALSE, eval=FALSE}
   x <- 1
   repeat {
   print(x)
@@ -245,7 +245,7 @@ For example:
 
 Finally, we can nest loops of the same type or different types - for example, for every value of i it will do a loop of n:
 
-```{r prompt=TRUE, eval=FALSE}
+```{r results='hide', message=FALSE, eval=FALSE}
   continue <- TRUE 
   i <- 0
   
@@ -267,7 +267,7 @@ A function is a set of statements organized together to perform a specific task.
 
 An R function is created by using the keyword function. The basic syntax of an R function definition is as follows:
 
-```{r prompt=TRUE, eval=FALSE}
+```{r results='hide', message=FALSE, eval=FALSE}
   function_name <- function(arg_1, arg_2, arg_n) {
      Function_Body 
   }
@@ -275,7 +275,7 @@ An R function is created by using the keyword function. The basic syntax of an R
 
 An example of a custom function is the following:
 
-```{r prompt=TRUE, eval=FALSE}
+```{r results='hide', message=FALSE, eval=FALSE}
   numbers <- seq(1:10)
   
   calculator <- function(data, type){
@@ -299,7 +299,7 @@ An example of a custom function is the following:
 
 To provide a default in the parameters, use the equal sign:
 
-```{r prompt=TRUE, eval=FALSE}
+```{r results='hide', message=FALSE, eval=FALSE}
   calculator <- function(data, type='mean'){
     if(type=="mean"){
       value <- mean(data)
@@ -318,7 +318,7 @@ To provide a default in the parameters, use the equal sign:
 
 If we want to return multiple values, we need store them in a vector or list and return that object:
 
-```{r prompt=TRUE, eval=FALSE}
+```{r results='hide', message=FALSE, eval=FALSE}
   univariate_summary <- function(data){
     ntot <- length(data)
     mean <- mean(data)
