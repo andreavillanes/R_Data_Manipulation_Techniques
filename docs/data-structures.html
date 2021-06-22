@@ -206,292 +206,292 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <h2><span class="header-section-number">2.1</span> Vectors</h2>
 <p>A vector is the simplest type of data structure in R. Vectors are particularly important as most of the functions you will write will work with vectors. Simply put, a vector is a sequence of data elements of the same basic type.</p>
 <p>We can construct a vector using the combine <code>(c)</code> function:</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="data-structures.html#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="sc">&gt;</span>   <span class="co"># Here is a vector containing three numeric values 3, 5 and 7:</span></span>
-<span id="cb1-2"><a href="data-structures.html#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="er">&gt;</span>   numbers <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">3</span>, <span class="dv">5</span>, <span class="dv">7</span>)</span>
-<span id="cb1-3"><a href="data-structures.html#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="sc">&gt;</span> </span>
-<span id="cb1-4"><a href="data-structures.html#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="er">&gt;</span>   <span class="co">#Here is a vector of logical values:</span></span>
-<span id="cb1-5"><a href="data-structures.html#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="er">&gt;</span>   logical <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="cn">TRUE</span>, <span class="cn">FALSE</span>, <span class="cn">TRUE</span>, <span class="cn">FALSE</span>, <span class="cn">FALSE</span>) </span>
-<span id="cb1-6"><a href="data-structures.html#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="sc">&gt;</span>   </span>
-<span id="cb1-7"><a href="data-structures.html#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="er">&gt;</span>   <span class="co">#Here is a vector of character values:</span></span>
-<span id="cb1-8"><a href="data-structures.html#cb1-8" aria-hidden="true" tabindex="-1"></a><span class="er">&gt;</span>   fruits <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;apple&quot;</span>, <span class="st">&quot;oranges&quot;</span>, <span class="st">&quot;banana&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="data-structures.html#cb1-1" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Here is a vector containing three numeric values 3, 5 and 7:</span></span>
+<span id="cb1-2"><a href="data-structures.html#cb1-2" aria-hidden="true" tabindex="-1"></a>  numbers <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">3</span>, <span class="dv">5</span>, <span class="dv">7</span>)</span>
+<span id="cb1-3"><a href="data-structures.html#cb1-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-4"><a href="data-structures.html#cb1-4" aria-hidden="true" tabindex="-1"></a>  <span class="co">#Here is a vector of logical values:</span></span>
+<span id="cb1-5"><a href="data-structures.html#cb1-5" aria-hidden="true" tabindex="-1"></a>  logical <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="cn">TRUE</span>, <span class="cn">FALSE</span>, <span class="cn">TRUE</span>, <span class="cn">FALSE</span>, <span class="cn">FALSE</span>) </span>
+<span id="cb1-6"><a href="data-structures.html#cb1-6" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb1-7"><a href="data-structures.html#cb1-7" aria-hidden="true" tabindex="-1"></a>  <span class="co">#Here is a vector of character values:</span></span>
+<span id="cb1-8"><a href="data-structures.html#cb1-8" aria-hidden="true" tabindex="-1"></a>  fruits <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;apple&quot;</span>, <span class="st">&quot;oranges&quot;</span>, <span class="st">&quot;banana&quot;</span>)</span></code></pre></div>
 <p>We can also change the value in a vector:</p>
-<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb2-1"><a href="data-structures.html#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="sc">&gt;</span>   fruits[<span class="dv">2</span>] <span class="ot">&lt;-</span> <span class="st">&quot;strawberries&quot;</span></span></code></pre></div>
+<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb2-1"><a href="data-structures.html#cb2-1" aria-hidden="true" tabindex="-1"></a>  fruits[<span class="dv">2</span>] <span class="ot">&lt;-</span> <span class="st">&quot;strawberries&quot;</span></span></code></pre></div>
 <p>Every vector has two key properties: its type and its length:</p>
-<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="data-structures.html#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="sc">&gt;</span>   <span class="fu">typeof</span>(fruits)</span>
-<span id="cb3-2"><a href="data-structures.html#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="sc">&gt;</span>   <span class="fu">length</span>(fruits)</span></code></pre></div>
+<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="data-structures.html#cb3-1" aria-hidden="true" tabindex="-1"></a>  <span class="fu">typeof</span>(fruits)</span>
+<span id="cb3-2"><a href="data-structures.html#cb3-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">length</span>(fruits)</span></code></pre></div>
 <p>You can combine vectors using the combine function as well:</p>
-<div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb4-1"><a href="data-structures.html#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="sc">&gt;</span>   results <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>)</span>
-<span id="cb4-2"><a href="data-structures.html#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="sc">&gt;</span>   other_results <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">4</span>, <span class="dv">5</span>, <span class="dv">6</span>)</span>
-<span id="cb4-3"><a href="data-structures.html#cb4-3" aria-hidden="true" tabindex="-1"></a><span class="sc">&gt;</span>   combined_results <span class="ot">&lt;-</span> <span class="fu">c</span>(results, other_results)</span></code></pre></div>
+<div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb4-1"><a href="data-structures.html#cb4-1" aria-hidden="true" tabindex="-1"></a>  results <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>)</span>
+<span id="cb4-2"><a href="data-structures.html#cb4-2" aria-hidden="true" tabindex="-1"></a>  other_results <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">4</span>, <span class="dv">5</span>, <span class="dv">6</span>)</span>
+<span id="cb4-3"><a href="data-structures.html#cb4-3" aria-hidden="true" tabindex="-1"></a>  combined_results <span class="ot">&lt;-</span> <span class="fu">c</span>(results, other_results)</span></code></pre></div>
 <p>Vectors can be added together in an element-wise operation:</p>
-<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb5-1"><a href="data-structures.html#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="sc">&gt;</span>   total_add <span class="ot">&lt;-</span> results <span class="sc">+</span> other_results</span>
-<span id="cb5-2"><a href="data-structures.html#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="sc">&gt;</span>   total_div <span class="ot">&lt;-</span> results <span class="sc">/</span> other_results</span>
-<span id="cb5-3"><a href="data-structures.html#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="sc">&gt;</span>   total_mod <span class="ot">&lt;-</span> results <span class="sc">%%</span> other_results</span></code></pre></div>
+<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb5-1"><a href="data-structures.html#cb5-1" aria-hidden="true" tabindex="-1"></a>  total_add <span class="ot">&lt;-</span> results <span class="sc">+</span> other_results</span>
+<span id="cb5-2"><a href="data-structures.html#cb5-2" aria-hidden="true" tabindex="-1"></a>  total_div <span class="ot">&lt;-</span> results <span class="sc">/</span> other_results</span>
+<span id="cb5-3"><a href="data-structures.html#cb5-3" aria-hidden="true" tabindex="-1"></a>  total_mod <span class="ot">&lt;-</span> results <span class="sc">%%</span> other_results</span></code></pre></div>
 <p>Functions can be applied to each element of the vector. However, not all functions are vectorized (we will cover this later):</p>
-<div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb6-1"><a href="data-structures.html#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="sc">&gt;</span>   total_rou <span class="ot">&lt;-</span> <span class="fu">round</span>(total_div, <span class="dv">1</span>)</span>
-<span id="cb6-2"><a href="data-structures.html#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="sc">&gt;</span> </span>
-<span id="cb6-3"><a href="data-structures.html#cb6-3" aria-hidden="true" tabindex="-1"></a><span class="er">&gt;</span>   names <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;Simmons&quot;</span>, <span class="st">&quot;Race&quot;</span>, <span class="st">&quot;Healey&quot;</span>, <span class="st">&quot;LaBarr&quot;</span>, <span class="st">&quot;Villanes&quot;</span>)</span>
-<span id="cb6-4"><a href="data-structures.html#cb6-4" aria-hidden="true" tabindex="-1"></a><span class="sc">&gt;</span>   names <span class="ot">&lt;-</span> <span class="fu">sort</span>(names, <span class="at">decreasing =</span> <span class="cn">TRUE</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb6-1"><a href="data-structures.html#cb6-1" aria-hidden="true" tabindex="-1"></a>  total_rou <span class="ot">&lt;-</span> <span class="fu">round</span>(total_div, <span class="dv">1</span>)</span>
+<span id="cb6-2"><a href="data-structures.html#cb6-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-3"><a href="data-structures.html#cb6-3" aria-hidden="true" tabindex="-1"></a>  names <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;Simmons&quot;</span>, <span class="st">&quot;Race&quot;</span>, <span class="st">&quot;Healey&quot;</span>, <span class="st">&quot;LaBarr&quot;</span>, <span class="st">&quot;Villanes&quot;</span>)</span>
+<span id="cb6-4"><a href="data-structures.html#cb6-4" aria-hidden="true" tabindex="-1"></a>  names <span class="ot">&lt;-</span> <span class="fu">sort</span>(names, <span class="at">decreasing =</span> <span class="cn">TRUE</span>)</span></code></pre></div>
 <p>There are also functions for constructing useful types of vectors:</p>
-<div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb7-1"><a href="data-structures.html#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="sc">&gt;</span>   <span class="co"># Replicate - replicates a value X number of times </span></span>
-<span id="cb7-2"><a href="data-structures.html#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="er">&gt;</span>   identity_vector <span class="ot">&lt;-</span> <span class="fu">rep</span>(<span class="dv">1</span>,<span class="dv">10</span>)</span>
-<span id="cb7-3"><a href="data-structures.html#cb7-3" aria-hidden="true" tabindex="-1"></a><span class="sc">&gt;</span>   identity_vector</span>
-<span id="cb7-4"><a href="data-structures.html#cb7-4" aria-hidden="true" tabindex="-1"></a><span class="sc">&gt;</span>   </span>
-<span id="cb7-5"><a href="data-structures.html#cb7-5" aria-hidden="true" tabindex="-1"></a><span class="er">&gt;</span>   <span class="co"># Sequence operator &quot;:&quot; From:To </span></span>
-<span id="cb7-6"><a href="data-structures.html#cb7-6" aria-hidden="true" tabindex="-1"></a><span class="er">&gt;</span>   sequence_vector <span class="ot">&lt;-</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">10</span></span>
-<span id="cb7-7"><a href="data-structures.html#cb7-7" aria-hidden="true" tabindex="-1"></a><span class="sc">&gt;</span>   </span>
-<span id="cb7-8"><a href="data-structures.html#cb7-8" aria-hidden="true" tabindex="-1"></a><span class="er">&gt;</span>   <span class="co"># Sequence function - allows sequencing by a value</span></span>
-<span id="cb7-9"><a href="data-structures.html#cb7-9" aria-hidden="true" tabindex="-1"></a><span class="er">&gt;</span>   sequence_by_two_vector <span class="ot">&lt;-</span> <span class="fu">seq</span>(<span class="dv">0</span>,<span class="dv">10</span>, <span class="dv">2</span>)</span>
-<span id="cb7-10"><a href="data-structures.html#cb7-10" aria-hidden="true" tabindex="-1"></a><span class="sc">&gt;</span>   sequence_by_two_vector</span>
-<span id="cb7-11"><a href="data-structures.html#cb7-11" aria-hidden="true" tabindex="-1"></a><span class="sc">&gt;</span>   </span>
-<span id="cb7-12"><a href="data-structures.html#cb7-12" aria-hidden="true" tabindex="-1"></a><span class="er">&gt;</span>   <span class="co"># Sample function - take a random sample from a vector</span></span>
-<span id="cb7-13"><a href="data-structures.html#cb7-13" aria-hidden="true" tabindex="-1"></a><span class="er">&gt;</span>   random_vector <span class="ot">&lt;-</span> <span class="fu">sample</span>(sequence_by_two_vector,<span class="dv">3</span>)</span>
-<span id="cb7-14"><a href="data-structures.html#cb7-14" aria-hidden="true" tabindex="-1"></a><span class="sc">&gt;</span>   </span>
-<span id="cb7-15"><a href="data-structures.html#cb7-15" aria-hidden="true" tabindex="-1"></a><span class="er">&gt;</span>   <span class="co">#A common trick to randomly permute all elements in a vector is sample(vector_name)</span></span>
-<span id="cb7-16"><a href="data-structures.html#cb7-16" aria-hidden="true" tabindex="-1"></a><span class="er">&gt;</span>   permute <span class="ot">&lt;-</span> <span class="fu">sample</span>(numbers)</span></code></pre></div>
+<div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb7-1"><a href="data-structures.html#cb7-1" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Replicate - replicates a value X number of times </span></span>
+<span id="cb7-2"><a href="data-structures.html#cb7-2" aria-hidden="true" tabindex="-1"></a>  identity_vector <span class="ot">&lt;-</span> <span class="fu">rep</span>(<span class="dv">1</span>,<span class="dv">10</span>)</span>
+<span id="cb7-3"><a href="data-structures.html#cb7-3" aria-hidden="true" tabindex="-1"></a>  identity_vector</span>
+<span id="cb7-4"><a href="data-structures.html#cb7-4" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb7-5"><a href="data-structures.html#cb7-5" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Sequence operator &quot;:&quot; From:To </span></span>
+<span id="cb7-6"><a href="data-structures.html#cb7-6" aria-hidden="true" tabindex="-1"></a>  sequence_vector <span class="ot">&lt;-</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">10</span></span>
+<span id="cb7-7"><a href="data-structures.html#cb7-7" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb7-8"><a href="data-structures.html#cb7-8" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Sequence function - allows sequencing by a value</span></span>
+<span id="cb7-9"><a href="data-structures.html#cb7-9" aria-hidden="true" tabindex="-1"></a>  sequence_by_two_vector <span class="ot">&lt;-</span> <span class="fu">seq</span>(<span class="dv">0</span>,<span class="dv">10</span>, <span class="dv">2</span>)</span>
+<span id="cb7-10"><a href="data-structures.html#cb7-10" aria-hidden="true" tabindex="-1"></a>  sequence_by_two_vector</span>
+<span id="cb7-11"><a href="data-structures.html#cb7-11" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb7-12"><a href="data-structures.html#cb7-12" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Sample function - take a random sample from a vector</span></span>
+<span id="cb7-13"><a href="data-structures.html#cb7-13" aria-hidden="true" tabindex="-1"></a>  random_vector <span class="ot">&lt;-</span> <span class="fu">sample</span>(sequence_by_two_vector,<span class="dv">3</span>)</span>
+<span id="cb7-14"><a href="data-structures.html#cb7-14" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb7-15"><a href="data-structures.html#cb7-15" aria-hidden="true" tabindex="-1"></a>  <span class="co">#A common trick to randomly permute all elements in a vector is sample(vector_name)</span></span>
+<span id="cb7-16"><a href="data-structures.html#cb7-16" aria-hidden="true" tabindex="-1"></a>  permute <span class="ot">&lt;-</span> <span class="fu">sample</span>(numbers)</span></code></pre></div>
 <p>Finally, a vector doesn’t have to be made with consistent elements, but it will force them to one type:</p>
-<div class="sourceCode" id="cb8"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb8-1"><a href="data-structures.html#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="sc">&gt;</span>   values <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;IAA&quot;</span>, <span class="dv">1</span>, <span class="st">&quot;2021&quot;</span>, <span class="dv">5</span>)</span>
-<span id="cb8-2"><a href="data-structures.html#cb8-2" aria-hidden="true" tabindex="-1"></a><span class="sc">&gt;</span>   <span class="fu">typeof</span>(values)</span></code></pre></div>
+<div class="sourceCode" id="cb8"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb8-1"><a href="data-structures.html#cb8-1" aria-hidden="true" tabindex="-1"></a>  values <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;IAA&quot;</span>, <span class="dv">1</span>, <span class="st">&quot;2021&quot;</span>, <span class="dv">5</span>)</span>
+<span id="cb8-2"><a href="data-structures.html#cb8-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">typeof</span>(values)</span></code></pre></div>
 <p>As we mentioned earlier, the elements of a vector can only be of one type. If we want elements of different types… we will need a list.</p>
 </div>
 <div id="lists" class="section level2" number="2.2">
 <h2><span class="header-section-number">2.2</span> Lists</h2>
 <p>Lists are objects which contain elements of different types like − numbers, strings, vectors and another list inside it. A list can also contain a matrix or a function as its elements. A list is created using list() function.</p>
-<div class="sourceCode" id="cb9"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb9-1"><a href="data-structures.html#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="sc">&gt;</span>   <span class="co"># Here are 3 vectors of different types</span></span>
-<span id="cb9-2"><a href="data-structures.html#cb9-2" aria-hidden="true" tabindex="-1"></a><span class="er">&gt;</span>   v1 <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;apple&quot;</span>, <span class="st">&quot;banana&quot;</span>)</span>
-<span id="cb9-3"><a href="data-structures.html#cb9-3" aria-hidden="true" tabindex="-1"></a><span class="sc">&gt;</span>   v2 <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;dog&quot;</span>, <span class="st">&quot;cat&quot;</span>, <span class="st">&quot;bunny&quot;</span>, <span class="st">&quot;pig&quot;</span>, <span class="st">&quot;cow&quot;</span>, <span class="st">&quot;horse&quot;</span>)</span>
-<span id="cb9-4"><a href="data-structures.html#cb9-4" aria-hidden="true" tabindex="-1"></a><span class="sc">&gt;</span>   v3 <span class="ot">&lt;-</span> <span class="fu">seq</span>(<span class="dv">0</span>,<span class="dv">10</span>,<span class="at">by=</span><span class="dv">2</span>)</span>
-<span id="cb9-5"><a href="data-structures.html#cb9-5" aria-hidden="true" tabindex="-1"></a><span class="sc">&gt;</span>   </span>
-<span id="cb9-6"><a href="data-structures.html#cb9-6" aria-hidden="true" tabindex="-1"></a><span class="er">&gt;</span>   v1;v2;v3</span></code></pre></div>
+<div class="sourceCode" id="cb9"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb9-1"><a href="data-structures.html#cb9-1" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Here are 3 vectors of different types</span></span>
+<span id="cb9-2"><a href="data-structures.html#cb9-2" aria-hidden="true" tabindex="-1"></a>  v1 <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;apple&quot;</span>, <span class="st">&quot;banana&quot;</span>)</span>
+<span id="cb9-3"><a href="data-structures.html#cb9-3" aria-hidden="true" tabindex="-1"></a>  v2 <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;dog&quot;</span>, <span class="st">&quot;cat&quot;</span>, <span class="st">&quot;bunny&quot;</span>, <span class="st">&quot;pig&quot;</span>, <span class="st">&quot;cow&quot;</span>, <span class="st">&quot;horse&quot;</span>)</span>
+<span id="cb9-4"><a href="data-structures.html#cb9-4" aria-hidden="true" tabindex="-1"></a>  v3 <span class="ot">&lt;-</span> <span class="fu">seq</span>(<span class="dv">0</span>,<span class="dv">10</span>,<span class="at">by=</span><span class="dv">2</span>)</span>
+<span id="cb9-5"><a href="data-structures.html#cb9-5" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb9-6"><a href="data-structures.html#cb9-6" aria-hidden="true" tabindex="-1"></a>  v1;v2;v3</span></code></pre></div>
 <p>We can put all of these vectors into a list:</p>
-<div class="sourceCode" id="cb10"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb10-1"><a href="data-structures.html#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="sc">&gt;</span>   <span class="co"># Here are 3 vectors of different types</span></span>
-<span id="cb10-2"><a href="data-structures.html#cb10-2" aria-hidden="true" tabindex="-1"></a><span class="er">&gt;</span>   l1 <span class="ot">&lt;-</span> <span class="fu">list</span>(v1, v2, v3)</span>
-<span id="cb10-3"><a href="data-structures.html#cb10-3" aria-hidden="true" tabindex="-1"></a><span class="sc">&gt;</span> </span>
-<span id="cb10-4"><a href="data-structures.html#cb10-4" aria-hidden="true" tabindex="-1"></a><span class="er">&gt;</span>   <span class="fu">class</span>(l1)</span>
-<span id="cb10-5"><a href="data-structures.html#cb10-5" aria-hidden="true" tabindex="-1"></a><span class="sc">&gt;</span>   <span class="fu">typeof</span>(l1)  </span></code></pre></div>
+<div class="sourceCode" id="cb10"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb10-1"><a href="data-structures.html#cb10-1" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Here are 3 vectors of different types</span></span>
+<span id="cb10-2"><a href="data-structures.html#cb10-2" aria-hidden="true" tabindex="-1"></a>  l1 <span class="ot">&lt;-</span> <span class="fu">list</span>(v1, v2, v3)</span>
+<span id="cb10-3"><a href="data-structures.html#cb10-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-4"><a href="data-structures.html#cb10-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">class</span>(l1)</span>
+<span id="cb10-5"><a href="data-structures.html#cb10-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">typeof</span>(l1)  </span></code></pre></div>
 <p>List elements can be accessed via index. Each of the components of a list is accessed via the double bracket [[x]] syntax:</p>
-<div class="sourceCode" id="cb11"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb11-1"><a href="data-structures.html#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="sc">&gt;</span>   <span class="co"># First element in the list</span></span>
-<span id="cb11-2"><a href="data-structures.html#cb11-2" aria-hidden="true" tabindex="-1"></a><span class="er">&gt;</span>   l1[[<span class="dv">1</span>]]</span>
-<span id="cb11-3"><a href="data-structures.html#cb11-3" aria-hidden="true" tabindex="-1"></a><span class="sc">&gt;</span>   </span>
-<span id="cb11-4"><a href="data-structures.html#cb11-4" aria-hidden="true" tabindex="-1"></a><span class="er">&gt;</span>   <span class="co"># First element in the first element (vector) of the list</span></span>
-<span id="cb11-5"><a href="data-structures.html#cb11-5" aria-hidden="true" tabindex="-1"></a><span class="er">&gt;</span>   l1[[<span class="dv">1</span>]][<span class="dv">1</span>]</span></code></pre></div>
+<div class="sourceCode" id="cb11"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb11-1"><a href="data-structures.html#cb11-1" aria-hidden="true" tabindex="-1"></a>  <span class="co"># First element in the list</span></span>
+<span id="cb11-2"><a href="data-structures.html#cb11-2" aria-hidden="true" tabindex="-1"></a>  l1[[<span class="dv">1</span>]]</span>
+<span id="cb11-3"><a href="data-structures.html#cb11-3" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb11-4"><a href="data-structures.html#cb11-4" aria-hidden="true" tabindex="-1"></a>  <span class="co"># First element in the first element (vector) of the list</span></span>
+<span id="cb11-5"><a href="data-structures.html#cb11-5" aria-hidden="true" tabindex="-1"></a>  l1[[<span class="dv">1</span>]][<span class="dv">1</span>]</span></code></pre></div>
 <p>List elements can be named:</p>
-<div class="sourceCode" id="cb12"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb12-1"><a href="data-structures.html#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="sc">&gt;</span>   <span class="fu">names</span>(l1) <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;Fruit&quot;</span>, <span class="st">&quot;Animals&quot;</span>, <span class="st">&quot;Even_Numbers&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb12"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb12-1"><a href="data-structures.html#cb12-1" aria-hidden="true" tabindex="-1"></a>  <span class="fu">names</span>(l1) <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;Fruit&quot;</span>, <span class="st">&quot;Animals&quot;</span>, <span class="st">&quot;Even_Numbers&quot;</span>)</span></code></pre></div>
 <p>Or they can be named upon creating the list:</p>
-<div class="sourceCode" id="cb13"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb13-1"><a href="data-structures.html#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="sc">&gt;</span>   l1 <span class="ot">&lt;-</span> <span class="fu">list</span>(<span class="at">Fruit=</span>v1, <span class="at">Animals=</span>v2, <span class="at">Even_Numbers=</span>v3)</span></code></pre></div>
+<div class="sourceCode" id="cb13"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb13-1"><a href="data-structures.html#cb13-1" aria-hidden="true" tabindex="-1"></a>  l1 <span class="ot">&lt;-</span> <span class="fu">list</span>(<span class="at">Fruit=</span>v1, <span class="at">Animals=</span>v2, <span class="at">Even_Numbers=</span>v3)</span></code></pre></div>
 <p>The elements in a list can be retrieved by name:</p>
-<div class="sourceCode" id="cb14"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb14-1"><a href="data-structures.html#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="sc">&gt;</span>   l1<span class="sc">$</span>Fruit</span>
-<span id="cb14-2"><a href="data-structures.html#cb14-2" aria-hidden="true" tabindex="-1"></a><span class="sc">&gt;</span>   l1<span class="sc">$</span>Fruit[<span class="dv">1</span>]</span>
-<span id="cb14-3"><a href="data-structures.html#cb14-3" aria-hidden="true" tabindex="-1"></a><span class="sc">&gt;</span>   </span>
-<span id="cb14-4"><a href="data-structures.html#cb14-4" aria-hidden="true" tabindex="-1"></a><span class="er">&gt;</span>   l1<span class="sc">$</span>Even_Numbers</span>
-<span id="cb14-5"><a href="data-structures.html#cb14-5" aria-hidden="true" tabindex="-1"></a><span class="sc">&gt;</span>   <span class="fu">max</span>(l1<span class="sc">$</span>Even_Numbers)</span></code></pre></div>
+<div class="sourceCode" id="cb14"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb14-1"><a href="data-structures.html#cb14-1" aria-hidden="true" tabindex="-1"></a>  l1<span class="sc">$</span>Fruit</span>
+<span id="cb14-2"><a href="data-structures.html#cb14-2" aria-hidden="true" tabindex="-1"></a>  l1<span class="sc">$</span>Fruit[<span class="dv">1</span>]</span>
+<span id="cb14-3"><a href="data-structures.html#cb14-3" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb14-4"><a href="data-structures.html#cb14-4" aria-hidden="true" tabindex="-1"></a>  l1<span class="sc">$</span>Even_Numbers</span>
+<span id="cb14-5"><a href="data-structures.html#cb14-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">max</span>(l1<span class="sc">$</span>Even_Numbers)</span></code></pre></div>
 <p>A list can even contain lists:</p>
-<div class="sourceCode" id="cb15"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb15-1"><a href="data-structures.html#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="sc">&gt;</span>   l2 <span class="ot">&lt;-</span> <span class="fu">list</span>(<span class="at">Odd_Numbers=</span><span class="fu">seq</span>(<span class="dv">1</span>,<span class="dv">10</span>,<span class="at">by=</span><span class="dv">2</span>), <span class="at">list1=</span>l1)</span>
-<span id="cb15-2"><a href="data-structures.html#cb15-2" aria-hidden="true" tabindex="-1"></a><span class="sc">&gt;</span> </span>
-<span id="cb15-3"><a href="data-structures.html#cb15-3" aria-hidden="true" tabindex="-1"></a><span class="er">&gt;</span>   <span class="co"># First Vector</span></span>
-<span id="cb15-4"><a href="data-structures.html#cb15-4" aria-hidden="true" tabindex="-1"></a><span class="er">&gt;</span>   l2<span class="sc">$</span>Odd_Numbers</span>
-<span id="cb15-5"><a href="data-structures.html#cb15-5" aria-hidden="true" tabindex="-1"></a><span class="sc">&gt;</span>   l2[[<span class="dv">1</span>]]</span>
-<span id="cb15-6"><a href="data-structures.html#cb15-6" aria-hidden="true" tabindex="-1"></a><span class="sc">&gt;</span>   </span>
-<span id="cb15-7"><a href="data-structures.html#cb15-7" aria-hidden="true" tabindex="-1"></a><span class="er">&gt;</span>   <span class="co"># l1 within L2</span></span>
-<span id="cb15-8"><a href="data-structures.html#cb15-8" aria-hidden="true" tabindex="-1"></a><span class="er">&gt;</span>   l2<span class="sc">$</span>list1</span>
-<span id="cb15-9"><a href="data-structures.html#cb15-9" aria-hidden="true" tabindex="-1"></a><span class="sc">&gt;</span>   l2[[<span class="dv">2</span>]]</span>
-<span id="cb15-10"><a href="data-structures.html#cb15-10" aria-hidden="true" tabindex="-1"></a><span class="sc">&gt;</span>   </span>
-<span id="cb15-11"><a href="data-structures.html#cb15-11" aria-hidden="true" tabindex="-1"></a><span class="er">&gt;</span>   l2<span class="sc">$</span>list1<span class="sc">$</span>Fruit</span>
-<span id="cb15-12"><a href="data-structures.html#cb15-12" aria-hidden="true" tabindex="-1"></a><span class="sc">&gt;</span>   l2[[<span class="dv">2</span>]][<span class="dv">1</span>]</span>
-<span id="cb15-13"><a href="data-structures.html#cb15-13" aria-hidden="true" tabindex="-1"></a><span class="sc">&gt;</span>   </span>
-<span id="cb15-14"><a href="data-structures.html#cb15-14" aria-hidden="true" tabindex="-1"></a><span class="er">&gt;</span>   l2<span class="sc">$</span>list1<span class="sc">$</span>Fruit[<span class="dv">1</span>]</span>
-<span id="cb15-15"><a href="data-structures.html#cb15-15" aria-hidden="true" tabindex="-1"></a><span class="sc">&gt;</span>   l2[[<span class="dv">2</span>]][[<span class="dv">1</span>]][<span class="dv">1</span>]</span>
-<span id="cb15-16"><a href="data-structures.html#cb15-16" aria-hidden="true" tabindex="-1"></a><span class="sc">&gt;</span>   </span>
-<span id="cb15-17"><a href="data-structures.html#cb15-17" aria-hidden="true" tabindex="-1"></a><span class="er">&gt;</span>   l2[[<span class="dv">2</span>]][[<span class="dv">1</span>]][<span class="dv">3</span>] <span class="ot">&lt;-</span> <span class="st">&quot;blueberry&quot;</span></span>
-<span id="cb15-18"><a href="data-structures.html#cb15-18" aria-hidden="true" tabindex="-1"></a><span class="sc">&gt;</span>   l2<span class="sc">$</span>list1<span class="sc">$</span>Fruit</span>
-<span id="cb15-19"><a href="data-structures.html#cb15-19" aria-hidden="true" tabindex="-1"></a><span class="sc">&gt;</span>   l2</span></code></pre></div>
+<div class="sourceCode" id="cb15"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb15-1"><a href="data-structures.html#cb15-1" aria-hidden="true" tabindex="-1"></a>  l2 <span class="ot">&lt;-</span> <span class="fu">list</span>(<span class="at">Odd_Numbers=</span><span class="fu">seq</span>(<span class="dv">1</span>,<span class="dv">10</span>,<span class="at">by=</span><span class="dv">2</span>), <span class="at">list1=</span>l1)</span>
+<span id="cb15-2"><a href="data-structures.html#cb15-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-3"><a href="data-structures.html#cb15-3" aria-hidden="true" tabindex="-1"></a>  <span class="co"># First Vector</span></span>
+<span id="cb15-4"><a href="data-structures.html#cb15-4" aria-hidden="true" tabindex="-1"></a>  l2<span class="sc">$</span>Odd_Numbers</span>
+<span id="cb15-5"><a href="data-structures.html#cb15-5" aria-hidden="true" tabindex="-1"></a>  l2[[<span class="dv">1</span>]]</span>
+<span id="cb15-6"><a href="data-structures.html#cb15-6" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb15-7"><a href="data-structures.html#cb15-7" aria-hidden="true" tabindex="-1"></a>  <span class="co"># l1 within L2</span></span>
+<span id="cb15-8"><a href="data-structures.html#cb15-8" aria-hidden="true" tabindex="-1"></a>  l2<span class="sc">$</span>list1</span>
+<span id="cb15-9"><a href="data-structures.html#cb15-9" aria-hidden="true" tabindex="-1"></a>  l2[[<span class="dv">2</span>]]</span>
+<span id="cb15-10"><a href="data-structures.html#cb15-10" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb15-11"><a href="data-structures.html#cb15-11" aria-hidden="true" tabindex="-1"></a>  l2<span class="sc">$</span>list1<span class="sc">$</span>Fruit</span>
+<span id="cb15-12"><a href="data-structures.html#cb15-12" aria-hidden="true" tabindex="-1"></a>  l2[[<span class="dv">2</span>]][<span class="dv">1</span>]</span>
+<span id="cb15-13"><a href="data-structures.html#cb15-13" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb15-14"><a href="data-structures.html#cb15-14" aria-hidden="true" tabindex="-1"></a>  l2<span class="sc">$</span>list1<span class="sc">$</span>Fruit[<span class="dv">1</span>]</span>
+<span id="cb15-15"><a href="data-structures.html#cb15-15" aria-hidden="true" tabindex="-1"></a>  l2[[<span class="dv">2</span>]][[<span class="dv">1</span>]][<span class="dv">1</span>]</span>
+<span id="cb15-16"><a href="data-structures.html#cb15-16" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb15-17"><a href="data-structures.html#cb15-17" aria-hidden="true" tabindex="-1"></a>  l2[[<span class="dv">2</span>]][[<span class="dv">1</span>]][<span class="dv">3</span>] <span class="ot">&lt;-</span> <span class="st">&quot;blueberry&quot;</span></span>
+<span id="cb15-18"><a href="data-structures.html#cb15-18" aria-hidden="true" tabindex="-1"></a>  l2<span class="sc">$</span>list1<span class="sc">$</span>Fruit</span>
+<span id="cb15-19"><a href="data-structures.html#cb15-19" aria-hidden="true" tabindex="-1"></a>  l2</span></code></pre></div>
 <p>To combine lists:</p>
-<div class="sourceCode" id="cb16"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb16-1"><a href="data-structures.html#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="sc">&gt;</span>   l4 <span class="ot">&lt;-</span> <span class="fu">list</span>(<span class="at">More_Fruit=</span><span class="fu">c</span>(<span class="st">&quot;melon&quot;</span>, <span class="st">&quot;orange&quot;</span>))</span>
-<span id="cb16-2"><a href="data-structures.html#cb16-2" aria-hidden="true" tabindex="-1"></a><span class="sc">&gt;</span>   l1 <span class="ot">&lt;-</span> <span class="fu">c</span>(l1,l4)</span></code></pre></div>
+<div class="sourceCode" id="cb16"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb16-1"><a href="data-structures.html#cb16-1" aria-hidden="true" tabindex="-1"></a>  l4 <span class="ot">&lt;-</span> <span class="fu">list</span>(<span class="at">More_Fruit=</span><span class="fu">c</span>(<span class="st">&quot;melon&quot;</span>, <span class="st">&quot;orange&quot;</span>))</span>
+<span id="cb16-2"><a href="data-structures.html#cb16-2" aria-hidden="true" tabindex="-1"></a>  l1 <span class="ot">&lt;-</span> <span class="fu">c</span>(l1,l4)</span></code></pre></div>
 <p>Finally, if we want to update part of a list, we can just operate on and update it accordingly:</p>
-<div class="sourceCode" id="cb17"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb17-1"><a href="data-structures.html#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="sc">&gt;</span>   l1<span class="sc">$</span>Fruit <span class="ot">&lt;-</span> <span class="fu">c</span>(l1<span class="sc">$</span>Fruit, l4<span class="sc">$</span>More_Fruit)</span>
-<span id="cb17-2"><a href="data-structures.html#cb17-2" aria-hidden="true" tabindex="-1"></a><span class="sc">&gt;</span>   l1<span class="sc">$</span>Fruit</span></code></pre></div>
+<div class="sourceCode" id="cb17"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb17-1"><a href="data-structures.html#cb17-1" aria-hidden="true" tabindex="-1"></a>  l1<span class="sc">$</span>Fruit <span class="ot">&lt;-</span> <span class="fu">c</span>(l1<span class="sc">$</span>Fruit, l4<span class="sc">$</span>More_Fruit)</span>
+<span id="cb17-2"><a href="data-structures.html#cb17-2" aria-hidden="true" tabindex="-1"></a>  l1<span class="sc">$</span>Fruit</span></code></pre></div>
 </div>
 <div id="arrays" class="section level2" number="2.3">
 <h2><span class="header-section-number">2.3</span> Arrays</h2>
 <p>Arrays are similar to vectors, except that they are multi-dimensional. An array is created using the array() function, and the dim parameter to specify the dimensions:</p>
-<div class="sourceCode" id="cb18"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb18-1"><a href="data-structures.html#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="sc">&gt;</span>   <span class="co"># 1 dimension - 1 row (vector)</span></span>
-<span id="cb18-2"><a href="data-structures.html#cb18-2" aria-hidden="true" tabindex="-1"></a><span class="er">&gt;</span>   sequence_array_1_dim <span class="ot">&lt;-</span> <span class="fu">array</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">10</span>, <span class="at">dim=</span><span class="dv">10</span>)</span>
-<span id="cb18-3"><a href="data-structures.html#cb18-3" aria-hidden="true" tabindex="-1"></a><span class="sc">&gt;</span>   sequence_array_1_dim</span>
-<span id="cb18-4"><a href="data-structures.html#cb18-4" aria-hidden="true" tabindex="-1"></a><span class="sc">&gt;</span>   </span>
-<span id="cb18-5"><a href="data-structures.html#cb18-5" aria-hidden="true" tabindex="-1"></a><span class="er">&gt;</span>   <span class="co"># 2 dimensions - 2 rows, 5 columns </span></span>
-<span id="cb18-6"><a href="data-structures.html#cb18-6" aria-hidden="true" tabindex="-1"></a><span class="er">&gt;</span>   sequence_array_2_dim <span class="ot">&lt;-</span> <span class="fu">array</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">10</span>, <span class="at">dim=</span> <span class="fu">c</span>(<span class="dv">2</span>,<span class="dv">5</span>))</span>
-<span id="cb18-7"><a href="data-structures.html#cb18-7" aria-hidden="true" tabindex="-1"></a><span class="sc">&gt;</span>   sequence_array_2_dim</span>
-<span id="cb18-8"><a href="data-structures.html#cb18-8" aria-hidden="true" tabindex="-1"></a><span class="sc">&gt;</span>   </span>
-<span id="cb18-9"><a href="data-structures.html#cb18-9" aria-hidden="true" tabindex="-1"></a><span class="er">&gt;</span>   <span class="co"># 3 dimensions - 2 rows, 5 columns, 2 tables</span></span>
-<span id="cb18-10"><a href="data-structures.html#cb18-10" aria-hidden="true" tabindex="-1"></a><span class="er">&gt;</span>   sequence_array_3_dim <span class="ot">&lt;-</span> <span class="fu">array</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">20</span>, <span class="at">dim =</span> <span class="fu">c</span>(<span class="dv">2</span>,<span class="dv">5</span>,<span class="dv">2</span>))</span>
-<span id="cb18-11"><a href="data-structures.html#cb18-11" aria-hidden="true" tabindex="-1"></a><span class="sc">&gt;</span>   sequence_array_3_dim</span>
-<span id="cb18-12"><a href="data-structures.html#cb18-12" aria-hidden="true" tabindex="-1"></a><span class="sc">&gt;</span>   </span>
-<span id="cb18-13"><a href="data-structures.html#cb18-13" aria-hidden="true" tabindex="-1"></a><span class="er">&gt;</span>   <span class="co"># 4 dimensions - 2 rows, 5 columns, 2 tables, 2 sets </span></span>
-<span id="cb18-14"><a href="data-structures.html#cb18-14" aria-hidden="true" tabindex="-1"></a><span class="er">&gt;</span>   sequence_array_4_dim <span class="ot">&lt;-</span> <span class="fu">array</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">40</span>, <span class="at">dim =</span> <span class="fu">c</span>(<span class="dv">2</span>,<span class="dv">5</span>,<span class="dv">2</span>,<span class="dv">2</span>))</span>
-<span id="cb18-15"><a href="data-structures.html#cb18-15" aria-hidden="true" tabindex="-1"></a><span class="sc">&gt;</span>   sequence_array_4_dim</span></code></pre></div>
+<div class="sourceCode" id="cb18"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb18-1"><a href="data-structures.html#cb18-1" aria-hidden="true" tabindex="-1"></a>  <span class="co"># 1 dimension - 1 row (vector)</span></span>
+<span id="cb18-2"><a href="data-structures.html#cb18-2" aria-hidden="true" tabindex="-1"></a>  sequence_array_1_dim <span class="ot">&lt;-</span> <span class="fu">array</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">10</span>, <span class="at">dim=</span><span class="dv">10</span>)</span>
+<span id="cb18-3"><a href="data-structures.html#cb18-3" aria-hidden="true" tabindex="-1"></a>  sequence_array_1_dim</span>
+<span id="cb18-4"><a href="data-structures.html#cb18-4" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb18-5"><a href="data-structures.html#cb18-5" aria-hidden="true" tabindex="-1"></a>  <span class="co"># 2 dimensions - 2 rows, 5 columns </span></span>
+<span id="cb18-6"><a href="data-structures.html#cb18-6" aria-hidden="true" tabindex="-1"></a>  sequence_array_2_dim <span class="ot">&lt;-</span> <span class="fu">array</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">10</span>, <span class="at">dim=</span> <span class="fu">c</span>(<span class="dv">2</span>,<span class="dv">5</span>))</span>
+<span id="cb18-7"><a href="data-structures.html#cb18-7" aria-hidden="true" tabindex="-1"></a>  sequence_array_2_dim</span>
+<span id="cb18-8"><a href="data-structures.html#cb18-8" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb18-9"><a href="data-structures.html#cb18-9" aria-hidden="true" tabindex="-1"></a>  <span class="co"># 3 dimensions - 2 rows, 5 columns, 2 tables</span></span>
+<span id="cb18-10"><a href="data-structures.html#cb18-10" aria-hidden="true" tabindex="-1"></a>  sequence_array_3_dim <span class="ot">&lt;-</span> <span class="fu">array</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">20</span>, <span class="at">dim =</span> <span class="fu">c</span>(<span class="dv">2</span>,<span class="dv">5</span>,<span class="dv">2</span>))</span>
+<span id="cb18-11"><a href="data-structures.html#cb18-11" aria-hidden="true" tabindex="-1"></a>  sequence_array_3_dim</span>
+<span id="cb18-12"><a href="data-structures.html#cb18-12" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb18-13"><a href="data-structures.html#cb18-13" aria-hidden="true" tabindex="-1"></a>  <span class="co"># 4 dimensions - 2 rows, 5 columns, 2 tables, 2 sets </span></span>
+<span id="cb18-14"><a href="data-structures.html#cb18-14" aria-hidden="true" tabindex="-1"></a>  sequence_array_4_dim <span class="ot">&lt;-</span> <span class="fu">array</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">40</span>, <span class="at">dim =</span> <span class="fu">c</span>(<span class="dv">2</span>,<span class="dv">5</span>,<span class="dv">2</span>,<span class="dv">2</span>))</span>
+<span id="cb18-15"><a href="data-structures.html#cb18-15" aria-hidden="true" tabindex="-1"></a>  sequence_array_4_dim</span></code></pre></div>
 <p>Similar to vectors, functions can be applied to arrays:</p>
-<div class="sourceCode" id="cb19"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb19-1"><a href="data-structures.html#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="sc">&gt;</span>   <span class="fu">dim</span>(sequence_array_2_dim)</span>
-<span id="cb19-2"><a href="data-structures.html#cb19-2" aria-hidden="true" tabindex="-1"></a><span class="sc">&gt;</span>   <span class="fu">length</span>(sequence_array_2_dim)</span>
-<span id="cb19-3"><a href="data-structures.html#cb19-3" aria-hidden="true" tabindex="-1"></a><span class="sc">&gt;</span>   <span class="fu">sum</span>(sequence_array_2_dim)</span>
-<span id="cb19-4"><a href="data-structures.html#cb19-4" aria-hidden="true" tabindex="-1"></a><span class="sc">&gt;</span>   <span class="fu">max</span>(sequence_array_2_dim)</span></code></pre></div>
+<div class="sourceCode" id="cb19"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb19-1"><a href="data-structures.html#cb19-1" aria-hidden="true" tabindex="-1"></a>  <span class="fu">dim</span>(sequence_array_2_dim)</span>
+<span id="cb19-2"><a href="data-structures.html#cb19-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">length</span>(sequence_array_2_dim)</span>
+<span id="cb19-3"><a href="data-structures.html#cb19-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">sum</span>(sequence_array_2_dim)</span>
+<span id="cb19-4"><a href="data-structures.html#cb19-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">max</span>(sequence_array_2_dim)</span></code></pre></div>
 </div>
 <div id="matrices" class="section level2" number="2.4">
 <h2><span class="header-section-number">2.4</span> Matrices</h2>
 <p>Matrices are objects in which the elements are arranged in a two-dimensional rectangular layout. A matrix is created using the matrix() function:</p>
-<div class="sourceCode" id="cb20"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb20-1"><a href="data-structures.html#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="sc">&gt;</span>   <span class="co"># A matrix is a 2-demensional (row x column) array </span></span>
-<span id="cb20-2"><a href="data-structures.html#cb20-2" aria-hidden="true" tabindex="-1"></a><span class="er">&gt;</span>   A <span class="ot">&lt;-</span> <span class="fu">matrix</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">25</span>, <span class="dv">5</span>, <span class="dv">5</span>)</span>
-<span id="cb20-3"><a href="data-structures.html#cb20-3" aria-hidden="true" tabindex="-1"></a><span class="sc">&gt;</span>   </span>
-<span id="cb20-4"><a href="data-structures.html#cb20-4" aria-hidden="true" tabindex="-1"></a><span class="er">&gt;</span>   B <span class="ot">&lt;-</span> <span class="fu">matrix</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">25</span>, <span class="dv">5</span>, <span class="dv">5</span>, <span class="at">byrow=</span><span class="cn">TRUE</span>) <span class="co">#if you want to fill down the row instead of across the columns</span></span>
-<span id="cb20-5"><a href="data-structures.html#cb20-5" aria-hidden="true" tabindex="-1"></a><span class="sc">&gt;</span>   </span>
-<span id="cb20-6"><a href="data-structures.html#cb20-6" aria-hidden="true" tabindex="-1"></a><span class="er">&gt;</span>   C <span class="ot">&lt;-</span> <span class="fu">matrix</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">5</span>, <span class="dv">1</span>, <span class="dv">5</span>)</span>
-<span id="cb20-7"><a href="data-structures.html#cb20-7" aria-hidden="true" tabindex="-1"></a><span class="sc">&gt;</span>   </span>
-<span id="cb20-8"><a href="data-structures.html#cb20-8" aria-hidden="true" tabindex="-1"></a><span class="er">&gt;</span>   D <span class="ot">&lt;-</span> <span class="fu">matrix</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">5</span>, <span class="dv">5</span>, <span class="dv">1</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb20"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb20-1"><a href="data-structures.html#cb20-1" aria-hidden="true" tabindex="-1"></a>  <span class="co"># A matrix is a 2-demensional (row x column) array </span></span>
+<span id="cb20-2"><a href="data-structures.html#cb20-2" aria-hidden="true" tabindex="-1"></a>  A <span class="ot">&lt;-</span> <span class="fu">matrix</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">25</span>, <span class="dv">5</span>, <span class="dv">5</span>)</span>
+<span id="cb20-3"><a href="data-structures.html#cb20-3" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb20-4"><a href="data-structures.html#cb20-4" aria-hidden="true" tabindex="-1"></a>  B <span class="ot">&lt;-</span> <span class="fu">matrix</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">25</span>, <span class="dv">5</span>, <span class="dv">5</span>, <span class="at">byrow=</span><span class="cn">TRUE</span>) <span class="co">#if you want to fill down the row instead of across the columns</span></span>
+<span id="cb20-5"><a href="data-structures.html#cb20-5" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb20-6"><a href="data-structures.html#cb20-6" aria-hidden="true" tabindex="-1"></a>  C <span class="ot">&lt;-</span> <span class="fu">matrix</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">5</span>, <span class="dv">1</span>, <span class="dv">5</span>)</span>
+<span id="cb20-7"><a href="data-structures.html#cb20-7" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb20-8"><a href="data-structures.html#cb20-8" aria-hidden="true" tabindex="-1"></a>  D <span class="ot">&lt;-</span> <span class="fu">matrix</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">5</span>, <span class="dv">5</span>, <span class="dv">1</span>)</span></code></pre></div>
 <p>Matrices are convenient because we can do linear algebra with them:</p>
-<div class="sourceCode" id="cb21"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb21-1"><a href="data-structures.html#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="sc">&gt;</span>   <span class="co"># Element-wise operators </span></span>
-<span id="cb21-2"><a href="data-structures.html#cb21-2" aria-hidden="true" tabindex="-1"></a><span class="er">&gt;</span>   A <span class="sc">+</span> B</span>
-<span id="cb21-3"><a href="data-structures.html#cb21-3" aria-hidden="true" tabindex="-1"></a><span class="sc">&gt;</span>   A <span class="sc">-</span> B</span>
-<span id="cb21-4"><a href="data-structures.html#cb21-4" aria-hidden="true" tabindex="-1"></a><span class="sc">&gt;</span>   A <span class="sc">*</span> B</span>
-<span id="cb21-5"><a href="data-structures.html#cb21-5" aria-hidden="true" tabindex="-1"></a><span class="sc">&gt;</span>   A <span class="sc">/</span> B</span>
-<span id="cb21-6"><a href="data-structures.html#cb21-6" aria-hidden="true" tabindex="-1"></a><span class="sc">&gt;</span>   </span>
-<span id="cb21-7"><a href="data-structures.html#cb21-7" aria-hidden="true" tabindex="-1"></a><span class="er">&gt;</span>   <span class="co"># Matrix Multiplication</span></span>
-<span id="cb21-8"><a href="data-structures.html#cb21-8" aria-hidden="true" tabindex="-1"></a><span class="er">&gt;</span>   C <span class="sc">%*%</span> D</span>
-<span id="cb21-9"><a href="data-structures.html#cb21-9" aria-hidden="true" tabindex="-1"></a><span class="sc">&gt;</span>   </span>
-<span id="cb21-10"><a href="data-structures.html#cb21-10" aria-hidden="true" tabindex="-1"></a><span class="er">&gt;</span>   <span class="co"># Transpose </span></span>
-<span id="cb21-11"><a href="data-structures.html#cb21-11" aria-hidden="true" tabindex="-1"></a><span class="er">&gt;</span>   C</span>
-<span id="cb21-12"><a href="data-structures.html#cb21-12" aria-hidden="true" tabindex="-1"></a><span class="sc">&gt;</span>   <span class="fu">t</span>(C)</span></code></pre></div>
+<div class="sourceCode" id="cb21"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb21-1"><a href="data-structures.html#cb21-1" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Element-wise operators </span></span>
+<span id="cb21-2"><a href="data-structures.html#cb21-2" aria-hidden="true" tabindex="-1"></a>  A <span class="sc">+</span> B</span>
+<span id="cb21-3"><a href="data-structures.html#cb21-3" aria-hidden="true" tabindex="-1"></a>  A <span class="sc">-</span> B</span>
+<span id="cb21-4"><a href="data-structures.html#cb21-4" aria-hidden="true" tabindex="-1"></a>  A <span class="sc">*</span> B</span>
+<span id="cb21-5"><a href="data-structures.html#cb21-5" aria-hidden="true" tabindex="-1"></a>  A <span class="sc">/</span> B</span>
+<span id="cb21-6"><a href="data-structures.html#cb21-6" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb21-7"><a href="data-structures.html#cb21-7" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Matrix Multiplication</span></span>
+<span id="cb21-8"><a href="data-structures.html#cb21-8" aria-hidden="true" tabindex="-1"></a>  C <span class="sc">%*%</span> D</span>
+<span id="cb21-9"><a href="data-structures.html#cb21-9" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb21-10"><a href="data-structures.html#cb21-10" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Transpose </span></span>
+<span id="cb21-11"><a href="data-structures.html#cb21-11" aria-hidden="true" tabindex="-1"></a>  C</span>
+<span id="cb21-12"><a href="data-structures.html#cb21-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">t</span>(C)</span></code></pre></div>
 <p>We can also name the matrix columns and and rows:</p>
-<div class="sourceCode" id="cb22"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb22-1"><a href="data-structures.html#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="sc">&gt;</span>   <span class="fu">colnames</span>(A) <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;Column_1&quot;</span>, <span class="st">&quot;Column_2&quot;</span>, <span class="st">&quot;Column_3&quot;</span>, <span class="st">&quot;Column_4&quot;</span>, <span class="st">&quot;Column_5&quot;</span>)</span>
-<span id="cb22-2"><a href="data-structures.html#cb22-2" aria-hidden="true" tabindex="-1"></a><span class="sc">&gt;</span>   A</span>
-<span id="cb22-3"><a href="data-structures.html#cb22-3" aria-hidden="true" tabindex="-1"></a><span class="sc">&gt;</span>   </span>
-<span id="cb22-4"><a href="data-structures.html#cb22-4" aria-hidden="true" tabindex="-1"></a><span class="er">&gt;</span>   <span class="fu">colnames</span>(A)[<span class="dv">4</span>] <span class="ot">&lt;-</span> <span class="st">&quot;Changed_It&quot;</span></span>
-<span id="cb22-5"><a href="data-structures.html#cb22-5" aria-hidden="true" tabindex="-1"></a><span class="sc">&gt;</span>   A</span>
-<span id="cb22-6"><a href="data-structures.html#cb22-6" aria-hidden="true" tabindex="-1"></a><span class="sc">&gt;</span>   </span>
-<span id="cb22-7"><a href="data-structures.html#cb22-7" aria-hidden="true" tabindex="-1"></a><span class="er">&gt;</span>   <span class="fu">rownames</span>(A)  <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;Row_1&quot;</span>, <span class="st">&quot;Row_2&quot;</span>, <span class="st">&quot;Row_3&quot;</span>, <span class="st">&quot;Row_4&quot;</span>, <span class="st">&quot;Row_5&quot;</span>)</span>
-<span id="cb22-8"><a href="data-structures.html#cb22-8" aria-hidden="true" tabindex="-1"></a><span class="sc">&gt;</span>   A</span></code></pre></div>
+<div class="sourceCode" id="cb22"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb22-1"><a href="data-structures.html#cb22-1" aria-hidden="true" tabindex="-1"></a>  <span class="fu">colnames</span>(A) <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;Column_1&quot;</span>, <span class="st">&quot;Column_2&quot;</span>, <span class="st">&quot;Column_3&quot;</span>, <span class="st">&quot;Column_4&quot;</span>, <span class="st">&quot;Column_5&quot;</span>)</span>
+<span id="cb22-2"><a href="data-structures.html#cb22-2" aria-hidden="true" tabindex="-1"></a>  A</span>
+<span id="cb22-3"><a href="data-structures.html#cb22-3" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb22-4"><a href="data-structures.html#cb22-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">colnames</span>(A)[<span class="dv">4</span>] <span class="ot">&lt;-</span> <span class="st">&quot;Changed_It&quot;</span></span>
+<span id="cb22-5"><a href="data-structures.html#cb22-5" aria-hidden="true" tabindex="-1"></a>  A</span>
+<span id="cb22-6"><a href="data-structures.html#cb22-6" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb22-7"><a href="data-structures.html#cb22-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">rownames</span>(A)  <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;Row_1&quot;</span>, <span class="st">&quot;Row_2&quot;</span>, <span class="st">&quot;Row_3&quot;</span>, <span class="st">&quot;Row_4&quot;</span>, <span class="st">&quot;Row_5&quot;</span>)</span>
+<span id="cb22-8"><a href="data-structures.html#cb22-8" aria-hidden="true" tabindex="-1"></a>  A</span></code></pre></div>
 <p>We can also use some helpful functions for matrices:</p>
-<div class="sourceCode" id="cb23"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb23-1"><a href="data-structures.html#cb23-1" aria-hidden="true" tabindex="-1"></a><span class="sc">&gt;</span>   <span class="fu">colSums</span>(A)</span>
-<span id="cb23-2"><a href="data-structures.html#cb23-2" aria-hidden="true" tabindex="-1"></a><span class="sc">&gt;</span>   <span class="fu">rowSums</span>(A)</span>
-<span id="cb23-3"><a href="data-structures.html#cb23-3" aria-hidden="true" tabindex="-1"></a><span class="sc">&gt;</span>   <span class="fu">sum</span>(A)</span>
-<span id="cb23-4"><a href="data-structures.html#cb23-4" aria-hidden="true" tabindex="-1"></a><span class="sc">&gt;</span>   <span class="fu">dim</span>(A)</span>
-<span id="cb23-5"><a href="data-structures.html#cb23-5" aria-hidden="true" tabindex="-1"></a><span class="sc">&gt;</span>   <span class="fu">length</span>(A)</span></code></pre></div>
+<div class="sourceCode" id="cb23"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb23-1"><a href="data-structures.html#cb23-1" aria-hidden="true" tabindex="-1"></a>  <span class="fu">colSums</span>(A)</span>
+<span id="cb23-2"><a href="data-structures.html#cb23-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">rowSums</span>(A)</span>
+<span id="cb23-3"><a href="data-structures.html#cb23-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">sum</span>(A)</span>
+<span id="cb23-4"><a href="data-structures.html#cb23-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">dim</span>(A)</span>
+<span id="cb23-5"><a href="data-structures.html#cb23-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">length</span>(A)</span></code></pre></div>
 <p>And we can extract information from a matrix using similar index notation (row, column):</p>
-<div class="sourceCode" id="cb24"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb24-1"><a href="data-structures.html#cb24-1" aria-hidden="true" tabindex="-1"></a><span class="sc">&gt;</span>   A[<span class="dv">2</span>,<span class="dv">1</span>] <span class="co"># Single element </span></span>
-<span id="cb24-2"><a href="data-structures.html#cb24-2" aria-hidden="true" tabindex="-1"></a><span class="sc">&gt;</span>   </span>
-<span id="cb24-3"><a href="data-structures.html#cb24-3" aria-hidden="true" tabindex="-1"></a><span class="er">&gt;</span>   A[,<span class="dv">1</span>] <span class="co"># All rows in the first column</span></span>
-<span id="cb24-4"><a href="data-structures.html#cb24-4" aria-hidden="true" tabindex="-1"></a><span class="sc">&gt;</span>   A[,<span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">2</span>)] <span class="co"># All rows for columns 1 and 2</span></span>
-<span id="cb24-5"><a href="data-structures.html#cb24-5" aria-hidden="true" tabindex="-1"></a><span class="sc">&gt;</span>   </span>
-<span id="cb24-6"><a href="data-structures.html#cb24-6" aria-hidden="true" tabindex="-1"></a><span class="er">&gt;</span>   A[<span class="dv">1</span>,] <span class="co"># All columns in the first row </span></span>
-<span id="cb24-7"><a href="data-structures.html#cb24-7" aria-hidden="true" tabindex="-1"></a><span class="sc">&gt;</span>   A[<span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">2</span>),] <span class="co"># All columns for rows 1 and 2</span></span>
-<span id="cb24-8"><a href="data-structures.html#cb24-8" aria-hidden="true" tabindex="-1"></a><span class="sc">&gt;</span>   </span>
-<span id="cb24-9"><a href="data-structures.html#cb24-9" aria-hidden="true" tabindex="-1"></a><span class="er">&gt;</span>   A[<span class="st">&quot;Row_1&quot;</span>,<span class="st">&quot;Column_2&quot;</span>]</span></code></pre></div>
+<div class="sourceCode" id="cb24"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb24-1"><a href="data-structures.html#cb24-1" aria-hidden="true" tabindex="-1"></a>  A[<span class="dv">2</span>,<span class="dv">1</span>] <span class="co"># Single element </span></span>
+<span id="cb24-2"><a href="data-structures.html#cb24-2" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb24-3"><a href="data-structures.html#cb24-3" aria-hidden="true" tabindex="-1"></a>  A[,<span class="dv">1</span>] <span class="co"># All rows in the first column</span></span>
+<span id="cb24-4"><a href="data-structures.html#cb24-4" aria-hidden="true" tabindex="-1"></a>  A[,<span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">2</span>)] <span class="co"># All rows for columns 1 and 2</span></span>
+<span id="cb24-5"><a href="data-structures.html#cb24-5" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb24-6"><a href="data-structures.html#cb24-6" aria-hidden="true" tabindex="-1"></a>  A[<span class="dv">1</span>,] <span class="co"># All columns in the first row </span></span>
+<span id="cb24-7"><a href="data-structures.html#cb24-7" aria-hidden="true" tabindex="-1"></a>  A[<span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">2</span>),] <span class="co"># All columns for rows 1 and 2</span></span>
+<span id="cb24-8"><a href="data-structures.html#cb24-8" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb24-9"><a href="data-structures.html#cb24-9" aria-hidden="true" tabindex="-1"></a>  A[<span class="st">&quot;Row_1&quot;</span>,<span class="st">&quot;Column_2&quot;</span>]</span></code></pre></div>
 </div>
 <div id="data-frames" class="section level2" number="2.5">
 <h2><span class="header-section-number">2.5</span> Data Frames</h2>
 <p>Data Frames are data displayed in a format as a table. A data frame is essentially a 2 dimensional matrix (row x column). You can think of it like an excel table or relational database table. Data Frames can have different types of data inside it, and we use the data.frame() function to create a data frame:</p>
-<div class="sourceCode" id="cb25"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb25-1"><a href="data-structures.html#cb25-1" aria-hidden="true" tabindex="-1"></a><span class="sc">&gt;</span>   <span class="co"># Create a data frame called dt1 from a set of vectors:</span></span>
-<span id="cb25-2"><a href="data-structures.html#cb25-2" aria-hidden="true" tabindex="-1"></a><span class="er">&gt;</span>   dt1 <span class="ot">&lt;-</span> <span class="fu">data.frame</span> (</span>
-<span id="cb25-3"><a href="data-structures.html#cb25-3" aria-hidden="true" tabindex="-1"></a><span class="sc">+</span>     <span class="at">names =</span>  <span class="fu">c</span>(<span class="st">&quot;Simmons&quot;</span>, <span class="st">&quot;Race&quot;</span>, <span class="st">&quot;Healey&quot;</span>, <span class="st">&quot;LaBarr&quot;</span>, <span class="st">&quot;Villanes&quot;</span>),</span>
-<span id="cb25-4"><a href="data-structures.html#cb25-4" aria-hidden="true" tabindex="-1"></a><span class="sc">+</span>     <span class="at">class =</span> <span class="fu">c</span>(<span class="st">&quot;Time Series&quot;</span>, <span class="st">&quot;Linear Algebra&quot;</span>, <span class="st">&quot;Visualization&quot;</span>, <span class="st">&quot;Finance&quot;</span>, <span class="st">&quot;Programming&quot;</span>),</span>
-<span id="cb25-5"><a href="data-structures.html#cb25-5" aria-hidden="true" tabindex="-1"></a><span class="sc">+</span>     <span class="at">female =</span> <span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">1</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">1</span>)</span>
-<span id="cb25-6"><a href="data-structures.html#cb25-6" aria-hidden="true" tabindex="-1"></a><span class="sc">+</span>   )</span></code></pre></div>
+<div class="sourceCode" id="cb25"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb25-1"><a href="data-structures.html#cb25-1" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Create a data frame called dt1 from a set of vectors:</span></span>
+<span id="cb25-2"><a href="data-structures.html#cb25-2" aria-hidden="true" tabindex="-1"></a>  dt1 <span class="ot">&lt;-</span> <span class="fu">data.frame</span> (</span>
+<span id="cb25-3"><a href="data-structures.html#cb25-3" aria-hidden="true" tabindex="-1"></a>    <span class="at">names =</span>  <span class="fu">c</span>(<span class="st">&quot;Simmons&quot;</span>, <span class="st">&quot;Race&quot;</span>, <span class="st">&quot;Healey&quot;</span>, <span class="st">&quot;LaBarr&quot;</span>, <span class="st">&quot;Villanes&quot;</span>),</span>
+<span id="cb25-4"><a href="data-structures.html#cb25-4" aria-hidden="true" tabindex="-1"></a>    <span class="at">class =</span> <span class="fu">c</span>(<span class="st">&quot;Time Series&quot;</span>, <span class="st">&quot;Linear Algebra&quot;</span>, <span class="st">&quot;Visualization&quot;</span>, <span class="st">&quot;Finance&quot;</span>, <span class="st">&quot;Programming&quot;</span>),</span>
+<span id="cb25-5"><a href="data-structures.html#cb25-5" aria-hidden="true" tabindex="-1"></a>    <span class="at">female =</span> <span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">1</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">1</span>)</span>
+<span id="cb25-6"><a href="data-structures.html#cb25-6" aria-hidden="true" tabindex="-1"></a>  )</span></code></pre></div>
 <p>To view the data frame:</p>
-<div class="sourceCode" id="cb26"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb26-1"><a href="data-structures.html#cb26-1" aria-hidden="true" tabindex="-1"></a><span class="sc">&gt;</span>   <span class="co"># View the table</span></span>
-<span id="cb26-2"><a href="data-structures.html#cb26-2" aria-hidden="true" tabindex="-1"></a><span class="er">&gt;</span>   <span class="fu">View</span>(dt1)</span>
-<span id="cb26-3"><a href="data-structures.html#cb26-3" aria-hidden="true" tabindex="-1"></a><span class="sc">&gt;</span>   </span>
-<span id="cb26-4"><a href="data-structures.html#cb26-4" aria-hidden="true" tabindex="-1"></a><span class="er">&gt;</span>   <span class="co"># Head of the table</span></span>
-<span id="cb26-5"><a href="data-structures.html#cb26-5" aria-hidden="true" tabindex="-1"></a><span class="er">&gt;</span>   <span class="fu">head</span>(dt1, <span class="dv">3</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb26"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb26-1"><a href="data-structures.html#cb26-1" aria-hidden="true" tabindex="-1"></a>  <span class="co"># View the table</span></span>
+<span id="cb26-2"><a href="data-structures.html#cb26-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">View</span>(dt1)</span>
+<span id="cb26-3"><a href="data-structures.html#cb26-3" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb26-4"><a href="data-structures.html#cb26-4" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Head of the table</span></span>
+<span id="cb26-5"><a href="data-structures.html#cb26-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">head</span>(dt1, <span class="dv">3</span>)</span></code></pre></div>
 <p>To change the column names:</p>
-<div class="sourceCode" id="cb27"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb27-1"><a href="data-structures.html#cb27-1" aria-hidden="true" tabindex="-1"></a><span class="sc">&gt;</span>   <span class="fu">colnames</span>(dt1)</span>
-<span id="cb27-2"><a href="data-structures.html#cb27-2" aria-hidden="true" tabindex="-1"></a><span class="sc">&gt;</span>   <span class="fu">colnames</span>(dt1) <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;Last_Name&quot;</span>, <span class="st">&quot;Class_Taught&quot;</span>, <span class="st">&quot;Female?&quot;</span>)</span>
-<span id="cb27-3"><a href="data-structures.html#cb27-3" aria-hidden="true" tabindex="-1"></a><span class="sc">&gt;</span>   <span class="fu">colnames</span>(dt1)</span>
-<span id="cb27-4"><a href="data-structures.html#cb27-4" aria-hidden="true" tabindex="-1"></a><span class="sc">&gt;</span>   <span class="fu">colnames</span>(dt1)[<span class="dv">2</span>] <span class="ot">&lt;-</span> <span class="st">&quot;Classes_Taught&quot;</span></span>
-<span id="cb27-5"><a href="data-structures.html#cb27-5" aria-hidden="true" tabindex="-1"></a><span class="sc">&gt;</span>   <span class="fu">colnames</span>(dt1)</span></code></pre></div>
+<div class="sourceCode" id="cb27"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb27-1"><a href="data-structures.html#cb27-1" aria-hidden="true" tabindex="-1"></a>  <span class="fu">colnames</span>(dt1)</span>
+<span id="cb27-2"><a href="data-structures.html#cb27-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">colnames</span>(dt1) <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;Last_Name&quot;</span>, <span class="st">&quot;Class_Taught&quot;</span>, <span class="st">&quot;Female?&quot;</span>)</span>
+<span id="cb27-3"><a href="data-structures.html#cb27-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">colnames</span>(dt1)</span>
+<span id="cb27-4"><a href="data-structures.html#cb27-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">colnames</span>(dt1)[<span class="dv">2</span>] <span class="ot">&lt;-</span> <span class="st">&quot;Classes_Taught&quot;</span></span>
+<span id="cb27-5"><a href="data-structures.html#cb27-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">colnames</span>(dt1)</span></code></pre></div>
 <p>To reference a column by name:</p>
-<div class="sourceCode" id="cb28"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb28-1"><a href="data-structures.html#cb28-1" aria-hidden="true" tabindex="-1"></a><span class="sc">&gt;</span>   dt1<span class="sc">$</span>Last_Name</span>
-<span id="cb28-2"><a href="data-structures.html#cb28-2" aria-hidden="true" tabindex="-1"></a><span class="sc">&gt;</span>   dt1<span class="sc">$</span>Classes_Taught</span></code></pre></div>
+<div class="sourceCode" id="cb28"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb28-1"><a href="data-structures.html#cb28-1" aria-hidden="true" tabindex="-1"></a>  dt1<span class="sc">$</span>Last_Name</span>
+<span id="cb28-2"><a href="data-structures.html#cb28-2" aria-hidden="true" tabindex="-1"></a>  dt1<span class="sc">$</span>Classes_Taught</span></code></pre></div>
 <p>Data frame indexes - similar to vectors and arrays. We can perform the following actions:</p>
-<div class="sourceCode" id="cb29"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb29-1"><a href="data-structures.html#cb29-1" aria-hidden="true" tabindex="-1"></a><span class="sc">&gt;</span>   <span class="co"># Retrieve a row</span></span>
-<span id="cb29-2"><a href="data-structures.html#cb29-2" aria-hidden="true" tabindex="-1"></a><span class="er">&gt;</span>   <span class="co"># leaving the row or column blank means &quot;everything&quot;</span></span>
-<span id="cb29-3"><a href="data-structures.html#cb29-3" aria-hidden="true" tabindex="-1"></a><span class="er">&gt;</span>   <span class="co"># the negative operator &quot;-&quot; means &quot;everything but&quot;</span></span>
-<span id="cb29-4"><a href="data-structures.html#cb29-4" aria-hidden="true" tabindex="-1"></a><span class="er">&gt;</span>   dt1[<span class="dv">1</span>,]</span>
-<span id="cb29-5"><a href="data-structures.html#cb29-5" aria-hidden="true" tabindex="-1"></a><span class="sc">&gt;</span>   dt1[<span class="dv">2</span><span class="sc">:</span><span class="dv">5</span>,]</span>
-<span id="cb29-6"><a href="data-structures.html#cb29-6" aria-hidden="true" tabindex="-1"></a><span class="sc">&gt;</span>   dt1[<span class="sc">-</span><span class="dv">1</span>,]</span>
-<span id="cb29-7"><a href="data-structures.html#cb29-7" aria-hidden="true" tabindex="-1"></a><span class="sc">&gt;</span>   </span>
-<span id="cb29-8"><a href="data-structures.html#cb29-8" aria-hidden="true" tabindex="-1"></a><span class="er">&gt;</span>   <span class="co"># Retrieve a column</span></span>
-<span id="cb29-9"><a href="data-structures.html#cb29-9" aria-hidden="true" tabindex="-1"></a><span class="er">&gt;</span>   dt1[,<span class="dv">1</span>]</span>
-<span id="cb29-10"><a href="data-structures.html#cb29-10" aria-hidden="true" tabindex="-1"></a><span class="sc">&gt;</span>   dt1[,<span class="sc">-</span><span class="dv">3</span>]</span>
-<span id="cb29-11"><a href="data-structures.html#cb29-11" aria-hidden="true" tabindex="-1"></a><span class="sc">&gt;</span>   dt1[,<span class="fu">c</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">2</span>)]</span>
-<span id="cb29-12"><a href="data-structures.html#cb29-12" aria-hidden="true" tabindex="-1"></a><span class="sc">&gt;</span>   dt1[,<span class="st">&quot;Last_Name&quot;</span>]</span>
-<span id="cb29-13"><a href="data-structures.html#cb29-13" aria-hidden="true" tabindex="-1"></a><span class="sc">&gt;</span>   dt1[,<span class="fu">c</span>(<span class="st">&quot;Last_Name&quot;</span>,<span class="st">&quot;Female?&quot;</span>)]</span>
-<span id="cb29-14"><a href="data-structures.html#cb29-14" aria-hidden="true" tabindex="-1"></a><span class="sc">&gt;</span>   </span>
-<span id="cb29-15"><a href="data-structures.html#cb29-15" aria-hidden="true" tabindex="-1"></a><span class="er">&gt;</span>   <span class="co"># Retrieve an element</span></span>
-<span id="cb29-16"><a href="data-structures.html#cb29-16" aria-hidden="true" tabindex="-1"></a><span class="er">&gt;</span>   dt1[<span class="dv">6</span>,<span class="dv">2</span>]</span>
-<span id="cb29-17"><a href="data-structures.html#cb29-17" aria-hidden="true" tabindex="-1"></a><span class="sc">&gt;</span>   </span>
-<span id="cb29-18"><a href="data-structures.html#cb29-18" aria-hidden="true" tabindex="-1"></a><span class="er">&gt;</span>   <span class="co"># Reassign an element </span></span>
-<span id="cb29-19"><a href="data-structures.html#cb29-19" aria-hidden="true" tabindex="-1"></a><span class="er">&gt;</span>   dt1[<span class="dv">5</span>,<span class="dv">2</span>] <span class="ot">&lt;-</span> <span class="st">&quot;R Programming&quot;</span></span>
-<span id="cb29-20"><a href="data-structures.html#cb29-20" aria-hidden="true" tabindex="-1"></a><span class="sc">&gt;</span>   dt1[<span class="dv">5</span>,]</span>
-<span id="cb29-21"><a href="data-structures.html#cb29-21" aria-hidden="true" tabindex="-1"></a><span class="sc">&gt;</span>   </span>
-<span id="cb29-22"><a href="data-structures.html#cb29-22" aria-hidden="true" tabindex="-1"></a><span class="er">&gt;</span>   <span class="co">#Find elements that meet a condition</span></span>
-<span id="cb29-23"><a href="data-structures.html#cb29-23" aria-hidden="true" tabindex="-1"></a><span class="er">&gt;</span>   dt1<span class="sc">$</span><span class="st">`</span><span class="at">Female?</span><span class="st">`</span><span class="sc">==</span><span class="dv">1</span></span>
-<span id="cb29-24"><a href="data-structures.html#cb29-24" aria-hidden="true" tabindex="-1"></a><span class="sc">&gt;</span>   dt1<span class="sc">$</span>Last_Name<span class="sc">==</span><span class="st">&#39;Race&#39;</span></span>
-<span id="cb29-25"><a href="data-structures.html#cb29-25" aria-hidden="true" tabindex="-1"></a><span class="sc">&gt;</span>   </span>
-<span id="cb29-26"><a href="data-structures.html#cb29-26" aria-hidden="true" tabindex="-1"></a><span class="er">&gt;</span>   <span class="co"># Filter by an value </span></span>
-<span id="cb29-27"><a href="data-structures.html#cb29-27" aria-hidden="true" tabindex="-1"></a><span class="er">&gt;</span>   dt1[dt1<span class="sc">$</span><span class="st">`</span><span class="at">Female?</span><span class="st">`</span><span class="sc">==</span><span class="dv">1</span>,]</span>
-<span id="cb29-28"><a href="data-structures.html#cb29-28" aria-hidden="true" tabindex="-1"></a><span class="sc">&gt;</span>   dt1[dt1<span class="sc">$</span>Last_Name<span class="sc">==</span><span class="st">&#39;Race&#39;</span>,]</span>
-<span id="cb29-29"><a href="data-structures.html#cb29-29" aria-hidden="true" tabindex="-1"></a><span class="sc">&gt;</span>   </span>
-<span id="cb29-30"><a href="data-structures.html#cb29-30" aria-hidden="true" tabindex="-1"></a><span class="er">&gt;</span>   <span class="co"># Add a new row - rbind (row-bind) function. The cbind function is its column version.</span></span>
-<span id="cb29-31"><a href="data-structures.html#cb29-31" aria-hidden="true" tabindex="-1"></a><span class="er">&gt;</span>   dt1 <span class="ot">&lt;-</span> <span class="fu">rbind</span>(dt1, <span class="fu">c</span>(<span class="st">&quot;Larsen&quot;</span>, <span class="st">&quot;Teaching Assistant&quot;</span>, <span class="dv">0</span>))</span>
-<span id="cb29-32"><a href="data-structures.html#cb29-32" aria-hidden="true" tabindex="-1"></a><span class="sc">&gt;</span>   dt1</span>
-<span id="cb29-33"><a href="data-structures.html#cb29-33" aria-hidden="true" tabindex="-1"></a><span class="sc">&gt;</span>   </span>
-<span id="cb29-34"><a href="data-structures.html#cb29-34" aria-hidden="true" tabindex="-1"></a><span class="er">&gt;</span>   <span class="co"># Add a new column</span></span>
-<span id="cb29-35"><a href="data-structures.html#cb29-35" aria-hidden="true" tabindex="-1"></a><span class="er">&gt;</span>   dt1<span class="sc">$</span>First_Name <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;Susan&quot;</span>, <span class="st">&quot;Shaina&quot;</span>, <span class="st">&quot;Christopher&quot;</span>, <span class="st">&quot;Aric&quot;</span>, <span class="st">&quot;Andrea&quot;</span>, <span class="st">&quot;Nicholas&quot;</span>)</span>
-<span id="cb29-36"><a href="data-structures.html#cb29-36" aria-hidden="true" tabindex="-1"></a><span class="sc">&gt;</span>   </span>
-<span id="cb29-37"><a href="data-structures.html#cb29-37" aria-hidden="true" tabindex="-1"></a><span class="er">&gt;</span>   <span class="co"># Change the order of columns </span></span>
-<span id="cb29-38"><a href="data-structures.html#cb29-38" aria-hidden="true" tabindex="-1"></a><span class="er">&gt;</span>   dt1 <span class="ot">&lt;-</span> dt1[,<span class="fu">c</span>(<span class="dv">4</span>,<span class="dv">1</span><span class="sc">:</span><span class="dv">3</span>)]</span>
-<span id="cb29-39"><a href="data-structures.html#cb29-39" aria-hidden="true" tabindex="-1"></a><span class="sc">&gt;</span>   </span>
-<span id="cb29-40"><a href="data-structures.html#cb29-40" aria-hidden="true" tabindex="-1"></a><span class="er">&gt;</span>   <span class="co"># Make columns based off other columns</span></span>
-<span id="cb29-41"><a href="data-structures.html#cb29-41" aria-hidden="true" tabindex="-1"></a><span class="er">&gt;</span>   dt1<span class="sc">$</span>First_Name_Length <span class="ot">&lt;-</span> <span class="fu">nchar</span>(dt1<span class="sc">$</span>First_Name)</span>
-<span id="cb29-42"><a href="data-structures.html#cb29-42" aria-hidden="true" tabindex="-1"></a><span class="sc">&gt;</span>   dt1<span class="sc">$</span>Last_Name_Length <span class="ot">&lt;-</span> <span class="fu">nchar</span>(dt1<span class="sc">$</span>Last_Name)</span>
-<span id="cb29-43"><a href="data-structures.html#cb29-43" aria-hidden="true" tabindex="-1"></a><span class="sc">&gt;</span>   dt1<span class="sc">$</span>Total_Name_Length <span class="ot">&lt;-</span> dt1<span class="sc">$</span>First_Name_Length <span class="sc">+</span> dt1<span class="sc">$</span>Last_Name_Length <span class="sc">+</span> <span class="dv">1</span></span>
-<span id="cb29-44"><a href="data-structures.html#cb29-44" aria-hidden="true" tabindex="-1"></a><span class="sc">&gt;</span>   dt1<span class="sc">$</span>Full_Name <span class="ot">&lt;-</span> <span class="fu">paste</span>(dt1<span class="sc">$</span>First_Name, dt1<span class="sc">$</span>Last_Name, <span class="at">sep=</span><span class="st">&quot; &quot;</span>)</span>
-<span id="cb29-45"><a href="data-structures.html#cb29-45" aria-hidden="true" tabindex="-1"></a><span class="sc">&gt;</span>   dt1 </span>
-<span id="cb29-46"><a href="data-structures.html#cb29-46" aria-hidden="true" tabindex="-1"></a><span class="sc">&gt;</span>   </span>
-<span id="cb29-47"><a href="data-structures.html#cb29-47" aria-hidden="true" tabindex="-1"></a><span class="er">&gt;</span>   <span class="co"># Remove some intermediate step columns</span></span>
-<span id="cb29-48"><a href="data-structures.html#cb29-48" aria-hidden="true" tabindex="-1"></a><span class="er">&gt;</span>   dt1 <span class="ot">&lt;-</span> dt1[,<span class="sc">-</span><span class="fu">c</span>(<span class="dv">5</span>,<span class="dv">6</span>)]</span></code></pre></div>
+<div class="sourceCode" id="cb29"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb29-1"><a href="data-structures.html#cb29-1" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Retrieve a row</span></span>
+<span id="cb29-2"><a href="data-structures.html#cb29-2" aria-hidden="true" tabindex="-1"></a>  <span class="co"># leaving the row or column blank means &quot;everything&quot;</span></span>
+<span id="cb29-3"><a href="data-structures.html#cb29-3" aria-hidden="true" tabindex="-1"></a>  <span class="co"># the negative operator &quot;-&quot; means &quot;everything but&quot;</span></span>
+<span id="cb29-4"><a href="data-structures.html#cb29-4" aria-hidden="true" tabindex="-1"></a>  dt1[<span class="dv">1</span>,]</span>
+<span id="cb29-5"><a href="data-structures.html#cb29-5" aria-hidden="true" tabindex="-1"></a>  dt1[<span class="dv">2</span><span class="sc">:</span><span class="dv">5</span>,]</span>
+<span id="cb29-6"><a href="data-structures.html#cb29-6" aria-hidden="true" tabindex="-1"></a>  dt1[<span class="sc">-</span><span class="dv">1</span>,]</span>
+<span id="cb29-7"><a href="data-structures.html#cb29-7" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb29-8"><a href="data-structures.html#cb29-8" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Retrieve a column</span></span>
+<span id="cb29-9"><a href="data-structures.html#cb29-9" aria-hidden="true" tabindex="-1"></a>  dt1[,<span class="dv">1</span>]</span>
+<span id="cb29-10"><a href="data-structures.html#cb29-10" aria-hidden="true" tabindex="-1"></a>  dt1[,<span class="sc">-</span><span class="dv">3</span>]</span>
+<span id="cb29-11"><a href="data-structures.html#cb29-11" aria-hidden="true" tabindex="-1"></a>  dt1[,<span class="fu">c</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">2</span>)]</span>
+<span id="cb29-12"><a href="data-structures.html#cb29-12" aria-hidden="true" tabindex="-1"></a>  dt1[,<span class="st">&quot;Last_Name&quot;</span>]</span>
+<span id="cb29-13"><a href="data-structures.html#cb29-13" aria-hidden="true" tabindex="-1"></a>  dt1[,<span class="fu">c</span>(<span class="st">&quot;Last_Name&quot;</span>,<span class="st">&quot;Female?&quot;</span>)]</span>
+<span id="cb29-14"><a href="data-structures.html#cb29-14" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb29-15"><a href="data-structures.html#cb29-15" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Retrieve an element</span></span>
+<span id="cb29-16"><a href="data-structures.html#cb29-16" aria-hidden="true" tabindex="-1"></a>  dt1[<span class="dv">6</span>,<span class="dv">2</span>]</span>
+<span id="cb29-17"><a href="data-structures.html#cb29-17" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb29-18"><a href="data-structures.html#cb29-18" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Reassign an element </span></span>
+<span id="cb29-19"><a href="data-structures.html#cb29-19" aria-hidden="true" tabindex="-1"></a>  dt1[<span class="dv">5</span>,<span class="dv">2</span>] <span class="ot">&lt;-</span> <span class="st">&quot;R Programming&quot;</span></span>
+<span id="cb29-20"><a href="data-structures.html#cb29-20" aria-hidden="true" tabindex="-1"></a>  dt1[<span class="dv">5</span>,]</span>
+<span id="cb29-21"><a href="data-structures.html#cb29-21" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb29-22"><a href="data-structures.html#cb29-22" aria-hidden="true" tabindex="-1"></a>  <span class="co">#Find elements that meet a condition</span></span>
+<span id="cb29-23"><a href="data-structures.html#cb29-23" aria-hidden="true" tabindex="-1"></a>  dt1<span class="sc">$</span><span class="st">`</span><span class="at">Female?</span><span class="st">`</span><span class="sc">==</span><span class="dv">1</span></span>
+<span id="cb29-24"><a href="data-structures.html#cb29-24" aria-hidden="true" tabindex="-1"></a>  dt1<span class="sc">$</span>Last_Name<span class="sc">==</span><span class="st">&#39;Race&#39;</span></span>
+<span id="cb29-25"><a href="data-structures.html#cb29-25" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb29-26"><a href="data-structures.html#cb29-26" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Filter by an value </span></span>
+<span id="cb29-27"><a href="data-structures.html#cb29-27" aria-hidden="true" tabindex="-1"></a>  dt1[dt1<span class="sc">$</span><span class="st">`</span><span class="at">Female?</span><span class="st">`</span><span class="sc">==</span><span class="dv">1</span>,]</span>
+<span id="cb29-28"><a href="data-structures.html#cb29-28" aria-hidden="true" tabindex="-1"></a>  dt1[dt1<span class="sc">$</span>Last_Name<span class="sc">==</span><span class="st">&#39;Race&#39;</span>,]</span>
+<span id="cb29-29"><a href="data-structures.html#cb29-29" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb29-30"><a href="data-structures.html#cb29-30" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Add a new row - rbind (row-bind) function. The cbind function is its column version.</span></span>
+<span id="cb29-31"><a href="data-structures.html#cb29-31" aria-hidden="true" tabindex="-1"></a>  dt1 <span class="ot">&lt;-</span> <span class="fu">rbind</span>(dt1, <span class="fu">c</span>(<span class="st">&quot;Larsen&quot;</span>, <span class="st">&quot;Teaching Assistant&quot;</span>, <span class="dv">0</span>))</span>
+<span id="cb29-32"><a href="data-structures.html#cb29-32" aria-hidden="true" tabindex="-1"></a>  dt1</span>
+<span id="cb29-33"><a href="data-structures.html#cb29-33" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb29-34"><a href="data-structures.html#cb29-34" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Add a new column</span></span>
+<span id="cb29-35"><a href="data-structures.html#cb29-35" aria-hidden="true" tabindex="-1"></a>  dt1<span class="sc">$</span>First_Name <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;Susan&quot;</span>, <span class="st">&quot;Shaina&quot;</span>, <span class="st">&quot;Christopher&quot;</span>, <span class="st">&quot;Aric&quot;</span>, <span class="st">&quot;Andrea&quot;</span>, <span class="st">&quot;Nicholas&quot;</span>)</span>
+<span id="cb29-36"><a href="data-structures.html#cb29-36" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb29-37"><a href="data-structures.html#cb29-37" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Change the order of columns </span></span>
+<span id="cb29-38"><a href="data-structures.html#cb29-38" aria-hidden="true" tabindex="-1"></a>  dt1 <span class="ot">&lt;-</span> dt1[,<span class="fu">c</span>(<span class="dv">4</span>,<span class="dv">1</span><span class="sc">:</span><span class="dv">3</span>)]</span>
+<span id="cb29-39"><a href="data-structures.html#cb29-39" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb29-40"><a href="data-structures.html#cb29-40" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Make columns based off other columns</span></span>
+<span id="cb29-41"><a href="data-structures.html#cb29-41" aria-hidden="true" tabindex="-1"></a>  dt1<span class="sc">$</span>First_Name_Length <span class="ot">&lt;-</span> <span class="fu">nchar</span>(dt1<span class="sc">$</span>First_Name)</span>
+<span id="cb29-42"><a href="data-structures.html#cb29-42" aria-hidden="true" tabindex="-1"></a>  dt1<span class="sc">$</span>Last_Name_Length <span class="ot">&lt;-</span> <span class="fu">nchar</span>(dt1<span class="sc">$</span>Last_Name)</span>
+<span id="cb29-43"><a href="data-structures.html#cb29-43" aria-hidden="true" tabindex="-1"></a>  dt1<span class="sc">$</span>Total_Name_Length <span class="ot">&lt;-</span> dt1<span class="sc">$</span>First_Name_Length <span class="sc">+</span> dt1<span class="sc">$</span>Last_Name_Length <span class="sc">+</span> <span class="dv">1</span></span>
+<span id="cb29-44"><a href="data-structures.html#cb29-44" aria-hidden="true" tabindex="-1"></a>  dt1<span class="sc">$</span>Full_Name <span class="ot">&lt;-</span> <span class="fu">paste</span>(dt1<span class="sc">$</span>First_Name, dt1<span class="sc">$</span>Last_Name, <span class="at">sep=</span><span class="st">&quot; &quot;</span>)</span>
+<span id="cb29-45"><a href="data-structures.html#cb29-45" aria-hidden="true" tabindex="-1"></a>  dt1 </span>
+<span id="cb29-46"><a href="data-structures.html#cb29-46" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb29-47"><a href="data-structures.html#cb29-47" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Remove some intermediate step columns</span></span>
+<span id="cb29-48"><a href="data-structures.html#cb29-48" aria-hidden="true" tabindex="-1"></a>  dt1 <span class="ot">&lt;-</span> dt1[,<span class="sc">-</span><span class="fu">c</span>(<span class="dv">5</span>,<span class="dv">6</span>)]</span></code></pre></div>
 </div>
 <div id="working-with-different-types" class="section level2" number="2.6">
 <h2><span class="header-section-number">2.6</span> Working with different types</h2>
 <p>We can examine the class of each object using the class function:</p>
-<div class="sourceCode" id="cb30"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb30-1"><a href="data-structures.html#cb30-1" aria-hidden="true" tabindex="-1"></a><span class="sc">&gt;</span>   total_add</span>
-<span id="cb30-2"><a href="data-structures.html#cb30-2" aria-hidden="true" tabindex="-1"></a><span class="sc">&gt;</span>   <span class="fu">class</span>(total_add)</span>
-<span id="cb30-3"><a href="data-structures.html#cb30-3" aria-hidden="true" tabindex="-1"></a><span class="sc">&gt;</span>   </span>
-<span id="cb30-4"><a href="data-structures.html#cb30-4" aria-hidden="true" tabindex="-1"></a><span class="er">&gt;</span>   names</span>
-<span id="cb30-5"><a href="data-structures.html#cb30-5" aria-hidden="true" tabindex="-1"></a><span class="sc">&gt;</span>   <span class="fu">class</span>(names)</span>
-<span id="cb30-6"><a href="data-structures.html#cb30-6" aria-hidden="true" tabindex="-1"></a><span class="sc">&gt;</span>   </span>
-<span id="cb30-7"><a href="data-structures.html#cb30-7" aria-hidden="true" tabindex="-1"></a><span class="er">&gt;</span>   l2</span>
-<span id="cb30-8"><a href="data-structures.html#cb30-8" aria-hidden="true" tabindex="-1"></a><span class="sc">&gt;</span>   <span class="fu">class</span>(l2)</span>
-<span id="cb30-9"><a href="data-structures.html#cb30-9" aria-hidden="true" tabindex="-1"></a><span class="sc">&gt;</span> </span>
-<span id="cb30-10"><a href="data-structures.html#cb30-10" aria-hidden="true" tabindex="-1"></a><span class="er">&gt;</span>   sequence_array_1_dim</span>
-<span id="cb30-11"><a href="data-structures.html#cb30-11" aria-hidden="true" tabindex="-1"></a><span class="sc">&gt;</span>   <span class="fu">class</span>(sequence_array_1_dim)</span>
-<span id="cb30-12"><a href="data-structures.html#cb30-12" aria-hidden="true" tabindex="-1"></a><span class="sc">&gt;</span>   </span>
-<span id="cb30-13"><a href="data-structures.html#cb30-13" aria-hidden="true" tabindex="-1"></a><span class="er">&gt;</span>   A</span>
-<span id="cb30-14"><a href="data-structures.html#cb30-14" aria-hidden="true" tabindex="-1"></a><span class="sc">&gt;</span>   <span class="fu">class</span>(A)</span>
-<span id="cb30-15"><a href="data-structures.html#cb30-15" aria-hidden="true" tabindex="-1"></a><span class="sc">&gt;</span>   </span>
-<span id="cb30-16"><a href="data-structures.html#cb30-16" aria-hidden="true" tabindex="-1"></a><span class="er">&gt;</span>   dt1</span>
-<span id="cb30-17"><a href="data-structures.html#cb30-17" aria-hidden="true" tabindex="-1"></a><span class="sc">&gt;</span>   <span class="fu">class</span>(dt1)</span>
-<span id="cb30-18"><a href="data-structures.html#cb30-18" aria-hidden="true" tabindex="-1"></a><span class="sc">&gt;</span>   </span>
-<span id="cb30-19"><a href="data-structures.html#cb30-19" aria-hidden="true" tabindex="-1"></a><span class="er">&gt;</span>   dt1<span class="sc">$</span>First_Name</span>
-<span id="cb30-20"><a href="data-structures.html#cb30-20" aria-hidden="true" tabindex="-1"></a><span class="sc">&gt;</span>   <span class="fu">class</span>(dt1<span class="sc">$</span>First_Name)</span></code></pre></div>
+<div class="sourceCode" id="cb30"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb30-1"><a href="data-structures.html#cb30-1" aria-hidden="true" tabindex="-1"></a>  total_add</span>
+<span id="cb30-2"><a href="data-structures.html#cb30-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">class</span>(total_add)</span>
+<span id="cb30-3"><a href="data-structures.html#cb30-3" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb30-4"><a href="data-structures.html#cb30-4" aria-hidden="true" tabindex="-1"></a>  names</span>
+<span id="cb30-5"><a href="data-structures.html#cb30-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">class</span>(names)</span>
+<span id="cb30-6"><a href="data-structures.html#cb30-6" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb30-7"><a href="data-structures.html#cb30-7" aria-hidden="true" tabindex="-1"></a>  l2</span>
+<span id="cb30-8"><a href="data-structures.html#cb30-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">class</span>(l2)</span>
+<span id="cb30-9"><a href="data-structures.html#cb30-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb30-10"><a href="data-structures.html#cb30-10" aria-hidden="true" tabindex="-1"></a>  sequence_array_1_dim</span>
+<span id="cb30-11"><a href="data-structures.html#cb30-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">class</span>(sequence_array_1_dim)</span>
+<span id="cb30-12"><a href="data-structures.html#cb30-12" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb30-13"><a href="data-structures.html#cb30-13" aria-hidden="true" tabindex="-1"></a>  A</span>
+<span id="cb30-14"><a href="data-structures.html#cb30-14" aria-hidden="true" tabindex="-1"></a>  <span class="fu">class</span>(A)</span>
+<span id="cb30-15"><a href="data-structures.html#cb30-15" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb30-16"><a href="data-structures.html#cb30-16" aria-hidden="true" tabindex="-1"></a>  dt1</span>
+<span id="cb30-17"><a href="data-structures.html#cb30-17" aria-hidden="true" tabindex="-1"></a>  <span class="fu">class</span>(dt1)</span>
+<span id="cb30-18"><a href="data-structures.html#cb30-18" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb30-19"><a href="data-structures.html#cb30-19" aria-hidden="true" tabindex="-1"></a>  dt1<span class="sc">$</span>First_Name</span>
+<span id="cb30-20"><a href="data-structures.html#cb30-20" aria-hidden="true" tabindex="-1"></a>  <span class="fu">class</span>(dt1<span class="sc">$</span>First_Name)</span></code></pre></div>
 <p>Finally, we can also do some conversions between them using the “as” functions:</p>
-<div class="sourceCode" id="cb31"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb31-1"><a href="data-structures.html#cb31-1" aria-hidden="true" tabindex="-1"></a><span class="sc">&gt;</span>   new_array <span class="ot">&lt;-</span> <span class="fu">as.array</span>(total_add)</span>
-<span id="cb31-2"><a href="data-structures.html#cb31-2" aria-hidden="true" tabindex="-1"></a><span class="sc">&gt;</span>   <span class="fu">class</span>(new_array)</span>
-<span id="cb31-3"><a href="data-structures.html#cb31-3" aria-hidden="true" tabindex="-1"></a><span class="sc">&gt;</span>   </span>
-<span id="cb31-4"><a href="data-structures.html#cb31-4" aria-hidden="true" tabindex="-1"></a><span class="er">&gt;</span>   old_vector <span class="ot">&lt;-</span> <span class="fu">as.vector</span>(new_array) </span>
-<span id="cb31-5"><a href="data-structures.html#cb31-5" aria-hidden="true" tabindex="-1"></a><span class="sc">&gt;</span>   <span class="fu">class</span>(old_vector)</span>
-<span id="cb31-6"><a href="data-structures.html#cb31-6" aria-hidden="true" tabindex="-1"></a><span class="sc">&gt;</span>   </span>
-<span id="cb31-7"><a href="data-structures.html#cb31-7" aria-hidden="true" tabindex="-1"></a><span class="er">&gt;</span>   dfA <span class="ot">&lt;-</span> <span class="fu">as.data.frame</span>(A)</span>
-<span id="cb31-8"><a href="data-structures.html#cb31-8" aria-hidden="true" tabindex="-1"></a><span class="sc">&gt;</span>   <span class="fu">class</span>(dfA)</span></code></pre></div>
+<div class="sourceCode" id="cb31"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb31-1"><a href="data-structures.html#cb31-1" aria-hidden="true" tabindex="-1"></a>  new_array <span class="ot">&lt;-</span> <span class="fu">as.array</span>(total_add)</span>
+<span id="cb31-2"><a href="data-structures.html#cb31-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">class</span>(new_array)</span>
+<span id="cb31-3"><a href="data-structures.html#cb31-3" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb31-4"><a href="data-structures.html#cb31-4" aria-hidden="true" tabindex="-1"></a>  old_vector <span class="ot">&lt;-</span> <span class="fu">as.vector</span>(new_array) </span>
+<span id="cb31-5"><a href="data-structures.html#cb31-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">class</span>(old_vector)</span>
+<span id="cb31-6"><a href="data-structures.html#cb31-6" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb31-7"><a href="data-structures.html#cb31-7" aria-hidden="true" tabindex="-1"></a>  dfA <span class="ot">&lt;-</span> <span class="fu">as.data.frame</span>(A)</span>
+<span id="cb31-8"><a href="data-structures.html#cb31-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">class</span>(dfA)</span></code></pre></div>
 
 </div>
 </div>

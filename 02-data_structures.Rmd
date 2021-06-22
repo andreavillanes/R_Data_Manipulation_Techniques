@@ -6,7 +6,7 @@ A vector is the simplest type of data structure in R. Vectors are particularly i
 
 We can construct a vector using the combine `(c)` function:
 
-```{r prompt=TRUE, eval=FALSE}
+```{r results='hide', message=FALSE, eval=FALSE}
   # Here is a vector containing three numeric values 3, 5 and 7:
   numbers <- c(3, 5, 7)
 
@@ -19,20 +19,20 @@ We can construct a vector using the combine `(c)` function:
 
 We can also change the value in a vector:
 
-```{r prompt=TRUE, eval=FALSE}
+```{r results='hide', message=FALSE, eval=FALSE}
   fruits[2] <- "strawberries"
 ```
 
 Every vector has two key properties: its type and its length:
 
-```{r prompt=TRUE, eval=FALSE}
+```{r results='hide', message=FALSE, eval=FALSE}
   typeof(fruits)
   length(fruits)
 ```
 
 You can combine vectors using the combine function as well:
 
-```{r prompt=TRUE, eval=FALSE}
+```{r results='hide', message=FALSE, eval=FALSE}
   results <- c(1, 2, 3)
   other_results <- c(4, 5, 6)
   combined_results <- c(results, other_results)
@@ -40,7 +40,7 @@ You can combine vectors using the combine function as well:
 
 Vectors can be added together in an element-wise operation:
 
-```{r prompt=TRUE, eval=FALSE}
+```{r results='hide', message=FALSE, eval=FALSE}
   total_add <- results + other_results
   total_div <- results / other_results
   total_mod <- results %% other_results
@@ -49,7 +49,7 @@ Vectors can be added together in an element-wise operation:
 
 Functions can be applied to each element of the vector. However, not all functions are vectorized (we will cover this later):
 
-```{r prompt=TRUE, eval=FALSE}
+```{r results='hide', message=FALSE, eval=FALSE}
   total_rou <- round(total_div, 1)
 
   names <- c("Simmons", "Race", "Healey", "LaBarr", "Villanes")
@@ -58,7 +58,7 @@ Functions can be applied to each element of the vector. However, not all functio
 
 There are also functions for constructing useful types of vectors:
 
-```{r prompt=TRUE, eval=FALSE}
+```{r results='hide', message=FALSE, eval=FALSE}
   # Replicate - replicates a value X number of times 
   identity_vector <- rep(1,10)
   identity_vector
@@ -79,7 +79,7 @@ There are also functions for constructing useful types of vectors:
 
 Finally, a vector doesn't have to be made with consistent elements, but it will force them to one type:
 
-```{r prompt=TRUE, eval=FALSE}
+```{r results='hide', message=FALSE, eval=FALSE}
   values <- c("IAA", 1, "2021", 5)
   typeof(values)
 ```
@@ -90,7 +90,7 @@ As we mentioned earlier, the elements of a vector can only be of one type. If we
 
 Lists are objects which contain elements of different types like − numbers, strings, vectors and another list inside it. A list can also contain a matrix or a function as its elements. A list is created using list() function.
 
-```{r prompt=TRUE, eval=FALSE}
+```{r results='hide', message=FALSE, eval=FALSE}
   # Here are 3 vectors of different types
   v1 <- c("apple", "banana")
   v2 <- c("dog", "cat", "bunny", "pig", "cow", "horse")
@@ -101,7 +101,7 @@ Lists are objects which contain elements of different types like − numbers, st
 
 We can put all of these vectors into a list:
 
-```{r prompt=TRUE, eval=FALSE}
+```{r results='hide', message=FALSE, eval=FALSE}
   # Here are 3 vectors of different types
   l1 <- list(v1, v2, v3)
 
@@ -111,7 +111,7 @@ We can put all of these vectors into a list:
 
 List elements can be accessed via index. Each of the components of a list is accessed via the double bracket [[x]] syntax:
 
-```{r prompt=TRUE, eval=FALSE}
+```{r results='hide', message=FALSE, eval=FALSE}
   # First element in the list
   l1[[1]]
   
@@ -121,19 +121,19 @@ List elements can be accessed via index. Each of the components of a list is acc
 
 List elements can be named:
 
-```{r prompt=TRUE, eval=FALSE}
+```{r results='hide', message=FALSE, eval=FALSE}
   names(l1) <- c("Fruit", "Animals", "Even_Numbers")
 ```
 
 Or they can be named upon creating the list:
 
-```{r prompt=TRUE, eval=FALSE}
+```{r results='hide', message=FALSE, eval=FALSE}
   l1 <- list(Fruit=v1, Animals=v2, Even_Numbers=v3)
 ```
 
 The elements in a list can be retrieved by name:
 
-```{r prompt=TRUE, eval=FALSE}
+```{r results='hide', message=FALSE, eval=FALSE}
   l1$Fruit
   l1$Fruit[1]
   
@@ -143,7 +143,7 @@ The elements in a list can be retrieved by name:
 
 A list can even contain lists:
 
-```{r prompt=TRUE, eval=FALSE}
+```{r results='hide', message=FALSE, eval=FALSE}
   l2 <- list(Odd_Numbers=seq(1,10,by=2), list1=l1)
 
   # First Vector
@@ -167,14 +167,14 @@ A list can even contain lists:
 
 To combine lists:
 
-```{r prompt=TRUE, eval=FALSE}
+```{r results='hide', message=FALSE, eval=FALSE}
   l4 <- list(More_Fruit=c("melon", "orange"))
   l1 <- c(l1,l4)
 ```
 
 Finally, if we want to update part of a list, we can just operate on and update it accordingly:
 
-```{r prompt=TRUE, eval=FALSE}
+```{r results='hide', message=FALSE, eval=FALSE}
   l1$Fruit <- c(l1$Fruit, l4$More_Fruit)
   l1$Fruit
 ```
@@ -182,7 +182,7 @@ Finally, if we want to update part of a list, we can just operate on and update 
 ## Arrays
 Arrays are similar to vectors, except that they are multi-dimensional. An array is created using the array() function, and the dim parameter to specify the dimensions:
 
-```{r prompt=TRUE, eval=FALSE}
+```{r results='hide', message=FALSE, eval=FALSE}
   # 1 dimension - 1 row (vector)
   sequence_array_1_dim <- array(1:10, dim=10)
   sequence_array_1_dim
@@ -202,7 +202,7 @@ Arrays are similar to vectors, except that they are multi-dimensional. An array 
 
 Similar to vectors, functions can be applied to arrays:
 
-```{r prompt=TRUE, eval=FALSE}
+```{r results='hide', message=FALSE, eval=FALSE}
   dim(sequence_array_2_dim)
   length(sequence_array_2_dim)
   sum(sequence_array_2_dim)
@@ -213,7 +213,7 @@ Similar to vectors, functions can be applied to arrays:
 
 Matrices are objects in which the elements are arranged in a two-dimensional rectangular layout. A matrix is created using the matrix() function:
 
-```{r prompt=TRUE, eval=FALSE}
+```{r results='hide', message=FALSE, eval=FALSE}
   # A matrix is a 2-demensional (row x column) array 
   A <- matrix(1:25, 5, 5)
   
@@ -226,7 +226,7 @@ Matrices are objects in which the elements are arranged in a two-dimensional rec
 
 Matrices are convenient because we can do linear algebra with them:
 
-```{r prompt=TRUE, eval=FALSE}
+```{r results='hide', message=FALSE, eval=FALSE}
   # Element-wise operators 
   A + B
   A - B
@@ -243,7 +243,7 @@ Matrices are convenient because we can do linear algebra with them:
 
 We can also name the matrix columns and and rows:
 
-```{r prompt=TRUE, eval=FALSE}
+```{r results='hide', message=FALSE, eval=FALSE}
   colnames(A) <- c("Column_1", "Column_2", "Column_3", "Column_4", "Column_5")
   A
   
@@ -256,7 +256,7 @@ We can also name the matrix columns and and rows:
 
 We can also use some helpful functions for matrices:
 
-```{r prompt=TRUE, eval=FALSE}
+```{r results='hide', message=FALSE, eval=FALSE}
   colSums(A)
   rowSums(A)
   sum(A)
@@ -266,7 +266,7 @@ We can also use some helpful functions for matrices:
 
 And we can extract information from a matrix using similar index notation (row, column):
 
-```{r prompt=TRUE, eval=FALSE}
+```{r results='hide', message=FALSE, eval=FALSE}
   A[2,1] # Single element 
   
   A[,1] # All rows in the first column
@@ -282,7 +282,7 @@ And we can extract information from a matrix using similar index notation (row, 
 
 Data Frames are data displayed in a format as a table. A data frame is essentially a 2 dimensional matrix (row x column). You can think of it like an excel table or relational database table. Data Frames can have different types of data inside it, and we use the data.frame() function to create a data frame:
 
-```{r prompt=TRUE, eval=FALSE}
+```{r results='hide', message=FALSE, eval=FALSE}
   # Create a data frame called dt1 from a set of vectors:
   dt1 <- data.frame (
     names =  c("Simmons", "Race", "Healey", "LaBarr", "Villanes"),
@@ -293,7 +293,7 @@ Data Frames are data displayed in a format as a table. A data frame is essential
 
 To view the data frame:
 
-```{r prompt=TRUE, eval=FALSE}
+```{r results='hide', message=FALSE, eval=FALSE}
   # View the table
   View(dt1)
   
@@ -303,7 +303,7 @@ To view the data frame:
 
 To change the column names:
 
-```{r prompt=TRUE, eval=FALSE}
+```{r results='hide', message=FALSE, eval=FALSE}
   colnames(dt1)
   colnames(dt1) <- c("Last_Name", "Class_Taught", "Female?")
   colnames(dt1)
@@ -313,14 +313,14 @@ To change the column names:
 
 To reference a column by name:
 
-```{r prompt=TRUE, eval=FALSE}
+```{r results='hide', message=FALSE, eval=FALSE}
   dt1$Last_Name
   dt1$Classes_Taught
 ```
 
 Data frame indexes - similar to vectors and arrays. We can perform the following actions:
 
-```{r prompt=TRUE, eval=FALSE}
+```{r results='hide', message=FALSE, eval=FALSE}
   # Retrieve a row
   # leaving the row or column blank means "everything"
   # the negative operator "-" means "everything but"
@@ -375,7 +375,7 @@ Data frame indexes - similar to vectors and arrays. We can perform the following
 
 We can examine the class of each object using the class function:
 
-```{r prompt=TRUE, eval=FALSE}
+```{r results='hide', message=FALSE, eval=FALSE}
   total_add
   class(total_add)
   
@@ -400,7 +400,7 @@ We can examine the class of each object using the class function:
 
 Finally, we can also do some conversions between them using the "as" functions:
 
-```{r prompt=TRUE, eval=FALSE}
+```{r results='hide', message=FALSE, eval=FALSE}
   new_array <- as.array(total_add)
   class(new_array)
   
