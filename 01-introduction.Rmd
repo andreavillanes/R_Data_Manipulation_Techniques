@@ -8,7 +8,7 @@ The simplest way to use R is to use it as if it were a calculator. For example, 
   1 + 1
 ```
 
-We can use any arithmetic operator, like addition, subtraction, multiplication, division, divison, exponentiation, and modulus operations:
+We can use any arithmetic operator, like addition, subtraction, multiplication, divison, exponentiation, and modulus operations:
 
 
 ```{r results='hide', message=FALSE, eval=FALSE}
