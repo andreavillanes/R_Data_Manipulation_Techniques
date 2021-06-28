@@ -336,7 +336,7 @@ Data frame indexes - similar to vectors and arrays. We can perform the following
   dt1[,c("Last_Name","Female?")]
   
   # Retrieve an element
-  dt1[6,2]
+  dt1[5,2]
   
   # Reassign an element 
   dt1[5,2] <- "R Programming"
