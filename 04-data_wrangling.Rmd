@@ -328,20 +328,6 @@ Now that we have Car Make and Model, we might want to summarize some information
     ungroup(Car_Make, Model_Year)
 ```
     
-What if we want to create a variable for each Make that is the average MPG across the Make, by year?
-
-```{r results='hide', message=FALSE, eval=FALSE}
-  df_auto_hold <- df_auto %>%
-    group_by(Car_Make, Model_Year) %>%
-    mutate(Average_MPG=mean(MPG)) %>% #create a column that contains the avg MPG for the model year of the car
-    mutate(MPG_Fold_Pct=round(((MPG-Average_MPG)/Average_MPG)*100,2)) %>%
-    ungroup(Car_Make, Model_Year) %>%
-    arrange(Car_Make, Model_Year) %>%
-    select(Car_Make, Model_Year, Car_Name, MPG, Average_MPG, MPG_Fold_Pct)
-  
-  View(df_auto_hold)
-```
-
 ## Combining Data - dplyr 
 
 Typically when working with data, especially relational databases, we have information stored in multiple tables. For instance, we have the Auto data set:

@@ -394,31 +394,21 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <span id="cb33-5"><a href="data-wrangling.html#cb33-5" aria-hidden="true" tabindex="-1"></a>    <span class="fu">arrange</span>(Model_Year) <span class="sc">%&gt;%</span> </span>
 <span id="cb33-6"><a href="data-wrangling.html#cb33-6" aria-hidden="true" tabindex="-1"></a>    <span class="fu">filter</span>(Model_Year<span class="sc">==</span><span class="dv">70</span>) <span class="sc">%&gt;%</span></span>
 <span id="cb33-7"><a href="data-wrangling.html#cb33-7" aria-hidden="true" tabindex="-1"></a>    <span class="fu">ungroup</span>(Car_Make, Model_Year)</span></code></pre></div>
-<p>What if we want to create a variable for each Make that is the average MPG across the Make, by year?</p>
-<div class="sourceCode" id="cb34"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb34-1"><a href="data-wrangling.html#cb34-1" aria-hidden="true" tabindex="-1"></a>  df_auto_hold <span class="ot">&lt;-</span> df_auto <span class="sc">%&gt;%</span></span>
-<span id="cb34-2"><a href="data-wrangling.html#cb34-2" aria-hidden="true" tabindex="-1"></a>    <span class="fu">group_by</span>(Car_Make, Model_Year) <span class="sc">%&gt;%</span></span>
-<span id="cb34-3"><a href="data-wrangling.html#cb34-3" aria-hidden="true" tabindex="-1"></a>    <span class="fu">mutate</span>(<span class="at">Average_MPG=</span><span class="fu">mean</span>(MPG)) <span class="sc">%&gt;%</span> <span class="co">#create a column that contains the avg MPG for the model year of the car</span></span>
-<span id="cb34-4"><a href="data-wrangling.html#cb34-4" aria-hidden="true" tabindex="-1"></a>    <span class="fu">mutate</span>(<span class="at">MPG_Fold_Pct=</span><span class="fu">round</span>(((MPG<span class="sc">-</span>Average_MPG)<span class="sc">/</span>Average_MPG)<span class="sc">*</span><span class="dv">100</span>,<span class="dv">2</span>)) <span class="sc">%&gt;%</span></span>
-<span id="cb34-5"><a href="data-wrangling.html#cb34-5" aria-hidden="true" tabindex="-1"></a>    <span class="fu">ungroup</span>(Car_Make, Model_Year) <span class="sc">%&gt;%</span></span>
-<span id="cb34-6"><a href="data-wrangling.html#cb34-6" aria-hidden="true" tabindex="-1"></a>    <span class="fu">arrange</span>(Car_Make, Model_Year) <span class="sc">%&gt;%</span></span>
-<span id="cb34-7"><a href="data-wrangling.html#cb34-7" aria-hidden="true" tabindex="-1"></a>    <span class="fu">select</span>(Car_Make, Model_Year, Car_Name, MPG, Average_MPG, MPG_Fold_Pct)</span>
-<span id="cb34-8"><a href="data-wrangling.html#cb34-8" aria-hidden="true" tabindex="-1"></a>  </span>
-<span id="cb34-9"><a href="data-wrangling.html#cb34-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">View</span>(df_auto_hold)</span></code></pre></div>
 </div>
 <div id="combining-data---dplyr" class="section level2" number="4.7">
 <h2><span class="header-section-number">4.7</span> Combining Data - dplyr</h2>
 <p>Typically when working with data, especially relational databases, we have information stored in multiple tables. For instance, we have the Auto data set:</p>
-<div class="sourceCode" id="cb35"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb35-1"><a href="data-wrangling.html#cb35-1" aria-hidden="true" tabindex="-1"></a>  <span class="fu">View</span>(df_auto)</span>
-<span id="cb35-2"><a href="data-wrangling.html#cb35-2" aria-hidden="true" tabindex="-1"></a>  </span>
-<span id="cb35-3"><a href="data-wrangling.html#cb35-3" aria-hidden="true" tabindex="-1"></a>  <span class="co"># But we also have data on when a brand started:</span></span>
-<span id="cb35-4"><a href="data-wrangling.html#cb35-4" aria-hidden="true" tabindex="-1"></a>  Car_Make <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;amc&quot;</span>, <span class="st">&quot;audi&quot;</span>, <span class="st">&quot;bmw&quot;</span>, <span class="st">&quot;buick&quot;</span>, <span class="st">&quot;chevrolet&quot;</span>, <span class="st">&quot;datsun&quot;</span>, <span class="st">&quot;dodge&quot;</span>, <span class="st">&quot;ford&quot;</span>)</span>
-<span id="cb35-5"><a href="data-wrangling.html#cb35-5" aria-hidden="true" tabindex="-1"></a>  First_Year <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">1954</span>, <span class="dv">1910</span>, <span class="dv">1916</span>, <span class="dv">1903</span>, <span class="dv">1911</span>, <span class="dv">1931</span>, <span class="dv">1900</span>, <span class="dv">1903</span>)</span>
-<span id="cb35-6"><a href="data-wrangling.html#cb35-6" aria-hidden="true" tabindex="-1"></a>  </span>
-<span id="cb35-7"><a href="data-wrangling.html#cb35-7" aria-hidden="true" tabindex="-1"></a>  df_auto_start <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="at">Car_Make=</span>Car_Make, </span>
-<span id="cb35-8"><a href="data-wrangling.html#cb35-8" aria-hidden="true" tabindex="-1"></a>                              <span class="at">First_Year=</span>First_Year, </span>
-<span id="cb35-9"><a href="data-wrangling.html#cb35-9" aria-hidden="true" tabindex="-1"></a>                              <span class="at">stringsAsFactors =</span> <span class="cn">FALSE</span>)</span>
-<span id="cb35-10"><a href="data-wrangling.html#cb35-10" aria-hidden="true" tabindex="-1"></a>  </span>
-<span id="cb35-11"><a href="data-wrangling.html#cb35-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">View</span>(df_auto_start)</span></code></pre></div>
+<div class="sourceCode" id="cb34"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb34-1"><a href="data-wrangling.html#cb34-1" aria-hidden="true" tabindex="-1"></a>  <span class="fu">View</span>(df_auto)</span>
+<span id="cb34-2"><a href="data-wrangling.html#cb34-2" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb34-3"><a href="data-wrangling.html#cb34-3" aria-hidden="true" tabindex="-1"></a>  <span class="co"># But we also have data on when a brand started:</span></span>
+<span id="cb34-4"><a href="data-wrangling.html#cb34-4" aria-hidden="true" tabindex="-1"></a>  Car_Make <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;amc&quot;</span>, <span class="st">&quot;audi&quot;</span>, <span class="st">&quot;bmw&quot;</span>, <span class="st">&quot;buick&quot;</span>, <span class="st">&quot;chevrolet&quot;</span>, <span class="st">&quot;datsun&quot;</span>, <span class="st">&quot;dodge&quot;</span>, <span class="st">&quot;ford&quot;</span>)</span>
+<span id="cb34-5"><a href="data-wrangling.html#cb34-5" aria-hidden="true" tabindex="-1"></a>  First_Year <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">1954</span>, <span class="dv">1910</span>, <span class="dv">1916</span>, <span class="dv">1903</span>, <span class="dv">1911</span>, <span class="dv">1931</span>, <span class="dv">1900</span>, <span class="dv">1903</span>)</span>
+<span id="cb34-6"><a href="data-wrangling.html#cb34-6" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb34-7"><a href="data-wrangling.html#cb34-7" aria-hidden="true" tabindex="-1"></a>  df_auto_start <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="at">Car_Make=</span>Car_Make, </span>
+<span id="cb34-8"><a href="data-wrangling.html#cb34-8" aria-hidden="true" tabindex="-1"></a>                              <span class="at">First_Year=</span>First_Year, </span>
+<span id="cb34-9"><a href="data-wrangling.html#cb34-9" aria-hidden="true" tabindex="-1"></a>                              <span class="at">stringsAsFactors =</span> <span class="cn">FALSE</span>)</span>
+<span id="cb34-10"><a href="data-wrangling.html#cb34-10" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb34-11"><a href="data-wrangling.html#cb34-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">View</span>(df_auto_start)</span></code></pre></div>
 <p>We are interested in the relationship between founding year and average MPG for the max year. For this, we need to get my First Year data combined with the Auto MPG Data. This is accomplished via joins.</p>
 <p>Dplyr has different join types. The easiest way to think about this is as a Venn-Diagram.</p>
 <ul>
@@ -428,42 +418,42 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li>full_join - returns all data from both tables. NAs created for both tables.</li>
 </ul>
 <p>Inner_join:</p>
-<div class="sourceCode" id="cb36"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb36-1"><a href="data-wrangling.html#cb36-1" aria-hidden="true" tabindex="-1"></a>  df_auto_hold <span class="ot">&lt;-</span> df_auto <span class="sc">%&gt;%</span></span>
-<span id="cb36-2"><a href="data-wrangling.html#cb36-2" aria-hidden="true" tabindex="-1"></a>    <span class="fu">inner_join</span>(df_auto_start, <span class="at">by=</span><span class="st">&quot;Car_Make&quot;</span>)</span>
-<span id="cb36-3"><a href="data-wrangling.html#cb36-3" aria-hidden="true" tabindex="-1"></a>  </span>
-<span id="cb36-4"><a href="data-wrangling.html#cb36-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">View</span>(df_auto_hold)</span>
-<span id="cb36-5"><a href="data-wrangling.html#cb36-5" aria-hidden="true" tabindex="-1"></a>  </span>
-<span id="cb36-6"><a href="data-wrangling.html#cb36-6" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Note, we&#39;ve effectively filtered a lot of data because the inner_join only keeps matching records. </span></span>
-<span id="cb36-7"><a href="data-wrangling.html#cb36-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">dim</span>(df_auto)</span>
-<span id="cb36-8"><a href="data-wrangling.html#cb36-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">dim</span>(df_auto_hold)</span>
-<span id="cb36-9"><a href="data-wrangling.html#cb36-9" aria-hidden="true" tabindex="-1"></a>  </span>
-<span id="cb36-10"><a href="data-wrangling.html#cb36-10" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Joins can pipe together with other functions just as we expect</span></span>
-<span id="cb36-11"><a href="data-wrangling.html#cb36-11" aria-hidden="true" tabindex="-1"></a>  df_auto_hold <span class="ot">&lt;-</span> df_auto <span class="sc">%&gt;%</span></span>
-<span id="cb36-12"><a href="data-wrangling.html#cb36-12" aria-hidden="true" tabindex="-1"></a>    <span class="fu">inner_join</span>(df_auto_start, <span class="at">by=</span><span class="st">&quot;Car_Make&quot;</span>) <span class="sc">%&gt;%</span></span>
-<span id="cb36-13"><a href="data-wrangling.html#cb36-13" aria-hidden="true" tabindex="-1"></a>    <span class="fu">group_by</span>(Car_Make, First_Year) <span class="sc">%&gt;%</span></span>
-<span id="cb36-14"><a href="data-wrangling.html#cb36-14" aria-hidden="true" tabindex="-1"></a>    <span class="fu">summarise</span>(<span class="at">Average_MPG=</span><span class="fu">mean</span>(MPG))</span>
-<span id="cb36-15"><a href="data-wrangling.html#cb36-15" aria-hidden="true" tabindex="-1"></a>  </span>
-<span id="cb36-16"><a href="data-wrangling.html#cb36-16" aria-hidden="true" tabindex="-1"></a>  <span class="fu">View</span>(df_auto_hold)</span>
-<span id="cb36-17"><a href="data-wrangling.html#cb36-17" aria-hidden="true" tabindex="-1"></a> </span>
-<span id="cb36-18"><a href="data-wrangling.html#cb36-18" aria-hidden="true" tabindex="-1"></a>  <span class="fu">plot</span>(df_auto_hold<span class="sc">$</span>First_Year, df_auto_hold<span class="sc">$</span>Average_MPG)</span></code></pre></div>
+<div class="sourceCode" id="cb35"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb35-1"><a href="data-wrangling.html#cb35-1" aria-hidden="true" tabindex="-1"></a>  df_auto_hold <span class="ot">&lt;-</span> df_auto <span class="sc">%&gt;%</span></span>
+<span id="cb35-2"><a href="data-wrangling.html#cb35-2" aria-hidden="true" tabindex="-1"></a>    <span class="fu">inner_join</span>(df_auto_start, <span class="at">by=</span><span class="st">&quot;Car_Make&quot;</span>)</span>
+<span id="cb35-3"><a href="data-wrangling.html#cb35-3" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb35-4"><a href="data-wrangling.html#cb35-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">View</span>(df_auto_hold)</span>
+<span id="cb35-5"><a href="data-wrangling.html#cb35-5" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb35-6"><a href="data-wrangling.html#cb35-6" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Note, we&#39;ve effectively filtered a lot of data because the inner_join only keeps matching records. </span></span>
+<span id="cb35-7"><a href="data-wrangling.html#cb35-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">dim</span>(df_auto)</span>
+<span id="cb35-8"><a href="data-wrangling.html#cb35-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">dim</span>(df_auto_hold)</span>
+<span id="cb35-9"><a href="data-wrangling.html#cb35-9" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb35-10"><a href="data-wrangling.html#cb35-10" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Joins can pipe together with other functions just as we expect</span></span>
+<span id="cb35-11"><a href="data-wrangling.html#cb35-11" aria-hidden="true" tabindex="-1"></a>  df_auto_hold <span class="ot">&lt;-</span> df_auto <span class="sc">%&gt;%</span></span>
+<span id="cb35-12"><a href="data-wrangling.html#cb35-12" aria-hidden="true" tabindex="-1"></a>    <span class="fu">inner_join</span>(df_auto_start, <span class="at">by=</span><span class="st">&quot;Car_Make&quot;</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb35-13"><a href="data-wrangling.html#cb35-13" aria-hidden="true" tabindex="-1"></a>    <span class="fu">group_by</span>(Car_Make, First_Year) <span class="sc">%&gt;%</span></span>
+<span id="cb35-14"><a href="data-wrangling.html#cb35-14" aria-hidden="true" tabindex="-1"></a>    <span class="fu">summarise</span>(<span class="at">Average_MPG=</span><span class="fu">mean</span>(MPG))</span>
+<span id="cb35-15"><a href="data-wrangling.html#cb35-15" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb35-16"><a href="data-wrangling.html#cb35-16" aria-hidden="true" tabindex="-1"></a>  <span class="fu">View</span>(df_auto_hold)</span>
+<span id="cb35-17"><a href="data-wrangling.html#cb35-17" aria-hidden="true" tabindex="-1"></a> </span>
+<span id="cb35-18"><a href="data-wrangling.html#cb35-18" aria-hidden="true" tabindex="-1"></a>  <span class="fu">plot</span>(df_auto_hold<span class="sc">$</span>First_Year, df_auto_hold<span class="sc">$</span>Average_MPG)</span></code></pre></div>
 <p>Left_join:</p>
-<div class="sourceCode" id="cb37"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb37-1"><a href="data-wrangling.html#cb37-1" aria-hidden="true" tabindex="-1"></a>  df_auto_hold <span class="ot">&lt;-</span> df_auto <span class="sc">%&gt;%</span></span>
-<span id="cb37-2"><a href="data-wrangling.html#cb37-2" aria-hidden="true" tabindex="-1"></a>    <span class="fu">left_join</span>(df_auto_start, <span class="at">by=</span><span class="st">&quot;Car_Make&quot;</span>)</span>
-<span id="cb37-3"><a href="data-wrangling.html#cb37-3" aria-hidden="true" tabindex="-1"></a>    </span>
-<span id="cb37-4"><a href="data-wrangling.html#cb37-4" aria-hidden="true" tabindex="-1"></a>  <span class="co"># note, we&#39;ve retained all of the records but it&#39;s placed &quot;NA&quot; in the column where it couldn&#39;t find a matching record</span></span>
-<span id="cb37-5"><a href="data-wrangling.html#cb37-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">dim</span>(df_auto) </span>
-<span id="cb37-6"><a href="data-wrangling.html#cb37-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">dim</span>(df_auto_hold) </span>
-<span id="cb37-7"><a href="data-wrangling.html#cb37-7" aria-hidden="true" tabindex="-1"></a>  </span>
-<span id="cb37-8"><a href="data-wrangling.html#cb37-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">is.na</span>(df_auto_hold<span class="sc">$</span>First_Year)</span>
-<span id="cb37-9"><a href="data-wrangling.html#cb37-9" aria-hidden="true" tabindex="-1"></a>  </span>
-<span id="cb37-10"><a href="data-wrangling.html#cb37-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">View</span>(df_auto_hold)  </span>
-<span id="cb37-11"><a href="data-wrangling.html#cb37-11" aria-hidden="true" tabindex="-1"></a>  </span>
-<span id="cb37-12"><a href="data-wrangling.html#cb37-12" aria-hidden="true" tabindex="-1"></a>  df_auto_hold <span class="ot">&lt;-</span> df_auto <span class="sc">%&gt;%</span></span>
-<span id="cb37-13"><a href="data-wrangling.html#cb37-13" aria-hidden="true" tabindex="-1"></a>    <span class="fu">left_join</span>(df_auto_start, <span class="at">by=</span><span class="st">&quot;Car_Make&quot;</span>) <span class="sc">%&gt;%</span></span>
-<span id="cb37-14"><a href="data-wrangling.html#cb37-14" aria-hidden="true" tabindex="-1"></a>    <span class="fu">group_by</span>(Car_Make, First_Year) <span class="sc">%&gt;%</span></span>
-<span id="cb37-15"><a href="data-wrangling.html#cb37-15" aria-hidden="true" tabindex="-1"></a>    <span class="fu">summarise</span>(<span class="at">Average_MPG=</span><span class="fu">mean</span>(MPG))</span>
-<span id="cb37-16"><a href="data-wrangling.html#cb37-16" aria-hidden="true" tabindex="-1"></a>  </span>
-<span id="cb37-17"><a href="data-wrangling.html#cb37-17" aria-hidden="true" tabindex="-1"></a>  <span class="fu">View</span>(df_auto_hold)  </span></code></pre></div>
+<div class="sourceCode" id="cb36"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb36-1"><a href="data-wrangling.html#cb36-1" aria-hidden="true" tabindex="-1"></a>  df_auto_hold <span class="ot">&lt;-</span> df_auto <span class="sc">%&gt;%</span></span>
+<span id="cb36-2"><a href="data-wrangling.html#cb36-2" aria-hidden="true" tabindex="-1"></a>    <span class="fu">left_join</span>(df_auto_start, <span class="at">by=</span><span class="st">&quot;Car_Make&quot;</span>)</span>
+<span id="cb36-3"><a href="data-wrangling.html#cb36-3" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb36-4"><a href="data-wrangling.html#cb36-4" aria-hidden="true" tabindex="-1"></a>  <span class="co"># note, we&#39;ve retained all of the records but it&#39;s placed &quot;NA&quot; in the column where it couldn&#39;t find a matching record</span></span>
+<span id="cb36-5"><a href="data-wrangling.html#cb36-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">dim</span>(df_auto) </span>
+<span id="cb36-6"><a href="data-wrangling.html#cb36-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">dim</span>(df_auto_hold) </span>
+<span id="cb36-7"><a href="data-wrangling.html#cb36-7" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb36-8"><a href="data-wrangling.html#cb36-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">is.na</span>(df_auto_hold<span class="sc">$</span>First_Year)</span>
+<span id="cb36-9"><a href="data-wrangling.html#cb36-9" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb36-10"><a href="data-wrangling.html#cb36-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">View</span>(df_auto_hold)  </span>
+<span id="cb36-11"><a href="data-wrangling.html#cb36-11" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb36-12"><a href="data-wrangling.html#cb36-12" aria-hidden="true" tabindex="-1"></a>  df_auto_hold <span class="ot">&lt;-</span> df_auto <span class="sc">%&gt;%</span></span>
+<span id="cb36-13"><a href="data-wrangling.html#cb36-13" aria-hidden="true" tabindex="-1"></a>    <span class="fu">left_join</span>(df_auto_start, <span class="at">by=</span><span class="st">&quot;Car_Make&quot;</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb36-14"><a href="data-wrangling.html#cb36-14" aria-hidden="true" tabindex="-1"></a>    <span class="fu">group_by</span>(Car_Make, First_Year) <span class="sc">%&gt;%</span></span>
+<span id="cb36-15"><a href="data-wrangling.html#cb36-15" aria-hidden="true" tabindex="-1"></a>    <span class="fu">summarise</span>(<span class="at">Average_MPG=</span><span class="fu">mean</span>(MPG))</span>
+<span id="cb36-16"><a href="data-wrangling.html#cb36-16" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb36-17"><a href="data-wrangling.html#cb36-17" aria-hidden="true" tabindex="-1"></a>  <span class="fu">View</span>(df_auto_hold)  </span></code></pre></div>
 </div>
 <div id="cheat-sheet" class="section level2" number="4.8">
 <h2><span class="header-section-number">4.8</span> Cheat Sheet</h2>
@@ -477,11 +467,11 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div id="extra---sqldf" class="section level2" number="4.9">
 <h2><span class="header-section-number">4.9</span> Extra - sqldf</h2>
 <p>If you like SQL, there is a package allows you to manipulate data in a in-memory, or permanent database:</p>
-<div class="sourceCode" id="cb38"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb38-1"><a href="data-wrangling.html#cb38-1" aria-hidden="true" tabindex="-1"></a>  <span class="fu">install.packages</span>(<span class="st">&quot;sqldf&quot;</span>)</span>
-<span id="cb38-2"><a href="data-wrangling.html#cb38-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">library</span>(sqldf)</span>
-<span id="cb38-3"><a href="data-wrangling.html#cb38-3" aria-hidden="true" tabindex="-1"></a>  </span>
-<span id="cb38-4"><a href="data-wrangling.html#cb38-4" aria-hidden="true" tabindex="-1"></a>  df_auto_hold <span class="ot">&lt;-</span> <span class="fu">sqldf</span>(<span class="st">&quot;select * from df_auto where Car_Make=&#39;amc&#39;&quot;</span>)</span>
-<span id="cb38-5"><a href="data-wrangling.html#cb38-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">View</span>(df_auto_hold)</span></code></pre></div>
+<div class="sourceCode" id="cb37"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb37-1"><a href="data-wrangling.html#cb37-1" aria-hidden="true" tabindex="-1"></a>  <span class="fu">install.packages</span>(<span class="st">&quot;sqldf&quot;</span>)</span>
+<span id="cb37-2"><a href="data-wrangling.html#cb37-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">library</span>(sqldf)</span>
+<span id="cb37-3"><a href="data-wrangling.html#cb37-3" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb37-4"><a href="data-wrangling.html#cb37-4" aria-hidden="true" tabindex="-1"></a>  df_auto_hold <span class="ot">&lt;-</span> <span class="fu">sqldf</span>(<span class="st">&quot;select * from df_auto where Car_Make=&#39;amc&#39;&quot;</span>)</span>
+<span id="cb37-5"><a href="data-wrangling.html#cb37-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">View</span>(df_auto_hold)</span></code></pre></div>
 <p>We will learn a lot more about SQL in the Fall semester.</p>
 
 </div>
