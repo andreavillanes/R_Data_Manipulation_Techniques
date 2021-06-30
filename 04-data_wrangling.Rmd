@@ -295,7 +295,7 @@ Note, this is treating the entire column, instead of by row. One way to address 
   View(df_auto_hold)
 ```
 
-An alternative to this group_by is the group_by() function:
+An alternative to this is the group_by() function:
 
 ```{r results='hide', message=FALSE, eval=FALSE}
   df_auto_hold <- df_auto %>%

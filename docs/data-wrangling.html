@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>Chapter 4 Data Wrangling | Data Manipulation Techniques with R</title>
   <meta name="description" content="Chapter 4 Data Wrangling | Data Manipulation Techniques with R" />
-  <meta name="generator" content="bookdown 0.21 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.22 and GitBook 2.6.7" />
 
   <meta property="og:title" content="Chapter 4 Data Wrangling | Data Manipulation Techniques with R" />
   <meta property="og:type" content="book" />
@@ -31,7 +31,7 @@
   
 <link rel="prev" href="programming-fundamentals.html"/>
 <link rel="next" href="resources.html"/>
-<script src="libs/header-attrs-2.7/header-attrs.js"></script>
+<script src="libs/header-attrs-2.9/header-attrs.js"></script>
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
@@ -49,6 +49,8 @@
 
 
 
+<link href="libs/anchor-sections-1.0.1/anchor-sections.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.0.1/anchor-sections.js"></script>
 
 
 <style type="text/css">
@@ -115,6 +117,7 @@ code span.va { color: #19177c; } /* Variable */
 code span.vs { color: #4070a0; } /* VerbatimString */
 code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
 </style>
+
 
 <link rel="stylesheet" href="style.css" type="text/css" />
 </head>
@@ -370,7 +373,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <span id="cb30-3"><a href="data-wrangling.html#cb30-3" aria-hidden="true" tabindex="-1"></a>    <span class="fu">mutate</span>(<span class="at">Car_Make=</span><span class="fu">str_split</span>(Car_Name,<span class="st">&quot; &quot;</span>)[[<span class="dv">1</span>]][<span class="dv">1</span>])</span>
 <span id="cb30-4"><a href="data-wrangling.html#cb30-4" aria-hidden="true" tabindex="-1"></a>  </span>
 <span id="cb30-5"><a href="data-wrangling.html#cb30-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">View</span>(df_auto_hold)</span></code></pre></div>
-<p>An alternative to this group_by is the group_by() function:</p>
+<p>An alternative to this is the group_by() function:</p>
 <div class="sourceCode" id="cb31"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb31-1"><a href="data-wrangling.html#cb31-1" aria-hidden="true" tabindex="-1"></a>  df_auto_hold <span class="ot">&lt;-</span> df_auto <span class="sc">%&gt;%</span></span>
 <span id="cb31-2"><a href="data-wrangling.html#cb31-2" aria-hidden="true" tabindex="-1"></a>    <span class="fu">group_by</span>(Car_Name) <span class="sc">%&gt;%</span></span>
 <span id="cb31-3"><a href="data-wrangling.html#cb31-3" aria-hidden="true" tabindex="-1"></a>    <span class="fu">mutate</span>(<span class="at">Car_Make=</span><span class="fu">str_split</span>(Car_Name,<span class="st">&quot; &quot;</span>)[[<span class="dv">1</span>]][<span class="dv">1</span>])</span>
@@ -512,6 +515,7 @@ gitbook.start({
 "weibo": false,
 "instapaper": false,
 "vk": false,
+"whatsapp": false,
 "all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
 },
 "fontsettings": {
