@@ -14,4 +14,4 @@ The book is broken down into small sections that aim to demonstrate a single con
 
 ## Acknowledgements {-}
 
-We would like to thank Aaron Baker for providing the foundation for this work, and also Nicholas Larsen for all his feedback and suggestions.
+We would like to thank Aaron Baker for providing the foundation for this work, and also Nic Larsen for all his feedback and suggestions.
