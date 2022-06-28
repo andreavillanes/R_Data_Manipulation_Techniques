@@ -74,7 +74,6 @@ Logicals are used for evaluating comparisons, such as:
   identical(a,b)
   identical(A,B)
     
-  all.equal(A,B)
 ```
 
 ## Conditionals
