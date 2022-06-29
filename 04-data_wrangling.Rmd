@@ -235,7 +235,7 @@ The base R equivalents are:
 Consider the previous operations. If we wanted to manipulate our data set in order, we traditionally have to do a reassignment each time:
 
 ```{r results='hide', message=FALSE, eval=FALSE}
-  ddf_auto_hold <- rename(df_auto, Miles_Per_Gallon=MPG) #rename
+  df_auto_hold <- rename(df_auto, Miles_Per_Gallon=MPG) #rename
   
   df_auto_hold <- mutate(df_auto_hold, HP_Per_Cylinder=Horsepower/Cylinders) #then create
   

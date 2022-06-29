@@ -6,11 +6,10 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>Chapter 4 Data Wrangling | Data Manipulation Techniques with R</title>
   <meta name="description" content="Chapter 4 Data Wrangling | Data Manipulation Techniques with R" />
-  <meta name="generator" content="bookdown 0.22 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.27 and GitBook 2.6.7" />
 
   <meta property="og:title" content="Chapter 4 Data Wrangling | Data Manipulation Techniques with R" />
   <meta property="og:type" content="book" />
-  
   
   
   <meta name="github-repo" content="andreavillanes/R_Data_Manipulation_Techniques" />
@@ -31,8 +30,8 @@
   
 <link rel="prev" href="programming-fundamentals.html"/>
 <link rel="next" href="resources.html"/>
-<script src="libs/header-attrs-2.9/header-attrs.js"></script>
-<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
@@ -48,9 +47,9 @@
 
 
 
-
-<link href="libs/anchor-sections-1.0.1/anchor-sections.css" rel="stylesheet" />
-<script src="libs/anchor-sections-1.0.1/anchor-sections.js"></script>
+<link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
+<link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
 
 
 <style type="text/css">
@@ -203,10 +202,10 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="data-wrangling" class="section level1" number="4">
-<h1><span class="header-section-number">Chapter 4</span> Data Wrangling</h1>
-<div id="libraries" class="section level2" number="4.1">
-<h2><span class="header-section-number">4.1</span> Libraries</h2>
+<div id="data-wrangling" class="section level1 hasAnchor" number="4">
+<h1><span class="header-section-number">Chapter 4</span> Data Wrangling<a href="data-wrangling.html#data-wrangling" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<div id="libraries" class="section level2 hasAnchor" number="4.1">
+<h2><span class="header-section-number">4.1</span> Libraries<a href="data-wrangling.html#libraries" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>Up until now, we haven’t used packages - only functions available in base R. However, the power of R truly exists in the libraries, which are sets of functions that any user can create and share.</p>
 <p>As of June 2019, there were over 14,000 packages available on the Comprehensive R Archive Network, or CRAN, the public clearing house for R packages. CRAN lists all libraries here: <a href="https://cran.r-project.org/web/packages/available_packages_by_name.html" class="uri">https://cran.r-project.org/web/packages/available_packages_by_name.html</a></p>
 <p>To install a library, you can either:</p>
@@ -222,8 +221,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <span id="cb2-2"><a href="data-wrangling.html#cb2-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">library</span>(dplyr)</span>
 <span id="cb2-3"><a href="data-wrangling.html#cb2-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">library</span>(stringr)</span></code></pre></div>
 </div>
-<div id="importing-exporting-data" class="section level2" number="4.2">
-<h2><span class="header-section-number">4.2</span> Importing &amp; Exporting Data</h2>
+<div id="importing-exporting-data" class="section level2 hasAnchor" number="4.2">
+<h2><span class="header-section-number">4.2</span> Importing &amp; Exporting Data<a href="data-wrangling.html#importing-exporting-data" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>Before importing data, we generally want to set the working directory. This is a folder where we will be accessing or storing data and outputs:</p>
 <div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="data-wrangling.html#cb3-1" aria-hidden="true" tabindex="-1"></a>  <span class="fu">setwd</span>(<span class="st">&quot;C:/Users/avillan/Documents/Class 2022/Class_Code&quot;</span>)</span></code></pre></div>
 <p>Another useful function is <code>getwd()</code>. This function returns an absolute filepath representing the current working directory of the R process, or <code>NULL</code> if the working directory is not available:</p>
@@ -253,16 +252,16 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div class="sourceCode" id="cb10"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb10-1"><a href="data-wrangling.html#cb10-1" aria-hidden="true" tabindex="-1"></a>  <span class="fu">write.csv</span>(df_auto, <span class="at">file=</span><span class="st">&quot;Auto_MPG_Clean.csv&quot;</span>, <span class="at">row.names =</span> <span class="cn">FALSE</span>)</span></code></pre></div>
 <p>In addition to importing the data using code, one can also import data into RStudio with point-and-click. Go to <code>Import Dataset</code> in the Environment panel and select the relevant format. From there, you can set the datatype of each column, as well as specify whether to include or to skip a column or row. RStudio automatically generates the corresponding code that you can copy and paste for later reproducibility.</p>
 </div>
-<div id="dplyr-and-tidyverse" class="section level2" number="4.3">
-<h2><span class="header-section-number">4.3</span> dplyr and tidyverse</h2>
+<div id="dplyr-and-tidyverse" class="section level2 hasAnchor" number="4.3">
+<h2><span class="header-section-number">4.3</span> dplyr and tidyverse<a href="data-wrangling.html#dplyr-and-tidyverse" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>One of the most difficult (yet, interesting!) parts of open-source software is the many ways to achieve the same task. This can make recalling functions and syntax difficult, increasing the time to write or read code. Thus, people have started creating packages that structure coding tasks into a simple but comprehensive set of functions. You’ll see this referred to as a “grammar”. This framework attempts to simplify the majority of required functions into a simple set of “verbs” to remember.</p>
 <p>If you’re familiar with SQL - think about how easy it is to read and write:</p>
 <p><code>SELECT * FROM table WHERE column = 'some_value'</code></p>
 <p>In SQL, <code>SELECT</code>, <code>FROM</code>, <code>WHERE</code> are “verbs” that provide the framework for numerous tasks.</p>
 <p>The packages plyr, dplyr, ggplot2, stringr (and others) work within this framework. “tidyverse” is a collection of packages that encompases all of these <a href="https://www.tidyverse.org/" class="uri">https://www.tidyverse.org/</a></p>
 </div>
-<div id="data-manipulation---dplyr-basics" class="section level2" number="4.4">
-<h2><span class="header-section-number">4.4</span> Data manipulation - dplyr basics</h2>
+<div id="data-manipulation---dplyr-basics" class="section level2 hasAnchor" number="4.4">
+<h2><span class="header-section-number">4.4</span> Data manipulation - dplyr basics<a href="data-wrangling.html#data-manipulation---dplyr-basics" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>Select: select columns by name or helper function (choose which variables you want to look at ):</p>
 <div class="sourceCode" id="cb11"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb11-1"><a href="data-wrangling.html#cb11-1" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(df_auto, MPG, Cylinders)</span>
 <span id="cb11-2"><a href="data-wrangling.html#cb11-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(df_auto, <span class="sc">-</span>Origin)</span>
@@ -332,10 +331,10 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <span id="cb24-3"><a href="data-wrangling.html#cb24-3" aria-hidden="true" tabindex="-1"></a>      <span class="at">Min_HP_Per_Cylinder =</span> <span class="fu">min</span>(df_auto<span class="sc">$</span>Horsepower<span class="sc">/</span>df_auto<span class="sc">$</span>Cylinders, <span class="at">na.rm=</span><span class="cn">TRUE</span>)</span>
 <span id="cb24-4"><a href="data-wrangling.html#cb24-4" aria-hidden="true" tabindex="-1"></a>    )</span></code></pre></div>
 </div>
-<div id="dplyr---pipe-operator" class="section level2" number="4.5">
-<h2><span class="header-section-number">4.5</span> dplyr - pipe operator</h2>
+<div id="dplyr---pipe-operator" class="section level2 hasAnchor" number="4.5">
+<h2><span class="header-section-number">4.5</span> dplyr - pipe operator<a href="data-wrangling.html#dplyr---pipe-operator" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>Consider the previous operations. If we wanted to manipulate our data set in order, we traditionally have to do a reassignment each time:</p>
-<div class="sourceCode" id="cb25"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb25-1"><a href="data-wrangling.html#cb25-1" aria-hidden="true" tabindex="-1"></a>  ddf_auto_hold <span class="ot">&lt;-</span> <span class="fu">rename</span>(df_auto, <span class="at">Miles_Per_Gallon=</span>MPG) <span class="co">#rename</span></span>
+<div class="sourceCode" id="cb25"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb25-1"><a href="data-wrangling.html#cb25-1" aria-hidden="true" tabindex="-1"></a>  df_auto_hold <span class="ot">&lt;-</span> <span class="fu">rename</span>(df_auto, <span class="at">Miles_Per_Gallon=</span>MPG) <span class="co">#rename</span></span>
 <span id="cb25-2"><a href="data-wrangling.html#cb25-2" aria-hidden="true" tabindex="-1"></a>  </span>
 <span id="cb25-3"><a href="data-wrangling.html#cb25-3" aria-hidden="true" tabindex="-1"></a>  df_auto_hold <span class="ot">&lt;-</span> <span class="fu">mutate</span>(df_auto_hold, <span class="at">HP_Per_Cylinder=</span>Horsepower<span class="sc">/</span>Cylinders) <span class="co">#then create</span></span>
 <span id="cb25-4"><a href="data-wrangling.html#cb25-4" aria-hidden="true" tabindex="-1"></a>  </span>
@@ -353,8 +352,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <span id="cb26-6"><a href="data-wrangling.html#cb26-6" aria-hidden="true" tabindex="-1"></a>  </span>
 <span id="cb26-7"><a href="data-wrangling.html#cb26-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">View</span>(df_auto_hold)</span></code></pre></div>
 </div>
-<div id="stringr-package" class="section level2" number="4.6">
-<h2><span class="header-section-number">4.6</span> stringr package</h2>
+<div id="stringr-package" class="section level2 hasAnchor" number="4.6">
+<h2><span class="header-section-number">4.6</span> stringr package<a href="data-wrangling.html#stringr-package" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>The package stringr is a similar grammar language for manipulating strings. All the functions start with str_</p>
 <p>Consider that I want to extract the Car Make and Model from the Car Name:</p>
 <div class="sourceCode" id="cb27"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb27-1"><a href="data-wrangling.html#cb27-1" aria-hidden="true" tabindex="-1"></a>  <span class="fu">View</span>(df_auto_hold)</span></code></pre></div>
@@ -395,8 +394,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <span id="cb33-6"><a href="data-wrangling.html#cb33-6" aria-hidden="true" tabindex="-1"></a>    <span class="fu">filter</span>(Model_Year<span class="sc">==</span><span class="dv">70</span>) <span class="sc">%&gt;%</span></span>
 <span id="cb33-7"><a href="data-wrangling.html#cb33-7" aria-hidden="true" tabindex="-1"></a>    <span class="fu">ungroup</span>(Car_Make, Model_Year)</span></code></pre></div>
 </div>
-<div id="combining-data---dplyr" class="section level2" number="4.7">
-<h2><span class="header-section-number">4.7</span> Combining Data - dplyr</h2>
+<div id="combining-data---dplyr" class="section level2 hasAnchor" number="4.7">
+<h2><span class="header-section-number">4.7</span> Combining Data - dplyr<a href="data-wrangling.html#combining-data---dplyr" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>Typically when working with data, especially relational databases, we have information stored in multiple tables. For instance, we have the Auto data set:</p>
 <div class="sourceCode" id="cb34"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb34-1"><a href="data-wrangling.html#cb34-1" aria-hidden="true" tabindex="-1"></a>  <span class="fu">View</span>(df_auto)</span>
 <span id="cb34-2"><a href="data-wrangling.html#cb34-2" aria-hidden="true" tabindex="-1"></a>  </span>
@@ -455,8 +454,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <span id="cb36-16"><a href="data-wrangling.html#cb36-16" aria-hidden="true" tabindex="-1"></a>  </span>
 <span id="cb36-17"><a href="data-wrangling.html#cb36-17" aria-hidden="true" tabindex="-1"></a>  <span class="fu">View</span>(df_auto_hold)  </span></code></pre></div>
 </div>
-<div id="cheat-sheet" class="section level2" number="4.8">
-<h2><span class="header-section-number">4.8</span> Cheat Sheet</h2>
+<div id="cheat-sheet" class="section level2 hasAnchor" number="4.8">
+<h2><span class="header-section-number">4.8</span> Cheat Sheet<a href="data-wrangling.html#cheat-sheet" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>We’re not going to cover every function here, but what is great about these packages is the the cheatsheets. The community has made to provide reference. I highly recommend downloading them and keeping them close:</p>
 <ul>
 <li><p>dplyr: <a href="https://www.rstudio.com/wp-content/uploads/2015/02/data-wrangling-cheatsheet.pdf" class="uri">https://www.rstudio.com/wp-content/uploads/2015/02/data-wrangling-cheatsheet.pdf</a></p></li>
@@ -464,8 +463,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li><p>a whole lot more… <a href="https://www.rstudio.com/resources/cheatsheets/" class="uri">https://www.rstudio.com/resources/cheatsheets/</a></p></li>
 </ul>
 </div>
-<div id="extra---sqldf" class="section level2" number="4.9">
-<h2><span class="header-section-number">4.9</span> Extra - sqldf</h2>
+<div id="extra---sqldf" class="section level2 hasAnchor" number="4.9">
+<h2><span class="header-section-number">4.9</span> Extra - sqldf<a href="data-wrangling.html#extra---sqldf" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>If you like SQL, there is a package allows you to manipulate data in a in-memory, or permanent database:</p>
 <div class="sourceCode" id="cb37"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb37-1"><a href="data-wrangling.html#cb37-1" aria-hidden="true" tabindex="-1"></a>  <span class="fu">install.packages</span>(<span class="st">&quot;sqldf&quot;</span>)</span>
 <span id="cb37-2"><a href="data-wrangling.html#cb37-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">library</span>(sqldf)</span>
@@ -486,7 +485,6 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
-<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
 <script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
 <script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
 <script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
@@ -525,7 +523,11 @@ gitbook.start({
 "link": "https://github.com/andreavillanes/R_Data_Manipulation_Techniques/blob/master/04-data_wrangling.Rmd",
 "text": null
 },
-"download": null,
+"download": ["bookdownproj.pdf"],
+"search": {
+"engine": "fuse",
+"options": null
+},
 "toc": {
 "collapse": "subsection"
 }
