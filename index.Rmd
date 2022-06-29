@@ -1,7 +1,12 @@
 --- 
 title: "Data Manipulation Techniques with R"
 #author: "Dr. Andrea Villanes"
-output: pdf_document
+#output: pdf_document
+output:
+  bookdown::pdf_document2:
+    latex_engine: lualatex
+  tufte::tufte_handout:
+    latex_engine: xelatex
 site: bookdown::bookdown_site
 github-repo: andreavillanes/R_Data_Manipulation_Techniques
 ---
